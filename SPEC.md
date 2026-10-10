@@ -215,7 +215,7 @@ where `H` is SHA-256 or stronger, `"DCP-1:canary"` is a fixed ASCII domain-separ
   "attribution_level": "sut | dut | cut",
   "sut": "solution identifier",
   "dut": "product name",
-  "dut_fingerprint": "a062ea4e09ad122e6d2e8ff3fead14ef0359071c971f92183b07a97f94238666",
+  "dut_fingerprint": "ea55dce4aa233b4d27e047cabf8a6a2e68475b626dbdc7a6d5d4cfb8bff437c6",
   "cut": "control identifier, or null",
   "cut_fingerprint": "hash (Section 15.2), or null",
   "fingerprint_status": "current | stale",

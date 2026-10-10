@@ -69,7 +69,7 @@
     "dut_fingerprint": {
       "type": "string",
       "description": "Independently captured DUT Fingerprint (SPEC 15.2)",
-      "examples": ["a062ea4e09ad122e6d2e8ff3fead14ef0359071c971f92183b07a97f94238666"]
+      "examples": ["ea55dce4aa233b4d27e047cabf8a6a2e68475b626dbdc7a6d5d4cfb8bff437c6"]
     },
     "cut": {
       "type": [

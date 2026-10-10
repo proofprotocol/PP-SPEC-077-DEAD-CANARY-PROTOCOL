@@ -10,6 +10,19 @@ The method is Craig Ellrod's. The words were drafted with Claude.
 
 Prooflock, the Dead Canary Protocol, was conceived, designed, and decided by Craig Ellrod, a human. Claude, an AI assistant made by Anthropic, was used as a drafting, structuring, and editing tool under his direction. No part of the protocol's concept, purpose, or design originated with the AI. Every section was reviewed and accepted by Craig Ellrod before publication.
 
+## Ratio
+
+One number would misstate it, because the work splits along more than one line.
+
+| Dimension | Human (Craig Ellrod) | Machine (Claude) |
+|---|---|---|
+| Conception, method, every normative decision | 100% | 0% |
+| Design details and naming | 95% | 5% (Section 9 encoding constants and the terms roost, molt, clutch, proposed by Claude and accepted by Craig Ellrod) |
+| Words on the page, as typed | 10% | 90% |
+| Review, direction, acceptance, decision to publish | 100% | 0% |
+
+In short: substance 95% human, 5% machine; expression 10% human, 90% machine.
+
 ## Human: Craig Ellrod
 
 The following originated with Craig Ellrod and reflect his judgment, experience, and decisions:
