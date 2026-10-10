@@ -90,11 +90,13 @@ Draft, version 0.6.1, 2026-10-10. Maintained by Nebulonium, Inc. as part of Proo
 
 Where results live: every commitment, witness root, fingerprint, and result is published to a registry conforming to [PP-SPEC-004](https://github.com/proofprotocol/registry-api-spec), the ProofRegister API. The public instance is [proofregister.com](https://proofregister.com).
 
-Related: Proof Economy Prior Art Declaration, DOI [10.5281/zenodo.21379780](https://doi.org/10.5281/zenodo.21379780).
+Archived: v0.6.1 on Zenodo, DOI [10.5281/zenodo.23285061](https://doi.org/10.5281/zenodo.23285061).
+
+Related: Proof Economy Prior Art Declaration, DOI [10.5281/zenodo.21379780](https://doi.org/10.5281/zenodo.21379780). PP-SPEC-078, No Bros Jail Mode Protocol, DOI [10.5281/zenodo.23285067](https://doi.org/10.5281/zenodo.23285067), builds on this specification.
 
 ## Cite
 
 ```
 Ellrod, C. (2026). Prooflock: The Dead Canary Protocol (PP-SPEC-077), v0.6.1.
-Nebulonium, Inc., Proof Protocol.
+Nebulonium, Inc., Proof Protocol. https://doi.org/10.5281/zenodo.23285061
 ```
