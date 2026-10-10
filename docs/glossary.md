@@ -55,6 +55,9 @@
 | **Integration Point (IP-n)** | A named seam a third-party component plugs into, with its own MUSTs, evidence, and conformance claim (Section 18). |
 | **Component Fingerprint** | Hash of a component's build, version, and deployed configuration, captured independently. The testing equipment is fingerprinted like the DUT. |
 | **Interface Manifest** | Published before release: who occupies each seam, with product, version, fingerprint, and interests. |
+| **Absence Ladder** | Blind (witness not looking), Void (witness looking, path gone), Null (witness looking, path up, nothing landed). Only Null scores. |
+| **Blind** | A canary committed to an Effect Point outside the coverage map. Never scored; a finding against the plan. |
+| **Degraded** | A Production Stream series whose Blind plus Void share stayed over threshold for the declared number of clutches. Not proof for those clutches. |
 | **Verification** | Self-attestation. Baseline tier. |
 | **Validation** | One step above verification. |
 | **Proof** | Independent evidence of outcome under adversarial conditions. |

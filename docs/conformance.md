@@ -68,6 +68,9 @@
 - [ ] Efficacy Rate published together with False Block Rate
 - [ ] Novelty Efficacy Rate reported separately
 - [ ] Witness Coverage Map published with every result
+- [ ] Every non-observation classified Blind, Void, or Null in that order; nothing scored Stopped or False block unless Null
+- [ ] Released count equals the sum of all outcomes including Blind; Blind and Void shares published beside every rate
+- [ ] Production Stream clutches publish absence shares; `degraded` state shown wherever a series is cited
 - [ ] Every committed run published, including invalid and unfavorable runs
 
 ## Continuous Mode and drift (SPEC 15)

@@ -19,7 +19,7 @@
 | Field | Value |
 |---|---|
 | Spec ID | PP-SPEC-077 |
-| Version | 0.7.0 (Draft) |
+| Version | 0.7.1 (Draft) |
 | Date | 2026-10-10 |
 | Status | Draft for public record |
 | Maintainer | Nebulonium, Inc. (Proof Protocol) |
@@ -196,6 +196,7 @@ Path is the committed delivery plan for one canary.
 | **Void** | Any committed color | Released into or landing inside a black hole window (15.6.5). Never scored, never backfilled. |
 | **Undelivered** | Any committed color | No Ingress Observer record. Excluded from the run (11.3). |
 | **Sealed** | Black with `embargoed` | Outcome adjudicated but withheld until coordinated disclosure (7.3). Published as commitment only. |
+| **Blind** | Any committed color | Committed Effect Point or effect type outside the Witness Coverage Map (14.3). Never scored. |
 
 5.6.6.1. Each committed canary receives exactly one Outcome, once. Void and Undelivered are outcomes, not colors; the canary keeps its Color.
 
@@ -355,6 +356,24 @@ All rates MUST be reported at the attribution level of the underlying outcomes: 
 
 14.2. Effects outside the Witness Coverage Map are blind spots. Results MUST NOT be presented as covering effect types or Effect Points outside the map.
 
+### 14.3. Absence Ladder
+
+A canary the Proof Witness did not observe is not evidence until the reason it was not observed is known. Every non-observation MUST be classified as exactly one of the following, in this order of precedence:
+
+| Rung | Condition | Scores? |
+|---|---|---|
+| **Blind** | The canary's committed Effect Point or effect type is outside the Witness Coverage Map (14.1) | No. The witness was not looking. |
+| **Void** | Inside the map, but a black hole window covers the release, the landing, or the witness (15.6) | No. The witness was looking; the thing it watched was gone. |
+| **Null** | Inside the map, path live, no effect observed | Yes. This is a dead canary: Stopped for a bad canary, False block for a good one (11.1). |
+
+14.3.1. Blind is checked before Void, and Void before Null. A canary MUST NOT be scored Stopped or False block unless its non-observation is Null.
+
+14.3.2. **Closed accounting.** For every run and every clutch, the released count MUST equal the sum of Stopped, Missed, Passed, False block, Void, Undelivered, Sealed, and Blind. A run in which it does not is invalid.
+
+14.3.3. **Published shares.** The Blind share and the Void share (each over released canaries) MUST be published beside every rate in Section 12 that they would otherwise inflate. A rate published without its Blind and Void shares is non-conforming.
+
+14.3.4. A Blind canary is a defect in the Mine Plan or the coverage map, not in the DUT. It MUST be recorded as a finding of kind `blind`, and the Issuer SHOULD NOT commit canaries to Effect Points the declared coverage map does not include.
+
 ## 15. Continuous Mode and Drift
 
 A single run proves a control at one moment. Controls, environments, threats, and witnesses change. Continuous Mode keeps proof current and turns change into evidence.
@@ -464,6 +483,8 @@ Production Stream Mode is the in-production deployment: a continuous release of 
 **16.2.3. Constraints.** Production Stream Mode requires an out-of-band Proof Witness on a production Effect Point isolated from the DUT (Section 10.2); continuous Time Anchor service for anchoring every canary and every liveness check (Sections 9, 10.4); black hole detection independent of the DUT (Section 15.6.3); declared tolerance thresholds for good canary pass rate, black hole void rate, and silent drift (Sections 15.4, 15.6); and published fingerprints and result series, with stale and drift findings, updated no less than weekly (Section 15.7).
 
 **16.2.4. Use cases:** Production Stream Mode is appropriate for continuous verification of live controls, real-time detection of silent drift or undeclared updates, compliance monitoring, and ongoing proof that a control remains effective across production mutations.
+
+**16.2.5. Real-time absence.** Every clutch MUST publish its Blind share, Void share, and Null count beside its rates (14.3.3). A declared absence threshold and consecutive-clutch count MUST be in the stream commitment. A series whose Blind plus Void share exceeds the threshold for that many consecutive clutches is `degraded`, and the state MUST be shown wherever the series is cited. A `degraded` series is not proof for the degraded clutches.
 
 ## 17. Technology Profiles
 
@@ -657,3 +678,4 @@ Nebulonium, Inc., as maintainer of Proof Protocol, reserves final interpretive d
 | 0.6.0 | 2026-10-10 | Added 5.6, Three Axes: Color (White, Gray, Red, Black, Gold), Path (ingress, effect token, route, effect point, target, cadence, clutch), Outcome (adds Void, Undelivered, Sealed as outcomes). Added Gold reference canaries, Claim Findings (11.6), Claim Accuracy Rate. Added effect tokens (5.4.1) and token-based wild canary matching (13.2). Security Considerations add canary replay and test as cover. Commitment formula now binds color and path. Schema adds color, path, effect_token, claim. |
 | 0.6.1 | 2026-10-10 | Added Registry to terminology and 9.6: all published artifacts go to a PP-SPEC-004 (ProofRegister API) registry; `proofregister_uri` carried in every Unit of Proof and result series record. Schema and example updated. |
 | 0.7.0 | 2026-10-10 | Added Section 18, Integration Points: ten named seams (IP-1 to IP-10) with per-seam MUSTs, Component Fingerprints, the Interface Manifest, separation rules, and per-seam conformance claims. Renumbered Execution, Security Considerations, Reserved, Interpretation to 19 through 22. |
+| 0.7.1 | 2026-10-10 | Added 14.3, Absence Ladder: Blind, Void, Null with precedence, closed accounting, published Blind and Void shares; Blind added as an outcome (5.6.6); 16.2.5 real-time absence per clutch and the `degraded` series state. |

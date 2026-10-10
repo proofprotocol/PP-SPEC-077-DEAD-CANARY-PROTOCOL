@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.7.1 (2026-10-10)
+- 14.3 Absence Ladder: every non-observation is Blind, Void, or Null, in that precedence; only Null scores
+- Closed accounting: released equals the sum of all outcomes including Blind; otherwise invalid
+- Blind and Void shares published beside every rate they would inflate
+- Blind added to the Outcome table (5.6.6); a Blind canary is a `blind` finding against the plan, not the DUT
+- 16.2.5: per-clutch absence shares in Production Stream; `degraded` series state
+
 ## 0.7.0 (2026-10-10)
 - Section 18, Integration Points: IP-1 Issuer, IP-2 Time Anchor, IP-3 Release Driver, IP-4 Ingress Observer, IP-5 Fingerprint Capture, IP-6 Proof Witness, IP-7 Liveness Prober, IP-8 Adjudicator, IP-9 Registry, IP-10 Signer
 - Component Fingerprint for every component; Interface Manifest published to the Registry before release
