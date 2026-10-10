@@ -83,13 +83,13 @@ Prooflock is a method for producing **proof of efficacy** for a security control
 
 ## Status
 
-Draft, version 0.5.0, 2026-10-10. Maintained by Nebulonium, Inc. as part of Proof Protocol.
+Draft, version 0.5.1, 2026-10-10. Maintained by Nebulonium, Inc. as part of Proof Protocol.
 
 Related: Proof Economy Prior Art Declaration, DOI [10.5281/zenodo.21379780](https://doi.org/10.5281/zenodo.21379780).
 
 ## Cite
 
 ```
-Ellrod, C. (2026). Prooflock: The Dead Canary Protocol (PP-SPEC-077), v0.5.0.
+Ellrod, C. (2026). Prooflock: The Dead Canary Protocol (PP-SPEC-077), v0.5.1.
 Nebulonium, Inc., Proof Protocol.
 ```

@@ -53,6 +53,9 @@ A log is the control vouching for itself. That is verification, a legitimate bas
 **What is the difference between CUT, DUT, and SUT?**
 The SUT is the whole solution the canaries enter. A DUT is one security device or product inside it. A CUT is one control inside that device: a rule, a policy, a detection. Results are attributed at whichever level the evidence supports.
 
+**What is an AUT?**
+An Agent Under Test is an agent inside the SUT whose own conduct is being tested. A DUT stops attacks; an AUT may commit them. DCP treats an AUT as part of the environment. When the agent is the adversary, use PP-SPEC-078 (No Bros Jail Mode Protocol: The Jailed Canary Protocol).
+
 **The product's logs say rule 412 blocked the attack. Doesn't that prove the rule works?**
 No. That is the device vouching for itself. Credit goes to a single control only when matched runs show the attack lands with that control off and dies with it on.
 

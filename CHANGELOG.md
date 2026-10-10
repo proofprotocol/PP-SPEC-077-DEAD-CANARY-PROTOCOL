@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.5.1 (2026-10-10)
+- Terminology: added Agent Under Test (AUT), an actor inside the SUT, not a control
+- Section 2.1: lineage now covers all four terms (SUT, DUT, CUT, AUT) as derived from Technical Marketing (2008)
+- Section 2.2: AUT added beside the DUT in the test hierarchy; new 2.2.5 states AUT is not an attribution level and points to PP-SPEC-078 (No Bros Jail Mode Protocol: The Jailed Canary Protocol)
+- Updated glossary, FAQ, README, CITATION
+
 ## 0.5.0 (2026-10-10)
 - Added Section 16, Operating Modes: Bounded Mode and Production Stream Mode
 - Added Section 17, Technology Profiles for nine domains plus profile structure and implementation guidance

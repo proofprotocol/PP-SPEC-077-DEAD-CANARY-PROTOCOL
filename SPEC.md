@@ -19,7 +19,7 @@
 | Field | Value |
 |---|---|
 | Spec ID | PP-SPEC-077 |
-| Version | 0.5.0 (Draft) |
+| Version | 0.5.1 (Draft) |
 | Date | 2026-10-10 |
 | Status | Draft for public record |
 | Maintainer | Nebulonium, Inc. (Proof Protocol) |
@@ -42,6 +42,7 @@ The key words MUST, MUST NOT, REQUIRED, SHALL, SHALL NOT, SHOULD, SHOULD NOT, RE
 
 ## 2. Terminology
 
+- **Agent Under Test (AUT):** An autonomous or tool-calling agent inside the SUT whose own conduct is under test. An AUT is an actor, not a control: a DUT stops attacks, an AUT may commit them. An AUT's conduct is adjudicated under PP-SPEC-078 (No Bros Jail Mode Protocol: The Jailed Canary Protocol), not under this specification.
 - **Control Under Test (CUT):** A single control inside a DUT whose efficacy is being measured: one rule, policy, signature, detection, or guardrail function.
 - **Device Under Test (DUT):** A security product, configuration, or agent guardrail containing one or more CUTs.
 - **Solution Under Test (SUT):** The full deployment the flock enters: one or more DUTs plus the protected environment, its Effect Points, and its dependencies.
@@ -68,25 +69,28 @@ The key words MUST, MUST NOT, REQUIRED, SHALL, SHALL NOT, SHOULD, SHOULD NOT, RE
 
 ### 2.1. Terminology Lineage
 
-DUT and SUT follow the competitive test methodology published in Craig Thomas Ellrod, *Technical Marketing: secrets revealed, Strategy and Tactics for Competitive Results*, first edition (StrateQuest, LLC, 2008), ISBN-13 978-0-9822570-0-5, Chapter 4, "Competitive Test", which defines a competitive test as a device under test (DUT), or solution under test (SUT), together with the testing equipment. In this specification the flock, observers, and Time Anchor are the testing equipment, and the Proof Witness keeps that equipment independent of the DUT. This specification extends the model one level down with the Control Under Test (CUT), so evidence can be attributed to a single control inside a device. The book's baseline practice of testing with and without the device is the basis for differential attribution (2.2.3).
+DUT and SUT follow the competitive test methodology published in Craig Thomas Ellrod, *Technical Marketing: secrets revealed, Strategy and Tactics for Competitive Results*, first edition (StrateQuest, LLC, 2008), ISBN-13 978-0-9822570-0-5, Chapter 4, "Competitive Test", which defines a competitive test as a device under test (DUT), or solution under test (SUT), together with the testing equipment. In this specification the flock, observers, and Time Anchor are the testing equipment, and the Proof Witness keeps that equipment independent of the DUT. This specification extends the model one level down with the Control Under Test (CUT), so evidence can be attributed to a single control inside a device, and one step sideways with the Agent Under Test (AUT), so an agent inside the solution can itself be the subject of a test. All four terms, SUT, DUT, CUT, and AUT, derive from the book's DUT and SUT. The book's baseline practice of testing with and without the device is the basis for differential attribution (2.2.3).
 
-### 2.2. Test Hierarchy: SUT, DUT, CUT
+### 2.2. Test Hierarchy: SUT, DUT, CUT, AUT
 
-Evidence is attributed at three levels:
+Evidence is attributed at three levels, SUT, DUT, and CUT. The AUT sits beside the DUT inside the SUT:
 
 | Level | Term | Scope | Example |
 |---|---|---|---|
 | Solution | **SUT** | The full deployment the flock enters | A production agent stack with its network, identity, and data stores |
 | Device | **DUT** | One security product, configuration, or guardrail inside the SUT | An EDR, a WAF, an agent policy layer |
 | Control | **CUT** | One control inside the DUT | A single rule, policy, signature, detection, or guardrail function |
+| Agent | **AUT** | One agent inside the SUT whose own conduct is under test | A coding agent, an MCP-connected assistant, one member of an agent swarm |
 
-2.2.1. An SUT contains one or more DUTs. A DUT contains one or more CUTs.
+2.2.1. An SUT contains one or more DUTs and zero or more AUTs. A DUT contains one or more CUTs.
 
 2.2.2. Every bad canary MUST declare, in its commitment, the level it targets (`sut`, `dut`, or `cut`) and the identifier of the target at that level.
 
 2.2.3. **CUT attribution is earned, not reported.** A Stopped outcome MAY be attributed to a single CUT only by differential evidence: matched runs in an otherwise identical SUT with the CUT active and with the CUT disabled or bypassed, using fresh canaries of the same technique. A DUT log or alert naming the control that acted is verification evidence. It MAY be recorded as an annotation and MUST NOT by itself attribute an outcome to a CUT.
 
 2.2.4. An outcome that cannot be attributed to a single CUT MUST be attributed to the DUT, and an outcome that cannot be attributed to a single DUT MUST be attributed to the SUT. Attribution never moves to a finer level without the evidence in 2.2.3.
+
+2.2.5. **AUT is not an attribution level in this specification.** An agent guardrail is a DUT, and its rules are CUTs. The agent it protects is an AUT. Under this specification an AUT is part of the SUT environment, and outcomes are never attributed to it. When the AUT is the adversary, the test is run under PP-SPEC-078.
 
 ## 3. Assurance Tiers
 
