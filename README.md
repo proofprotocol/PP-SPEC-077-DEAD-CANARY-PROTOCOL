@@ -76,6 +76,7 @@ Prooflock is a method for producing **proof of efficacy** for a security control
 | [CHANGELOG.md](CHANGELOG.md) | Version history |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | How to engage |
 | [NOTICE.md](NOTICE.md) | Attribution requirements |
+| [AI_DISCLOSURE.md](AI_DISCLOSURE.md) | What was human-authored and what was AI-drafted |
 | [CITATION.cff](CITATION.cff) | Citation metadata |
 | [SECURITY.md](SECURITY.md) | Reporting protocol flaws |
 | [LICENSE.md](LICENSE.md) | License terms |
