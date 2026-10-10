@@ -60,7 +60,7 @@
 - [ ] Witness records timestamped, anchored, and committed before the Issuer's reveal
 - [ ] Proof Witness has no access to labels until its records are committed
 
-## Adjudication and publication (SPEC 11, 12, 14, 19)
+## Adjudication and publication (SPEC 11, 12, 14, 20)
 
 - [ ] Bad canaries whose effect occurred scored Missed regardless of alerts
 - [ ] Good canary pass threshold declared before the run
@@ -107,3 +107,13 @@
 - [ ] Fingerprints and result series published no less than weekly
 - [ ] Results published as time series per Fingerprint version
 - [ ] Stale periods, silent drift findings, and black hole windows included in series
+
+## Integration Points (SPEC 18)
+
+- [ ] Every conformance claim names its Integration Point(s) as `PP-SPEC-077 IP-n` and the spec version
+- [ ] Every component publishes a Component Fingerprint captured independently of its vendor
+- [ ] Interface Manifest (party, product, version, fingerprint, interests per seam) published to the Registry before release
+- [ ] No component other than the Issuer can hold or infer labels before reveal
+- [ ] Separation: Issuer and Proof Witness differ; Proof Witness is not the DUT Vendor; Time Anchor occupies no other seam; DUT Vendor occupies none of IP-1, 3, 5, 6, 7, 9
+- [ ] IP-8 Adjudicator reproduces reference output on the conformance vectors
+- [ ] DUT is unmodified and cannot detect any seam

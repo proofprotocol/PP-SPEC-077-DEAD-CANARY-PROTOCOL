@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.7.0 (2026-10-10)
+- Section 18, Integration Points: IP-1 Issuer, IP-2 Time Anchor, IP-3 Release Driver, IP-4 Ingress Observer, IP-5 Fingerprint Capture, IP-6 Proof Witness, IP-7 Liveness Prober, IP-8 Adjudicator, IP-9 Registry, IP-10 Signer
+- Component Fingerprint for every component; Interface Manifest published to the Registry before release
+- Separation rules between seams; the DUT has no seam and must not detect any
+- Conformance is claimed per seam as `PP-SPEC-077 IP-n`
+- Renumbered 18 to 21 as 19 to 22
+
 ## 0.6.1 (2026-10-10)
 - Terminology: Registry, a PP-SPEC-004 (ProofRegister API) conformant ledger; public instance proofregister.com
 - 9.6: every published artifact goes to a Registry; `proofregister_uri` required in Units of Proof and result series

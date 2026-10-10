@@ -19,7 +19,7 @@
 | Field | Value |
 |---|---|
 | Spec ID | PP-SPEC-077 |
-| Version | 0.6.1 (Draft) |
+| Version | 0.7.0 (Draft) |
 | Date | 2026-10-10 |
 | Status | Draft for public record |
 | Maintainer | Nebulonium, Inc. (Proof Protocol) |
@@ -341,7 +341,7 @@ All rates MUST be reported at the attribution level of the underlying outcomes: 
 
 13.1. The Proof Witness MAY remain in standby, its roost, at the Effect Points between and after runs.
 
-13.2. After reveal, each Proof Witness observation is matched to the committed flock by effect token, Effect Point, and release window. An observation that matches a committed canary belongs to that canary. An observation that matches no committed canary is a **Wild Canary**: a real attack, a real fault, or a real false alarm that did not originate from the protocol. An observation carrying a committed effect token with no corresponding Ingress Observer record, or outside its release window, is neither: it MUST be recorded as a **replayed canary** finding (Section 19) and MUST NOT be scored.
+13.2. After reveal, each Proof Witness observation is matched to the committed flock by effect token, Effect Point, and release window. An observation that matches a committed canary belongs to that canary. An observation that matches no committed canary is a **Wild Canary**: a real attack, a real fault, or a real false alarm that did not originate from the protocol. An observation carrying a committed effect token with no corresponding Ingress Observer record, or outside its release window, is neither: it MUST be recorded as a **replayed canary** finding (Section 20) and MUST NOT be scored.
 
 13.3. Wild Canaries MUST be recorded with timestamp, Time Anchor binding, Effect Point, and observed effect, and SHOULD be escalated for investigation.
 
@@ -557,7 +557,52 @@ Every technology profile declares the DUT scope (what constitutes a single Devic
 
 These profiles are starting points. Implementers MUST work with domain experts to define what constitutes a repeatable, observable Effect Point in their domain; establish independent fingerprint capture (Section 15.2.4); agree on mutation cadence and holdout strategy (Sections 6.1-6.2); and design canaries that are realistic and mutually distinguishable (Section 6).
 
-## 18. Execution
+## 18. Integration Points
+
+Every component in this specification will, in practice, be supplied by a different party: agent platforms, network and tool-path controls, witness and sensor vendors, time and registry services. This section names each seam, states what a component plugged into it MUST do and MUST emit, and which seams one party MUST NOT occupy at once. A product claims conformance per Integration Point, never to the specification as a whole.
+
+### 18.1. Rules for all Integration Points
+
+18.1.1. **Named conformance.** A conformance claim MUST name the Integration Point(s) it covers, in the form `PP-SPEC-077 IP-n`, and the version of this specification.
+
+18.1.2. **Component Fingerprint.** Every component occupying an Integration Point MUST publish a Component Fingerprint: a hash over its build identifier, version, and configuration as deployed for the run, captured under the same independence rule as a DUT Fingerprint (15.2.4). The testing equipment is fingerprinted like the thing it tests.
+
+18.1.3. **Interface Manifest.** Before release, the Issuer MUST publish an Interface Manifest to the Registry (9.6): for each Integration Point, the party occupying it, the product and version, its Component Fingerprint, and that party's disclosed interests (4.4). A run without a manifest is non-conforming.
+
+18.1.4. **Evidence, not opinions.** A component MUST emit the records this section assigns to it, in the canonical form this specification defines, and MUST NOT emit outcomes, verdicts, or rates. Adjudication is a separate seam (IP-8).
+
+18.1.5. **Blindness.** No component other than the Issuer (IP-1) holds labels or colors before reveal. A component that can infer labels from any input it receives is non-conforming.
+
+18.1.6. **Separation.** The following seams MUST be occupied by different parties: IP-1 Issuer and IP-6 Proof Witness; IP-6 Proof Witness and the Vendor of the DUT; IP-2 Time Anchor and any other seam. The Vendor of the DUT MUST NOT occupy IP-1, IP-3, IP-5, IP-6, IP-7, or IP-9.
+
+18.1.7. **Transport neutrality.** This specification defines what crosses each seam, not how. Records MAY move by API, message bus, file, or signed log. A reference transport is given in the reference implementation, not here.
+
+### 18.2. The seams
+
+| ID | Integration Point | What plugs in | MUST do | MUST emit |
+|---|---|---|---|---|
+| **IP-1** | Issuer / Canary Generator | Attack libraries, mutation engines, holdout pools, technology-profile generators | Produce canaries with content, Color, Path, expected effect, effect token (5.4.1), flags; commit under Section 9; hold labels; reveal under 9.4 | Commitment root and Time Anchor binding; reveal; Interface Manifest |
+| **IP-2** | Time Anchor | Public randomness beacons (e.g. NIST), or any externally verifiable pulse source | Issue pulses that no party to the run controls or can predict; serve `latest`, `at(index)`, `after(index, n)` | Pulse index, timestamp, output value, URI |
+| **IP-3** | Release Driver | Traffic generators, agent harnesses, mail injectors, API clients, network path controls | Deliver each released canary at its committed `ingress`, in committed order and cadence, unmodified; never see labels | Release timestamps per effect token |
+| **IP-4** | Ingress Observer | Taps, proxies, flow logs, mail gateways in passive mode | Record delivery of each canary at the ingress by effect token, timestamped and anchored; passive, never alter traffic | Ingress records (10.3) |
+| **IP-5** | Fingerprint Capture | Configuration readers, admission controllers, model and prompt registries | Read the deployed state of the DUT and each CUT independently of the Vendor and compute Fingerprints (15.2) | DUT and CUT Fingerprints, capture method, capturing party |
+| **IP-6** | Proof Witness / Effect Point Sensor | EDR telemetry taps, DLP sinks, database audit, egress sinks, identity logs, agent tool-output recorders | Observe the committed Effect Points over a path and credentials the DUT does not administer (10.2); record effect, token, point, time; commit and anchor the record set before reveal (10.4); publish a Witness Coverage Map (14) | Observations; witness root and signature; coverage map |
+| **IP-7** | Liveness Prober | Synthetic monitors, out-of-band health checks | Probe Effect Points, Ingress Observer, Proof Witness, and Time Anchor over paths that do not traverse the DUT (15.6.3); open and close black hole windows | Black hole windows with start and end pulses and cause evidence |
+| **IP-8** | Adjudicator | Scoring engines, reporting tools | Apply Sections 11 to 13 exactly; produce identical outcomes to the reference adjudicator on identical inputs; run only after IP-6 has committed and IP-1 has revealed | Outcomes, Units of Proof, findings, metrics, per-level rates |
+| **IP-9** | Registry | PP-SPEC-004 conformant registries; the public instance is proofregister.com | Accept every artifact 9.6 lists; return a record identifier; append-only | `proofregister_uri` per record |
+| **IP-10** | Signer / Key Custody | HSMs, KMS, software keys | Sign witness roots, Interface Manifests, and result records; publish verification keys | Signatures and key identifiers |
+
+### 18.3. Conformance per seam
+
+18.3.1. A component MAY claim conformance to one or more Integration Points. It MUST NOT claim conformance to this specification without naming them.
+
+18.3.2. Conformance to IP-8 is established only by producing identical adjudication output to the reference implementation on the published conformance vectors.
+
+18.3.3. A DUT has no Integration Point. It is the thing under test, it MUST NOT be modified to participate, and it MUST NOT be able to detect that any of the above seams exist (5.2, 10.2).
+
+18.3.4. A single product MAY occupy several seams in one run only where 18.1.6 permits, and the Interface Manifest MUST say so.
+
+## 19. Execution
 
 A conforming run proceeds as follows:
 
@@ -573,7 +618,7 @@ A conforming run proceeds as follows:
 10. Proof Witness returns to standby; any Wild Canaries are recorded under Section 13.
 11. In Continuous Mode, the trickle resumes and results join the series for the current DUT Fingerprint (Section 15).
 
-## 19. Security Considerations
+## 20. Security Considerations
 
 - **Test recognition:** A DUT tuned to recognize canaries will inflate efficacy. Mitigated by 5.2, Section 6, and 8.2.
 - **Label leakage:** Disclosure of labels or ratios before the run invalidates it.
@@ -588,11 +633,11 @@ A conforming run proceeds as follows:
 - **Canary replay:** A party that captures a canary could re-send it to manufacture an effect or a block. Mitigated by single-use effect tokens, Ingress Observer records, and release windows. An effect token seen without its ingress record, or outside its window, is a finding, never a Unit of Proof.
 - **Test as cover:** An attacker aware of a run window may attack during it, expecting alerts to be dismissed as test traffic. Operators MUST treat any effect without a matched effect token as real. The Proof Witness classifies by exclusion, and a run never suspends normal incident response. Publication of the method does not weaken this: the secret is the nonce, the holdout pool, and embargoed payloads, not the mechanism.
 
-## 20. Reserved
+## 21. Reserved
 
 Sections for campaign-level valuation (multi-technique chains) and additional witness requirements are reserved for future revisions by the maintainer.
 
-## 21. Interpretation
+## 22. Interpretation
 
 Nebulonium, Inc., as maintainer of Proof Protocol, reserves final interpretive discretion over this specification and over conformance claims made under it.
 
@@ -611,3 +656,4 @@ Nebulonium, Inc., as maintainer of Proof Protocol, reserves final interpretive d
 | 0.5.1 | 2026-10-10 | Added Agent Under Test (AUT) to terminology, lineage (2.1), and test hierarchy (2.2); 2.2.5 states AUT is not an attribution level and points to PP-SPEC-078. |
 | 0.6.0 | 2026-10-10 | Added 5.6, Three Axes: Color (White, Gray, Red, Black, Gold), Path (ingress, effect token, route, effect point, target, cadence, clutch), Outcome (adds Void, Undelivered, Sealed as outcomes). Added Gold reference canaries, Claim Findings (11.6), Claim Accuracy Rate. Added effect tokens (5.4.1) and token-based wild canary matching (13.2). Security Considerations add canary replay and test as cover. Commitment formula now binds color and path. Schema adds color, path, effect_token, claim. |
 | 0.6.1 | 2026-10-10 | Added Registry to terminology and 9.6: all published artifacts go to a PP-SPEC-004 (ProofRegister API) registry; `proofregister_uri` carried in every Unit of Proof and result series record. Schema and example updated. |
+| 0.7.0 | 2026-10-10 | Added Section 18, Integration Points: ten named seams (IP-1 to IP-10) with per-seam MUSTs, Component Fingerprints, the Interface Manifest, separation rules, and per-seam conformance claims. Renumbered Execution, Security Considerations, Reserved, Interpretation to 19 through 22. |
