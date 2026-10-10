@@ -45,6 +45,12 @@
 | **Roost** | The Proof Witness's standby state between and after runs. |
 | **Molt** | A DUT or CUT Fingerprint change. Prior results go stale. |
 | **Clutch** | One epoch's committed batch of canaries in Production Stream Mode. |
+| **Color** | What kind of canary it is: White, Gray, Red, Black, Gold. Sealed before release. Wild canaries have no color; they were never committed. |
+| **Path** | Where the canary goes and how it is sent: ingress, effect token, route, effect point, target, cadence, clutch. Sealed before release. |
+| **Outcome** | What happened: Stopped, Missed, Passed, False block, Void, Undelivered, Sealed. Assigned once, after the fact. |
+| **Effect Token** | Unique per-canary identifier visible at the Effect Point. Matches an observation to its canary after reveal. No token means wild. |
+| **Gold Canary** | A bad canary testing a technique the vendor claims in writing to stop. Gold Missed is a Claim Finding. |
+| **Claim Accuracy Rate** | Gold Stopped over all Gold. The vendor's own claims graded against outcome. |
 | **Verification** | Self-attestation. Baseline tier. |
 | **Validation** | One step above verification. |
 | **Proof** | Independent evidence of outcome under adversarial conditions. |

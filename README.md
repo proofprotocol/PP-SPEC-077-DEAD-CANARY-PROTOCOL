@@ -20,6 +20,8 @@ Prooflock is a method for producing **proof of efficacy** for a security control
 
 ## How it works
 
+![Prooflock architecture: Issuer, Time Anchor, Flock, Ingress Observer, SUT with DUT and CUTs, Effect Points, Proof Witness, liveness checks, reveal and adjudication, published results](docs/architecture.svg)
+
 ```
             Issuer (not the vendor)
                     |
@@ -69,6 +71,7 @@ Prooflock is a method for producing **proof of efficacy** for a security control
 |---|---|
 | [SPEC.md](SPEC.md) | The normative specification, PP-SPEC-077 |
 | [docs/overview.md](docs/overview.md) | Plain-English walkthrough |
+| [docs/architecture.svg](docs/architecture.svg) | One-page diagram of every component and flow |
 | [docs/glossary.md](docs/glossary.md) | Terms |
 | [docs/conformance.md](docs/conformance.md) | Conformance checklist |
 | [docs/faq.md](docs/faq.md) | Common questions |
@@ -83,13 +86,13 @@ Prooflock is a method for producing **proof of efficacy** for a security control
 
 ## Status
 
-Draft, version 0.5.1, 2026-10-10. Maintained by Nebulonium, Inc. as part of Proof Protocol.
+Draft, version 0.6.0, 2026-10-10. Maintained by Nebulonium, Inc. as part of Proof Protocol.
 
 Related: Proof Economy Prior Art Declaration, DOI [10.5281/zenodo.21379780](https://doi.org/10.5281/zenodo.21379780).
 
 ## Cite
 
 ```
-Ellrod, C. (2026). Prooflock: The Dead Canary Protocol (PP-SPEC-077), v0.5.1.
+Ellrod, C. (2026). Prooflock: The Dead Canary Protocol (PP-SPEC-077), v0.6.0.
 Nebulonium, Inc., Proof Protocol.
 ```

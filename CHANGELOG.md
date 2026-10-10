@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.6.0 (2026-10-10)
+- Section 5.6: three axes, Color, Path, Outcome, each set once at its own time
+- Colors: White, Gray, Red, Black, Gold; wild canaries stay outside the axes as their own evidence class
+- Gold reference canaries test the Vendor's written claims; Gold Missed is a Claim Finding (11.6)
+- Claim Accuracy Rate added to Section 12
+- Void, Undelivered, Sealed defined as outcomes; cadence defined as a Path field, not a color
+- 5.4.1 effect tokens; 13.2 matching by token, Effect Point, and window; replay findings
+- Security Considerations: canary replay, test as cover
+- 9.1 commitment binds color and path
+- Schema: color, path, effect_token, claim; top-level effect_point deprecated
+
 ## 0.5.1 (2026-10-10)
 - Terminology: added Agent Under Test (AUT), an actor inside the SUT, not a control
 - Section 2.1: lineage now covers all four terms (SUT, DUT, CUT, AUT) as derived from Technical Marketing (2008)

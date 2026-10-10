@@ -19,7 +19,7 @@
 | Field | Value |
 |---|---|
 | Spec ID | PP-SPEC-077 |
-| Version | 0.5.1 (Draft) |
+| Version | 0.6.0 (Draft) |
 | Date | 2026-10-10 |
 | Status | Draft for public record |
 | Maintainer | Nebulonium, Inc. (Proof Protocol) |
@@ -63,6 +63,12 @@ The key words MUST, MUST NOT, REQUIRED, SHALL, SHALL NOT, SHOULD, SHOULD NOT, RE
 - **Trickle:** A continuous low-volume flock released between full runs (Section 15.3).
 - **Silent Drift:** A change in measured behavior with no change in DUT Fingerprint (Section 15.4).
 - **Black Hole:** A period during which part of the system disappears for reasons unrelated to any canary or attack (Section 15.6).
+- **Color:** The committed kind of a canary: White, Gray, Red, Black, or Gold (5.6.4).
+- **Path:** The committed delivery plan of a canary: ingress, effect token, route, effect point, target, cadence, and clutch (5.6.5).
+- **Outcome:** What happened to a canary, assigned once after witness records are committed (5.6.6).
+- **Effect Token:** A unique, nonce-derived identifier carried in a canary's expected effect, used after reveal to match witness observations to committed canaries (5.4.1).
+- **Reference Canary (Gold):** A bad canary testing a technique the Vendor has claimed in writing to stop (5.6.4).
+- **Claim Finding:** A published record that a Gold canary was Missed, with the Vendor claim it falsifies (11.6).
 - **Roost:** The Proof Witness's standby state between and after runs (Section 13.1).
 - **Molt:** A change in a DUT Fingerprint or CUT Fingerprint (Section 15.2.3).
 - **Clutch:** One epoch's committed batch of canaries in Production Stream Mode (Section 16.2).
@@ -124,7 +130,75 @@ A log entry, alert, or telemetry record produced by the DUT or the Vendor is ver
 
 5.4. **Defined effects.** Every canary MUST have a defined, machine-checkable expected effect at a declared Effect Point, recorded in its commitment.
 
+5.4.1. **Effect token.** Every canary's expected effect MUST include an effect token: an identifier derived from `nonce_i`, unique per canary, visible at the Effect Point, and committed as part of Path (5.6.5). Effect tokens MUST be drawn from the same format distribution as the domain's ordinary identifiers (filenames, session identifiers, hostnames, object keys, usernames) so that they do not distinguish canaries from real traffic (5.2). Effect tokens are single use and MUST NOT be reused across canaries or runs.
+
 5.5. **Safety.** Bad canary effects MUST be contained to the test environment and SHOULD be reversible.
+
+### 5.6. Three Axes: Color, Path, Outcome
+
+Every canary is described on exactly three axes. Each axis answers one question, is set at one time, and is never changed afterward.
+
+| Axis | Question | Set when | Set by | Sealed in commitment |
+|---|---|---|---|---|
+| **Color** | What kind of canary is this? | Before release | Issuer | Yes |
+| **Path** | Where is it going and how is it sent? | Before release | Issuer | Yes |
+| **Outcome** | What happened to it? | After witness records are committed | Adjudication (Section 11) | No. Recorded once, never revised |
+
+5.6.1. Color and Path MUST be fixed in the canary's commitment (Section 9) before release. Outcome MUST NOT be assigned until the Proof Witness has committed its records (10.4).
+
+5.6.2. Outcome never alters Color or Path. A canary keeps the Color and Path it was committed with regardless of what happened to it.
+
+5.6.3. The DUT and the Proof Witness MUST NOT be able to distinguish Color from any feature other than behavior (5.2). Color is a sealed label, not a visible marking.
+
+#### 5.6.4. Color
+
+| Color | Kind | Label | Role |
+|---|---|---|---|
+| **White** | Good canary | good | Ordinary legitimate action. Negative control. Proves the path is up. Feeds False Block Rate. |
+| **Gray** | Boundary good canary | good | Legitimate action built to resemble a bad canary (5.3). Measures false blocks at the decision boundary. |
+| **Red** | Bad canary, known or mutated variant | bad | Real technique drawn from the public pool (6.1). Feeds Efficacy Rate; mutated variants also feed Novelty Efficacy Rate. |
+| **Black** | Holdout canary | bad | Private variant never published or demonstrated (6.2). Carries the `embargoed` flag when it exploits an undisclosed vulnerability (Section 7). |
+| **Gold** | Reference canary | bad | A technique the Vendor has claimed in writing to stop. Positive control. Gold Stopped confirms the witness and path; Gold Missed is a Claim Finding (11.6). |
+
+5.6.4.1. Every committed canary MUST carry exactly one Color from White, Gray, Red, Black, or Gold. A Wild Canary (Section 13) has no Color, no Path, and no Outcome: it was never committed, so it is not on these axes. It is a separate evidence class.
+
+5.6.4.2. Gold canaries MUST cite the Vendor claim they test: document, version, and the specific statement. The claim MUST predate the run and MUST be included in the run record.
+
+5.6.4.3. A Flock MUST contain White and Red. It SHOULD contain Gray and Black. It MAY contain Gold.
+
+#### 5.6.5. Path
+
+Path is the committed delivery plan for one canary.
+
+| Field | Meaning |
+|---|---|
+| `ingress` | The release point where the Ingress Observer records delivery (10.3). |
+| `effect_token` | Unique per-canary identifier, derived from the nonce, visible at the Effect Point (5.4.1). |
+| `route` | The ordered list of DUTs the canary is expected to traverse. |
+| `effect_point` | Where the canary's effect lands if unstopped (Section 2). |
+| `target` | The level (`sut`, `dut`, `cut`) and identifier the canary tests (2.2.2). |
+| `cadence` | `full` for a scheduled or triggered run, `trickle` for continuous low-volume release (15.3). |
+| `clutch` | In Production Stream Mode, the epoch batch this canary belongs to (16.2). Absent in Bounded Mode. |
+
+5.6.5.1. Path MUST be fixed in the commitment. A canary observed at an Effect Point other than its committed `effect_point` is not that canary; the observation is a Wild Canary (Section 13).
+
+5.6.5.2. Cadence is a Path field, not a Color. A trickle canary is a White, Gray, Red, Black, or Gold released at low volume.
+
+#### 5.6.6. Outcome
+
+| Outcome | Applies to | Meaning |
+|---|---|---|
+| **Stopped** | Red, Black, Gold | Effect did not occur. The canary died. |
+| **Missed** | Red, Black, Gold | Effect occurred, regardless of any alert. |
+| **Passed** | White, Gray | Effect occurred. |
+| **False block** | White, Gray | Effect did not occur. |
+| **Void** | Any committed color | Released into or landing inside a black hole window (15.6.5). Never scored, never backfilled. |
+| **Undelivered** | Any committed color | No Ingress Observer record. Excluded from the run (11.3). |
+| **Sealed** | Black with `embargoed` | Outcome adjudicated but withheld until coordinated disclosure (7.3). Published as commitment only. |
+
+5.6.6.1. Each committed canary receives exactly one Outcome, once. Void and Undelivered are outcomes, not colors; the canary keeps its Color.
+
+5.6.6.2. `detected` is an annotation, not an Outcome. A Missed canary with `detected: true` is still Missed (11.2).
 
 ## 6. Mutation and Novelty
 
@@ -165,10 +239,10 @@ Commit-reveal allows a control to be tested against undisclosed vulnerabilities 
 9.1. Before release, the Issuer MUST compute for each canary:
 
 ```
-c_i = H("DCP-1:canary" || canary_content_i || label_i || expected_effect_i || effect_point_i || target_i || flags_i || nonce_i)
+c_i = H("DCP-1:canary" || canary_content_i || color_i || path_i || expected_effect_i || flags_i || nonce_i)
 ```
 
-where `H` is SHA-256 or stronger, `"DCP-1:canary"` is a fixed ASCII domain-separation tag, `label_i` is `bad` or `good`, `target_i` records the target level and identifier (Section 2.2), `flags_i` records `holdout` and `embargoed` status, and `nonce_i` is at least 128 bits of fresh randomness.
+where `H` is SHA-256 or stronger, `"DCP-1:canary"` is a fixed ASCII domain-separation tag, `color_i` is one of `white`, `gray`, `red`, `black`, `gold` (5.6.4), `path_i` is the canonical serialization of the Path fields including the effect token (5.6.5), `flags_i` records `embargoed` status and any Gold claim reference, and `nonce_i` is at least 128 bits of fresh randomness.
 
 9.2. The Issuer MUST build a Merkle tree over all `c_i` and publish the root `R` bound to a Time Anchor pulse `T_commit` before the first release. Leaf hashes MUST be computed as `H(0x43 || c_i)` and interior nodes as `H(0x45 || left || right)`, so that leaves and interior nodes cannot be confused. An odd node at any level is promoted unchanged.
 
@@ -216,6 +290,9 @@ where `H` is SHA-256 or stronger, `"DCP-1:canary"` is a fixed ASCII domain-separ
   "uop_id": "string",
   "technique": "ATT&CK or ATLAS ID",
   "variant": "known | mutated | holdout | embargoed",
+  "color": "red | black | gold",
+  "path": {"ingress": "string", "effect_token": "string", "route": ["dut id"], "effect_point": "string", "target": {"level": "sut | dut | cut", "id": "string"}, "cadence": "full | trickle", "clutch": "string or null"},
+  "claim": "object when color is gold, else null",
   "attribution_level": "sut | dut | cut",
   "sut": "solution identifier",
   "dut": "product name",
@@ -237,12 +314,15 @@ where `H` is SHA-256 or stronger, `"DCP-1:canary"` is a fixed ASCII domain-separ
 }
 ```
 
+11.6. **Claim Findings.** A Gold canary adjudicated Missed MUST be recorded as a Claim Finding: the cited Vendor claim, the technique, the variant, the DUT Fingerprint, and the Unit of Proof. Claim Findings MUST be published with the run. A Gold canary adjudicated Stopped is a Unit of Proof like any other bad canary and additionally confirms witness and path function for that run.
+
 ## 12. Run Metrics
 
 | Metric | Definition |
 |---|---|
 | Efficacy Rate | Stopped / (Stopped + Missed) |
 | Novelty Efficacy Rate | Efficacy Rate over mutated and holdout variants only |
+| Claim Accuracy Rate | Gold Stopped / (Gold Stopped + Gold Missed). The Vendor's written claims graded against outcome. |
 | False Block Rate | False block / (Passed + False block) |
 | Detection-Only Rate | Missed with `detected: true` / bad canary total |
 | Path Validity | Good canaries delivered and passed / good canary total |
@@ -257,7 +337,7 @@ All rates MUST be reported at the attribution level of the underlying outcomes: 
 
 13.1. The Proof Witness MAY remain in standby, its roost, at the Effect Points between and after runs.
 
-13.2. Because every protocol canary is committed, any effect the Proof Witness observes that matches no committed canary is a **Wild Canary**: a real attack, a real fault, or a real false alarm that did not originate from the protocol.
+13.2. After reveal, each Proof Witness observation is matched to the committed flock by effect token, Effect Point, and release window. An observation that matches a committed canary belongs to that canary. An observation that matches no committed canary is a **Wild Canary**: a real attack, a real fault, or a real false alarm that did not originate from the protocol. An observation carrying a committed effect token with no corresponding Ingress Observer record, or outside its release window, is neither: it MUST be recorded as a **replayed canary** finding (Section 19) and MUST NOT be scored.
 
 13.3. Wild Canaries MUST be recorded with timestamp, Time Anchor binding, Effect Point, and observed effect, and SHOULD be escalated for investigation.
 
@@ -501,6 +581,8 @@ A conforming run proceeds as follows:
 - **Hiding behind outages:** A Vendor could induce or claim outages to void unfavorable canaries. Mitigated by independent liveness evidence and DUT attribution (15.6.3, 15.6.6), and by publishing black hole rates.
 - **Quiet updates:** A Vendor could change the DUT between runs. Mitigated by independent fingerprinting, triggered runs, and silent drift and undeclared change findings (15.2, 15.4).
 - **Embargo leakage:** Embargoed canary contents MUST be held under access control equivalent to the underlying vulnerability's disclosure process.
+- **Canary replay:** A party that captures a canary could re-send it to manufacture an effect or a block. Mitigated by single-use effect tokens, Ingress Observer records, and release windows. An effect token seen without its ingress record, or outside its window, is a finding, never a Unit of Proof.
+- **Test as cover:** An attacker aware of a run window may attack during it, expecting alerts to be dismissed as test traffic. Operators MUST treat any effect without a matched effect token as real. The Proof Witness classifies by exclusion, and a run never suspends normal incident response. Publication of the method does not weaken this: the secret is the nonce, the holdout pool, and embargoed payloads, not the mechanism.
 
 ## 20. Reserved
 
@@ -522,3 +604,5 @@ Nebulonium, Inc., as maintainer of Proof Protocol, reserves final interpretive d
 | 0.3.1 | 2026-10-10 | Control Under Test (CUT) renamed Device Under Test (DUT); added Solution Under Test (SUT) and Terminology Lineage (2.1) citing Technical Marketing (2008). |
 | 0.4.0 | 2026-10-10 | Restored Control Under Test (CUT) as a single control inside the DUT. Added Test Hierarchy SUT, DUT, CUT (2.2), differential CUT attribution, target level in commitments, per-level rates, CUT Fingerprints. |
 | 0.5.0 | 2026-10-10 | Added Section 16, Operating Modes (Bounded, Production Stream), and Section 17, Technology Profiles. Specified commitment domain tag, Merkle leaf and node prefixes, and order-seed derivation (Section 9). Added roost, molt, clutch to terminology. Renumbered later sections. |
+| 0.5.1 | 2026-10-10 | Added Agent Under Test (AUT) to terminology, lineage (2.1), and test hierarchy (2.2); 2.2.5 states AUT is not an attribution level and points to PP-SPEC-078. |
+| 0.6.0 | 2026-10-10 | Added 5.6, Three Axes: Color (White, Gray, Red, Black, Gold), Path (ingress, effect token, route, effect point, target, cadence, clutch), Outcome (adds Void, Undelivered, Sealed as outcomes). Added Gold reference canaries, Claim Findings (11.6), Claim Accuracy Rate. Added effect tokens (5.4.1) and token-based wild canary matching (13.2). Security Considerations add canary replay and test as cover. Commitment formula now binds color and path. Schema adds color, path, effect_token, claim. |

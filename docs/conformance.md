@@ -27,6 +27,14 @@
 - [ ] No bad canary reused verbatim across runs
 - [ ] Holdout and embargoed canaries flagged in their commitments
 - [ ] Embargoed canaries excluded from published rates until reveal
+- [ ] Every committed canary carries exactly one Color and a complete Path in its commitment
+- [ ] Every canary carries a single-use effect token shaped like the domain's ordinary identifiers
+- [ ] Outcome assigned only after Proof Witness records are committed, exactly once, never revised
+- [ ] Observations matched to canaries by effect token, Effect Point, and release window; unmatched observations recorded as wild
+- [ ] Effect tokens without ingress records recorded as replay findings, never scored
+- [ ] Gold canaries cite a dated Vendor claim included in the run record
+- [ ] Gold Missed published as a Claim Finding
+- [ ] Claim Accuracy Rate published when any Gold canary is in the flock
 
 ## Flock (SPEC 8)
 

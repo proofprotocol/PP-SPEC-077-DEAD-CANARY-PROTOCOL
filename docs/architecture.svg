@@ -1,0 +1,171 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 900" role="img" aria-label="Prooflock Dead Canary Protocol: Issuer commits a colored flock anchored to a public time beacon, releases it through an Ingress Observer into the Solution Under Test containing the Device Under Test and its controls, a blind out-of-band Proof Witness records what lands at the Effect Points, liveness checks bypass the device to detect black holes, labels are revealed and outcomes adjudicated into published Units of Proof, and any effect without a committed token is a wild canary." font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#c9d1d9"/></marker>
+    <marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#f2cc60"/></marker>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#ff7b72"/></marker>
+    <marker id="am" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#9aa4ae"/></marker>
+  </defs>
+
+  <rect width="1500" height="900" fill="#0d1117"/>
+  <text x="40" y="40" fill="#e6edf3" font-size="20" font-weight="bold">Prooflock: The Dead Canary Protocol (PP-SPEC-077)</text>
+  <text x="40" y="62" fill="#aab3bd">Who holds what, where the canaries go, who watches, and what gets published.</text>
+
+  <!-- Time Anchor -->
+  <rect x="40" y="100" width="260" height="70" rx="6" fill="#161b22" stroke="#c9d1d9"/>
+  <text x="170" y="126" fill="#e6edf3" text-anchor="middle" font-weight="bold">Time Anchor</text>
+  <text x="170" y="150" fill="#aab3bd" text-anchor="middle">public beacon (NIST). Nobody's.</text>
+
+  <!-- anchor -> issuer -->
+  <line x1="170" y1="170" x2="170" y2="238" stroke="#c9d1d9" marker-end="url(#a)"/>
+  <text x="180" y="196" fill="#aab3bd">pulse T_commit binds R</text>
+  <text x="180" y="214" fill="#aab3bd">2nd pulse seeds order</text>
+
+  <!-- anchor -> witness, dotted across top -->
+  <path d="M300,120 L1485,120 L1485,600 L1472,600" fill="none" stroke="#9aa4ae" stroke-dasharray="2 5" marker-end="url(#am)"/>
+  <text x="560" y="112" fill="#aab3bd" text-anchor="middle">witness records and liveness checks are timestamped to a pulse</text>
+
+  <!-- Issuer -->
+  <rect x="40" y="240" width="260" height="160" rx="6" fill="#161b22" stroke="#c9d1d9"/>
+  <text x="170" y="266" fill="#e6edf3" text-anchor="middle" font-weight="bold">Issuer</text>
+  <text x="170" y="284" fill="#aab3bd" text-anchor="middle">never the Vendor</text>
+  <text x="56" y="312" fill="#e6edf3">builds flock, holds labels</text>
+  <text x="56" y="332" fill="#e6edf3">commits every canary:</text>
+  <text x="56" y="350" fill="#e6edf3">c = H(tag||content||color</text>
+  <text x="56" y="366" fill="#e6edf3">      ||path||effect||nonce)</text>
+  <text x="56" y="388" fill="#e6edf3">publishes Merkle root R</text>
+
+  <!-- Flock -->
+  <rect x="350" y="240" width="260" height="160" rx="6" fill="#161b22" stroke="#c9d1d9"/>
+  <text x="480" y="266" fill="#e6edf3" text-anchor="middle" font-weight="bold">Flock</text>
+  <text x="480" y="284" fill="#aab3bd" text-anchor="middle">blind mix, sealed colors</text>
+  <circle cx="366" cy="308" r="5" fill="#e6edf3"/><text x="380" y="312" fill="#e6edf3">White  good, control group</text>
+  <circle cx="366" cy="328" r="5" fill="#8b949e"/><text x="380" y="332" fill="#e6edf3">Gray   good, looks bad</text>
+  <circle cx="366" cy="348" r="5" fill="#ff7b72"/><text x="380" y="352" fill="#e6edf3">Red    bad, known or mutated</text>
+  <circle cx="366" cy="368" r="5" fill="#000" stroke="#e6edf3"/><text x="380" y="372" fill="#e6edf3">Black  bad, holdout or 0day</text>
+  <circle cx="366" cy="388" r="5" fill="#f2cc60"/><text x="380" y="392" fill="#e6edf3">Gold   bad, vendor claims stop</text>
+
+  <line x1="300" y1="320" x2="348" y2="320" stroke="#c9d1d9" marker-end="url(#a)"/>
+  <text x="324" y="311" fill="#aab3bd" text-anchor="middle">commit</text>
+
+  <!-- Ingress Observer -->
+  <rect x="660" y="265" width="170" height="110" rx="6" fill="#161b22" stroke="#c9d1d9"/>
+  <text x="745" y="292" fill="#e6edf3" text-anchor="middle" font-weight="bold">Ingress Observer</text>
+  <text x="745" y="318" fill="#aab3bd" text-anchor="middle">records delivery</text>
+  <text x="745" y="336" fill="#aab3bd" text-anchor="middle">logs token on entry</text>
+  <text x="745" y="358" fill="#aab3bd" text-anchor="middle">passive</text>
+
+  <line x1="610" y1="320" x2="658" y2="320" stroke="#c9d1d9" marker-end="url(#a)"/>
+  <text x="634" y="311" fill="#aab3bd" text-anchor="middle">release</text>
+
+  <!-- SUT boundary -->
+  <rect x="880" y="140" width="580" height="310" rx="8" fill="none" stroke="#c9d1d9" stroke-dasharray="8 6"/>
+  <text x="896" y="164" fill="#e6edf3" font-weight="bold">Solution Under Test (SUT)</text>
+  <text x="896" y="182" fill="#aab3bd">the deployment the flock enters</text>
+
+  <!-- DUT -->
+  <rect x="900" y="200" width="260" height="230" rx="6" fill="#161b22" stroke="#c9d1d9"/>
+  <text x="1030" y="226" fill="#e6edf3" text-anchor="middle" font-weight="bold">Device Under Test (DUT)</text>
+  <text x="1030" y="244" fill="#aab3bd" text-anchor="middle">firewall, WAF, EDR, IAM,</text>
+  <text x="1030" y="260" fill="#aab3bd" text-anchor="middle">agent guardrail</text>
+  <rect x="920" y="276" width="220" height="26" rx="4" fill="#0d1117" stroke="#8b949e"/>
+  <text x="1030" y="294" fill="#e6edf3" text-anchor="middle">CUT: rule 412</text>
+  <rect x="920" y="308" width="220" height="26" rx="4" fill="#0d1117" stroke="#8b949e"/>
+  <text x="1030" y="326" fill="#e6edf3" text-anchor="middle">CUT: policy P-7</text>
+  <rect x="920" y="340" width="220" height="26" rx="4" fill="#0d1117" stroke="#8b949e"/>
+  <text x="1030" y="358" fill="#e6edf3" text-anchor="middle">CUT: detection D-3</text>
+  <text x="1030" y="394" fill="#aab3bd" text-anchor="middle">credit per CUT only by</text>
+  <text x="1030" y="410" fill="#aab3bd" text-anchor="middle">differential runs</text>
+
+  <line x1="830" y1="320" x2="898" y2="320" stroke="#c9d1d9" marker-end="url(#a)"/>
+
+  <!-- Effect Points -->
+  <rect x="1210" y="200" width="230" height="230" rx="6" fill="#161b22" stroke="#c9d1d9"/>
+  <text x="1325" y="226" fill="#e6edf3" text-anchor="middle" font-weight="bold">Effect Points</text>
+  <text x="1325" y="244" fill="#aab3bd" text-anchor="middle">where the attack would land</text>
+  <text x="1226" y="274" fill="#e6edf3">host, data store, identity,</text>
+  <text x="1226" y="292" fill="#e6edf3">egress sink, agent output</text>
+  <text x="1226" y="322" fill="#aab3bd">effect carries the token</text>
+  <text x="1226" y="340" fill="#aab3bd">if it lands</text>
+  <text x="1226" y="372" fill="#e6edf3">lived = effect occurred</text>
+  <text x="1226" y="390" fill="#e6edf3">died  = no effect</text>
+
+  <line x1="1160" y1="320" x2="1208" y2="320" stroke="#c9d1d9" marker-end="url(#a)"/>
+  <text x="1184" y="309" fill="#aab3bd" text-anchor="middle">if not</text>
+  <text x="1184" y="336" fill="#aab3bd" text-anchor="middle">stopped</text>
+
+  <!-- Attacker / wild -->
+  <rect x="1230" y="30" width="210" height="76" rx="6" fill="#161b22" stroke="#ff7b72"/>
+  <text x="1335" y="52" fill="#ff7b72" text-anchor="middle" font-weight="bold">Real attacker</text>
+  <text x="1335" y="72" fill="#aab3bd" text-anchor="middle">not in the flock, no token</text>
+  <text x="1335" y="92" fill="#ff7b72" text-anchor="middle">= wild canary, never a UoP</text>
+  <line x1="1325" y1="106" x2="1325" y2="198" stroke="#ff7b72" stroke-dasharray="5 4" marker-end="url(#ar)"/>
+
+  <!-- Fingerprint capture -->
+  <rect x="900" y="480" width="260" height="70" rx="6" fill="#161b22" stroke="#c9d1d9"/>
+  <text x="1030" y="505" fill="#e6edf3" text-anchor="middle" font-weight="bold">Fingerprint capture</text>
+  <text x="1030" y="525" fill="#aab3bd" text-anchor="middle">DUT + CUT. Independent,</text>
+  <text x="1030" y="541" fill="#aab3bd" text-anchor="middle">not vendor-declared</text>
+  <line x1="1030" y1="478" x2="1030" y2="432" stroke="#c9d1d9" marker-end="url(#a)"/>
+  <text x="1040" y="470" fill="#aab3bd">hashes deployed state</text>
+
+  <!-- Liveness -->
+  <rect x="900" y="590" width="260" height="90" rx="6" fill="#161b22" stroke="#9aa4ae"/>
+  <text x="1030" y="615" fill="#e6edf3" text-anchor="middle" font-weight="bold">Liveness checks</text>
+  <text x="1030" y="635" fill="#aab3bd" text-anchor="middle">ingress, effect points, witness.</text>
+  <text x="1030" y="651" fill="#aab3bd" text-anchor="middle">Never through the DUT.</text>
+  <text x="1030" y="669" fill="#aab3bd" text-anchor="middle">Black hole = void, not a stop.</text>
+  <path d="M900,635 L860,635 L860,345 L832,345" fill="none" stroke="#9aa4ae" stroke-dasharray="4 4" marker-end="url(#am)"/>
+  <path d="M1160,635 L1185,635 L1185,420 L1208,420" fill="none" stroke="#9aa4ae" stroke-dasharray="4 4" marker-end="url(#am)"/>
+  <path d="M1160,660 L1208,660" fill="none" stroke="#9aa4ae" stroke-dasharray="4 4" marker-end="url(#am)"/>
+
+  <!-- Proof Witness -->
+  <rect x="1210" y="480" width="260" height="200" rx="6" fill="#161b22" stroke="#f2cc60" stroke-width="2"/>
+  <text x="1340" y="506" fill="#f2cc60" text-anchor="middle" font-weight="bold">Proof Witness</text>
+  <text x="1340" y="524" fill="#aab3bd" text-anchor="middle">standby at the roost</text>
+  <text x="1226" y="552" fill="#e6edf3">out of band: own path, creds,</text>
+  <text x="1226" y="568" fill="#e6edf3">storage, telemetry.</text>
+  <text x="1226" y="584" fill="#e6edf3">DUT cannot see or touch it.</text>
+  <text x="1226" y="608" fill="#e6edf3">blind to colors until its</text>
+  <text x="1226" y="624" fill="#e6edf3">records are committed.</text>
+  <text x="1226" y="648" fill="#aab3bd">records: token, point, time</text>
+  <text x="1226" y="666" fill="#aab3bd">Merkle root, anchored</text>
+
+  <line x1="1250" y1="430" x2="1250" y2="478" stroke="#f2cc60" stroke-width="2" marker-end="url(#ag)"/>
+  <text x="1260" y="470" fill="#f2cc60">observes: lived or died</text>
+
+  <!-- Reveal / Adjudication -->
+  <rect x="350" y="480" width="480" height="200" rx="6" fill="#161b22" stroke="#c9d1d9"/>
+  <text x="590" y="506" fill="#e6edf3" text-anchor="middle" font-weight="bold">Reveal and Adjudication</text>
+  <text x="366" y="534" fill="#e6edf3">1. Witness commits records: Merkle root, anchored</text>
+  <text x="366" y="554" fill="#e6edf3">2. Issuer reveals preimages: colors, paths, tokens</text>
+  <text x="366" y="574" fill="#e6edf3">3. Match observation to canary: token + point + window</text>
+  <text x="366" y="594" fill="#e6edf3">4. Red/Black/Gold: Stopped or Missed. Alert alone = Missed</text>
+  <text x="366" y="614" fill="#e6edf3">5. White/Gray: Passed or False block</text>
+  <text x="366" y="634" fill="#e6edf3">6. Black hole window: Void. Unmatched: wild.</text>
+  <text x="366" y="654" fill="#e6edf3">   Token with no ingress record: replay finding</text>
+
+  <path d="M170,400 L170,580 L348,580" fill="none" stroke="#c9d1d9" marker-end="url(#a)"/>
+  <text x="180" y="470" fill="#aab3bd">reveals only after</text>
+  <text x="180" y="486" fill="#aab3bd">witness commits</text>
+
+  <path d="M1210,560 L1190,560 L1190,710 L850,710 L850,620 L832,620" fill="none" stroke="#f2cc60" stroke-width="2" marker-end="url(#ag)"/>
+  <text x="1020" y="726" fill="#f2cc60" text-anchor="middle">committed, anchored witness records</text>
+
+  <!-- Published -->
+  <rect x="350" y="750" width="1110" height="120" rx="6" fill="#161b22" stroke="#c9d1d9"/>
+  <text x="905" y="776" fill="#e6edf3" text-anchor="middle" font-weight="bold">Published, every run, favorable or not</text>
+  <text x="366" y="802" fill="#e6edf3">Units of Proof, one per bad canary  |  Efficacy Rate with False Block Rate  |  Novelty Efficacy Rate  |  Claim Accuracy Rate (Gold)</text>
+  <text x="366" y="822" fill="#e6edf3">Claim Findings (Gold Missed)  |  wild canaries as observed_in_wild  |  black hole rate and windows  |  Witness Coverage Map</text>
+  <text x="366" y="842" fill="#e6edf3">DUT and CUT fingerprints, stale on change  |  silent drift and undeclared change findings  |  disclosed interests</text>
+  <text x="366" y="862" fill="#aab3bd">Bounded Mode: one report per run.   Production Stream Mode: rolling series per fingerprint, clutch by clutch.</text>
+
+  <line x1="590" y1="680" x2="590" y2="748" stroke="#c9d1d9" marker-end="url(#a)"/>
+
+  <!-- Vendor excluded -->
+  <rect x="40" y="750" width="260" height="120" rx="6" fill="none" stroke="#8b949e" stroke-dasharray="6 4"/>
+  <text x="170" y="774" fill="#aab3bd" text-anchor="middle" font-weight="bold">Vendor</text>
+  <text x="170" y="790" fill="#aab3bd" text-anchor="middle">builds or operates the DUT</text>
+  <text x="56" y="814" fill="#e6edf3">never: canaries, labels,</text>
+  <text x="56" y="830" fill="#e6edf3">witness, anchor, fingerprints</text>
+  <text x="56" y="856" fill="#aab3bd">Its logs are verification only.</text>
+</svg>

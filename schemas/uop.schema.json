@@ -25,7 +25,9 @@
     "dut_fingerprint",
     "fingerprint_status",
     "attribution_level",
-    "sut"
+    "sut",
+    "color",
+    "path"
   ],
   "properties": {
     "spec": {
@@ -33,7 +35,9 @@
     },
     "run_id": {
       "type": "string",
-      "examples": ["dcp-2026-10-10-0077"]
+      "examples": [
+        "dcp-2026-10-10-0077"
+      ]
     },
     "uop_id": {
       "type": "string"
@@ -49,6 +53,92 @@
         "holdout",
         "embargoed"
       ]
+    },
+    "color": {
+      "enum": [
+        "red",
+        "black",
+        "gold"
+      ],
+      "description": "Committed color (SPEC 5.6.4). Units of Proof are bad canaries only, so white and gray do not appear here."
+    },
+    "path": {
+      "type": "object",
+      "required": [
+        "ingress",
+        "effect_token",
+        "route",
+        "effect_point",
+        "target",
+        "cadence"
+      ],
+      "properties": {
+        "ingress": {
+          "type": "string"
+        },
+        "effect_token": {
+          "type": "string"
+        },
+        "route": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "effect_point": {
+          "type": "string"
+        },
+        "target": {
+          "type": "object",
+          "required": [
+            "level",
+            "id"
+          ],
+          "properties": {
+            "level": {
+              "enum": [
+                "sut",
+                "dut",
+                "cut"
+              ]
+            },
+            "id": {
+              "type": "string"
+            }
+          }
+        },
+        "cadence": {
+          "enum": [
+            "full",
+            "trickle"
+          ]
+        },
+        "clutch": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "claim": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "description": "Required when color is gold (SPEC 5.6.4.2)",
+      "properties": {
+        "document": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "statement": {
+          "type": "string"
+        }
+      }
     },
     "attribution_level": {
       "enum": [
@@ -69,7 +159,9 @@
     "dut_fingerprint": {
       "type": "string",
       "description": "Independently captured DUT Fingerprint (SPEC 15.2)",
-      "examples": ["ea55dce4aa233b4d27e047cabf8a6a2e68475b626dbdc7a6d5d4cfb8bff437c6"]
+      "examples": [
+        "ea55dce4aa233b4d27e047cabf8a6a2e68475b626dbdc7a6d5d4cfb8bff437c6"
+      ]
     },
     "cut": {
       "type": [
@@ -92,7 +184,8 @@
       ]
     },
     "effect_point": {
-      "type": "string"
+      "type": "string",
+      "description": "Deprecated at top level since 0.6.0; use path.effect_point. Kept for one version."
     },
     "outcome": {
       "enum": [
@@ -156,6 +249,25 @@
           },
           "cut_fingerprint": {
             "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "color": {
+            "const": "gold"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "claim"
+        ],
+        "properties": {
+          "claim": {
+            "type": "object"
           }
         }
       }
