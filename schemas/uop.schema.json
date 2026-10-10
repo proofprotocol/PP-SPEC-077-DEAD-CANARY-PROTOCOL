@@ -27,7 +27,8 @@
     "attribution_level",
     "sut",
     "color",
-    "path"
+    "path",
+    "proofregister_uri"
   ],
   "properties": {
     "spec": {
@@ -220,6 +221,11 @@
     "witness_coverage_map": {
       "type": "string",
       "description": "Hash of the declared Witness Coverage Map"
+    },
+    "proofregister_uri": {
+      "type": "string",
+      "format": "uri",
+      "description": "Registry record identifier for this Unit of Proof, from a PP-SPEC-004 conformant registry (SPEC 9.6). Public instance: https://proofregister.com"
     },
     "disclosed_interests": {
       "type": "array",

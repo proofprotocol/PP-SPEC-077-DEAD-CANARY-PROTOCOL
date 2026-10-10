@@ -51,6 +51,7 @@
 | **Effect Token** | Unique per-canary identifier visible at the Effect Point. Matches an observation to its canary after reveal. No token means wild. |
 | **Gold Canary** | A bad canary testing a technique the vendor claims in writing to stop. Gold Missed is a Claim Finding. |
 | **Claim Accuracy Rate** | Gold Stopped over all Gold. The vendor's own claims graded against outcome. |
+| **Registry** | The append-only public ledger results are published to, per PP-SPEC-004 (ProofRegister API). Public instance: proofregister.com. |
 | **Verification** | Self-attestation. Baseline tier. |
 | **Validation** | One step above verification. |
 | **Proof** | Independent evidence of outcome under adversarial conditions. |

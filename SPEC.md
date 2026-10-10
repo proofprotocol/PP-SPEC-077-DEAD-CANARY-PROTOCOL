@@ -19,7 +19,7 @@
 | Field | Value |
 |---|---|
 | Spec ID | PP-SPEC-077 |
-| Version | 0.6.0 (Draft) |
+| Version | 0.6.1 (Draft) |
 | Date | 2026-10-10 |
 | Status | Draft for public record |
 | Maintainer | Nebulonium, Inc. (Proof Protocol) |
@@ -63,6 +63,7 @@ The key words MUST, MUST NOT, REQUIRED, SHALL, SHALL NOT, SHOULD, SHOULD NOT, RE
 - **Trickle:** A continuous low-volume flock released between full runs (Section 15.3).
 - **Silent Drift:** A change in measured behavior with no change in DUT Fingerprint (Section 15.4).
 - **Black Hole:** A period during which part of the system disappears for reasons unrelated to any canary or attack (Section 15.6).
+- **Registry:** The append-only public ledger where commitment roots, Time Anchor bindings, witness record roots, reveals, fingerprints, result series, findings, and Witness Coverage Maps are published, conforming to PP-SPEC-004 (ProofRegister API). The public instance is proofregister.com (9.6).
 - **Color:** The committed kind of a canary: White, Gray, Red, Black, or Gold (5.6.4).
 - **Path:** The committed delivery plan of a canary: ingress, effect token, route, effect point, target, cadence, and clutch (5.6.5).
 - **Outcome:** What happened to a canary, assigned once after witness records are committed (5.6.6).
@@ -252,6 +253,8 @@ where `H` is SHA-256 or stronger, `"DCP-1:canary"` is a fixed ASCII domain-separ
 
 9.5. A run whose reveal does not reproduce `R` is invalid.
 
+9.6. **Registry.** Every artifact this specification requires to be published, including the commitment root `R` and its Time Anchor binding, the witness record root, the reveal, DUT and CUT Fingerprints, Units of Proof, result series, findings, and the Witness Coverage Map, MUST be published to a Registry conforming to PP-SPEC-004. The Registry record identifier MUST be carried in every Unit of Proof and every result series record as `proofregister_uri`. Publication anywhere else is additional, never a substitute.
+
 ## 10. Proof Witness Placement
 
 10.1. **Outcome position.** The Proof Witness MUST observe the Effect Point of each canary. Observation of the network path or the DUT alone does not satisfy this requirement.
@@ -310,6 +313,7 @@ where `H` is SHA-256 or stronger, `"DCP-1:canary"` is a fixed ASCII domain-separ
   "witness_record": "hash",
   "witness_operator": "string",
   "witness_coverage_map": "hash",
+  "proofregister_uri": "https://proofregister.com/record/PR-2026-NNNNN",
   "disclosed_interests": []
 }
 ```
@@ -606,3 +610,4 @@ Nebulonium, Inc., as maintainer of Proof Protocol, reserves final interpretive d
 | 0.5.0 | 2026-10-10 | Added Section 16, Operating Modes (Bounded, Production Stream), and Section 17, Technology Profiles. Specified commitment domain tag, Merkle leaf and node prefixes, and order-seed derivation (Section 9). Added roost, molt, clutch to terminology. Renumbered later sections. |
 | 0.5.1 | 2026-10-10 | Added Agent Under Test (AUT) to terminology, lineage (2.1), and test hierarchy (2.2); 2.2.5 states AUT is not an attribution level and points to PP-SPEC-078. |
 | 0.6.0 | 2026-10-10 | Added 5.6, Three Axes: Color (White, Gray, Red, Black, Gold), Path (ingress, effect token, route, effect point, target, cadence, clutch), Outcome (adds Void, Undelivered, Sealed as outcomes). Added Gold reference canaries, Claim Findings (11.6), Claim Accuracy Rate. Added effect tokens (5.4.1) and token-based wild canary matching (13.2). Security Considerations add canary replay and test as cover. Commitment formula now binds color and path. Schema adds color, path, effect_token, claim. |
+| 0.6.1 | 2026-10-10 | Added Registry to terminology and 9.6: all published artifacts go to a PP-SPEC-004 (ProofRegister API) registry; `proofregister_uri` carried in every Unit of Proof and result series record. Schema and example updated. |

@@ -153,7 +153,7 @@
 
   <!-- Published -->
   <rect x="350" y="750" width="1110" height="120" rx="6" fill="#161b22" stroke="#c9d1d9"/>
-  <text x="905" y="776" fill="#e6edf3" text-anchor="middle" font-weight="bold">Published, every run, favorable or not</text>
+  <text x="905" y="776" fill="#e6edf3" text-anchor="middle" font-weight="bold">Published, every run, favorable or not, to a PP-SPEC-004 registry (proofregister.com)</text>
   <text x="366" y="802" fill="#e6edf3">Units of Proof, one per bad canary  |  Efficacy Rate with False Block Rate  |  Novelty Efficacy Rate  |  Claim Accuracy Rate (Gold)</text>
   <text x="366" y="822" fill="#e6edf3">Claim Findings (Gold Missed)  |  wild canaries as observed_in_wild  |  black hole rate and windows  |  Witness Coverage Map</text>
   <text x="366" y="842" fill="#e6edf3">DUT and CUT fingerprints, stale on change  |  silent drift and undeclared change findings  |  disclosed interests</text>

@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.6.1 (2026-10-10)
+- Terminology: Registry, a PP-SPEC-004 (ProofRegister API) conformant ledger; public instance proofregister.com
+- 9.6: every published artifact goes to a Registry; `proofregister_uri` required in Units of Proof and result series
+- Schema: `proofregister_uri` added and required
+- README: where results live
+
 ## 0.6.0 (2026-10-10)
 - Section 5.6: three axes, Color, Path, Outcome, each set once at its own time
 - Colors: White, Gray, Red, Black, Gold; wild canaries stay outside the axes as their own evidence class

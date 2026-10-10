@@ -50,6 +50,7 @@
 - [ ] Order seed derived from the second pulse after `T_commit` via HKDF-SHA256 with info `DCP-1:order`
 - [ ] All non-embargoed preimages revealed after the run
 - [ ] Reveal reproduces the committed root
+- [ ] Commitment root, witness root, reveal, fingerprints, results, findings, and coverage map published to a PP-SPEC-004 registry; `proofregister_uri` in every Unit of Proof
 
 ## Proof Witness (SPEC 10)
 
