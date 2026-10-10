@@ -1,0 +1,164 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/proofprotocol/prooflock/schemas/uop.schema.json",
+  "title": "Prooflock Unit of Proof",
+  "description": "One adjudicated bad canary outcome in a valid Prooflock run (PP-SPEC-077, Section 11).",
+  "type": "object",
+  "required": [
+    "spec",
+    "run_id",
+    "uop_id",
+    "technique",
+    "variant",
+    "dut",
+    "effect_point",
+    "outcome",
+    "detected",
+    "commitment",
+    "merkle_root",
+    "time_anchor_commit",
+    "ingress_record",
+    "witness_record",
+    "witness_operator",
+    "witness_coverage_map",
+    "disclosed_interests",
+    "dut_fingerprint",
+    "fingerprint_status",
+    "attribution_level",
+    "sut"
+  ],
+  "properties": {
+    "spec": {
+      "const": "PP-SPEC-077"
+    },
+    "run_id": {
+      "type": "string",
+      "examples": ["dcp-2026-10-10-0077"]
+    },
+    "uop_id": {
+      "type": "string"
+    },
+    "technique": {
+      "type": "string",
+      "description": "MITRE ATT&CK or ATLAS technique ID"
+    },
+    "variant": {
+      "enum": [
+        "known",
+        "mutated",
+        "holdout",
+        "embargoed"
+      ]
+    },
+    "attribution_level": {
+      "enum": [
+        "sut",
+        "dut",
+        "cut"
+      ],
+      "description": "Finest level the evidence supports (SPEC 2.2)"
+    },
+    "sut": {
+      "type": "string",
+      "description": "Solution Under Test identifier"
+    },
+    "dut": {
+      "type": "string",
+      "description": "Product name of the Device Under Test"
+    },
+    "dut_fingerprint": {
+      "type": "string",
+      "description": "Independently captured DUT Fingerprint (SPEC 15.2)",
+      "examples": ["a062ea4e09ad122e6d2e8ff3fead14ef0359071c971f92183b07a97f94238666"]
+    },
+    "cut": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Control Under Test identifier; required when attribution_level is cut"
+    },
+    "cut_fingerprint": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Independently captured CUT Fingerprint (SPEC 15.2.5)"
+    },
+    "fingerprint_status": {
+      "enum": [
+        "current",
+        "stale"
+      ]
+    },
+    "effect_point": {
+      "type": "string"
+    },
+    "outcome": {
+      "enum": [
+        "stopped",
+        "missed"
+      ]
+    },
+    "detected": {
+      "type": "boolean"
+    },
+    "commitment": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64,}$"
+    },
+    "merkle_root": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64,}$"
+    },
+    "time_anchor_commit": {
+      "type": "string",
+      "description": "Reference to the Time Anchor pulse bound to the commitment"
+    },
+    "ingress_record": {
+      "type": "string"
+    },
+    "witness_record": {
+      "type": "string"
+    },
+    "witness_operator": {
+      "type": "string"
+    },
+    "witness_coverage_map": {
+      "type": "string",
+      "description": "Hash of the declared Witness Coverage Map"
+    },
+    "disclosed_interests": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "attribution_level": {
+            "const": "cut"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "cut",
+          "cut_fingerprint"
+        ],
+        "properties": {
+          "cut": {
+            "type": "string"
+          },
+          "cut_fingerprint": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ]
+}
