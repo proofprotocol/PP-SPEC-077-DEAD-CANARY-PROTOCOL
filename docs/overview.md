@@ -4,18 +4,18 @@
 
 ## The problem
 
-Security vendors prove their products work with their own evidence: their logs, their dashboards, their test reports. That is self-attestation. It is a fine baseline, but it is not proof. A log entry saying "the control fired" does not tell you whether the attack actually failed.
+Security Providers prove their products work with their own evidence: their logs, their dashboards, their test reports. That is self-attestation. It is a fine baseline, but it is not proof. A log entry saying "the control fired" does not tell you whether the attack actually failed.
 
 ## The idea
 
 Coal miners carried canaries. If the air turned bad, the canary died first, and nobody could fake a dead bird.
 
-Prooflock sends a flock of canaries into the environment a security control protects:
+Prooflock sends a Proof Swarm of canaries into the environment a security control protects:
 
 - **Bad canaries** carry real attacks. If the control works, they die.
 - **Good canaries** do legitimate work. If the control works, they live.
 
-The flock is mixed blind, so the control cannot cheat by spotting the test. A **Proof Witness** waits where each canary's effect would land and simply records who lived and who died. It does not know which canaries were good or bad until after it has locked in its records.
+The Proof Swarm is mixed blind, so the control cannot cheat by spotting the test. A **Proof Witness** waits where each canary's effect would land and simply records who lived and who died. It does not know which canaries were good or bad until after it has locked in its records.
 
 ## Solution, device, control
 
@@ -32,9 +32,9 @@ A control that blocks everything stops every bad canary, but it also kills every
 
 ## Why nobody can cheat
 
-- **The vendor is out of the loop.** It does not build canaries, hold the answer key, or run the witness.
+- **The Provider is out of the loop.** It does not build canaries, hold the answer key, or run the witness.
 - **The answer key is sealed first.** Every canary and its label are hashed and anchored to a public time beacon before release. After the run, the hashes are opened. If anything changed, the run is void.
-- **The order is chosen by the beacon,** after the commitment, so nobody can arrange the flock to look good.
+- **The order is chosen by the beacon,** after the commitment, so nobody can arrange the Proof Swarm to look good.
 - **The witness is out of band.** The control cannot see, delay, or edit its records.
 - **Every run gets published,** including the bad ones.
 
@@ -48,7 +48,7 @@ No test can prove resistance to an attack that does not exist yet. Prooflock mea
 
 ## Wild canaries
 
-Every test canary is committed in advance. So if the standby Proof Witness ever sees an effect that matches no committed canary, it did not come from the test. That is a **wild canary**: a real attack, or a real fault. The test harness doubles as a detection layer, and its accuracy on the committed flock tells you how much to trust it.
+Every test canary is committed in advance. So if the standby Proof Witness ever sees an effect that matches no committed canary, it did not come from the test. That is a **wild canary**: a real attack, or a real fault. The test harness doubles as a detection layer, and its accuracy on the committed Proof Swarm tells you how much to trust it.
 
 ## Proof that stays current
 

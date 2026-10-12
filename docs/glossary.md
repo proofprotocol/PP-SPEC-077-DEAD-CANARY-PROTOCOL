@@ -7,15 +7,15 @@
 | **Bad Canary** | A canary carrying a real adversary technique (MITRE ATT&CK or ATLAS) that produces a defined malicious effect if not stopped. |
 | **Good Canary** | A canary performing a legitimate action that produces a defined benign effect if not stopped. |
 | **Boundary Good Canary** | A good canary built to look like a bad one. Measures false blocks where they actually happen. |
-| **Flock** | The full, blind-mixed set of good and bad canaries for one run. |
+| **Proof Swarm** | The full, blind-mixed set of good and bad canaries for one run. |
 | **Agent Under Test (AUT)** | An agent inside the SUT whose own conduct is under test. An actor, not a control. Tested under PP-SPEC-078 (No Bros Jail Mode Protocol: The Jailed Canary Protocol). Derived from *Technical Marketing* (2008) DUT/SUT. |
 | **Control Under Test (CUT)** | One control inside a DUT: a single rule, policy, signature, detection, or guardrail function. |
 | **Device Under Test (DUT)** | A security product, configuration, or agent guardrail containing one or more CUTs. Term from *Technical Marketing* (2008). |
-| **Solution Under Test (SUT)** | The full deployment the flock enters: one or more DUTs plus the protected environment and its Effect Points. Term from *Technical Marketing* (2008). |
+| **Solution Under Test (SUT)** | The full deployment the Proof Swarm enters: one or more DUTs plus the protected environment and its Effect Points. Term from *Technical Marketing* (2008). |
 | **Differential Attribution** | Proving a single CUT stopped an attack by matched runs with the CUT active and with it disabled. A DUT log naming the control is not enough. |
 | **CUT Fingerprint** | Independent hash of one control's definition and parameters. |
-| **Vendor** | Whoever builds, sells, or operates the DUT. |
-| **Issuer** | Builds the flock, holds the labels, publishes commitments. Never the Vendor. |
+| **Provider** | Whoever builds, sells, or operates the DUT. |
+| **Issuer** | Builds the Proof Swarm, holds the labels, publishes commitments. Never the Provider. |
 | **Effect Point** | Where a canary's effect lands: target host, data store, identity system, egress sink, agent tool output. |
 | **Proof Witness** | The standby, independent, out-of-band observer at the Effect Point. Records which canaries lived and died. |
 | **Ingress Observer** | Passive observer at the release point. Proves delivery. |
@@ -40,7 +40,7 @@
 | **Void (black hole)** | A canary released into a black hole. Never scored, never backfilled. |
 | **Black Hole Rate** | Share of canaries and time lost to black holes. Published with every result. |
 | **Witness Coverage Map** | The declared Effect Points and effect types the Proof Witness watches. Everything else is a blind spot. |
-| **Bounded Mode** | A scheduled test run with declared start and end times, a fixed committed flock, sealed evidence, and a publishable point-in-time report. |
+| **Bounded Mode** | A scheduled test run with declared start and end times, a fixed committed Proof Swarm, sealed evidence, and a publishable point-in-time report. |
 | **Production Stream Mode** | Continuous canary release into live traffic with rolling epoch-based commitments, no declared end, and ongoing result series tracking drift and changes. |
 | **Roost** | The Proof Witness's standby state between and after runs. |
 | **Molt** | A DUT or CUT Fingerprint change. Prior results go stale. |
@@ -49,9 +49,15 @@
 | **Path** | Where the canary goes and how it is sent: ingress, effect token, route, effect point, target, cadence, clutch. Sealed before release. |
 | **Outcome** | What happened: Stopped, Missed, Passed, False block, Void, Undelivered, Sealed. Assigned once, after the fact. |
 | **Effect Token** | Unique per-canary identifier visible at the Effect Point. Matches an observation to its canary after reveal. No token means wild. |
-| **Gold Canary** | A bad canary testing a technique the vendor claims in writing to stop. Gold Missed is a Claim Finding. |
-| **Claim Accuracy Rate** | Gold Stopped over all Gold. The vendor's own claims graded against outcome. |
+| **Gold Canary** | A bad canary testing a technique the Provider claims in writing to stop. Gold Missed is a Claim Finding. |
+| **Claim Accuracy Rate** | Gold Stopped over all Gold. The Provider's own claims graded against outcome. |
 | **Registry** | The append-only public ledger results are published to, per PP-SPEC-004 (ProofRegister API). Public instance: proofregister.com. |
+| **Integration Point (IP-n)** | A named seam a third-party component plugs into, with its own MUSTs, evidence, and conformance claim (Section 18). |
+| **Component Fingerprint** | Hash of a component's build, version, and deployed configuration, captured independently. The testing equipment is fingerprinted like the DUT. |
+| **Interface Manifest** | Published before release: who occupies each seam, with product, version, fingerprint, and interests. |
+| **Absence Ladder** | Blind (witness not looking), Void (witness looking, path gone), Null (witness looking, path up, nothing landed). Only Null scores. |
+| **Blind** | A canary committed to an Effect Point outside the coverage map. Never scored; a finding against the plan. |
+| **Degraded** | A Production Stream series whose Blind plus Void share stayed over threshold for the declared number of clutches. Not proof for those clutches. |
 | **Verification** | Self-attestation. Baseline tier. |
 | **Validation** | One step above verification. |
 | **Proof** | Independent evidence of outcome under adversarial conditions. |

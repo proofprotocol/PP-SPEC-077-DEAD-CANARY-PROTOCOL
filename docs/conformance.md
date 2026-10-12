@@ -4,9 +4,9 @@
 
 ## Roles and independence (SPEC 4)
 
-- [ ] Issuer is not the Vendor
-- [ ] Vendor does not generate canaries, hold labels, run the Proof Witness, or run the Time Anchor
-- [ ] Proof Witness operated by a party other than the Vendor
+- [ ] Issuer is not the Provider
+- [ ] Provider does not generate canaries, hold labels, run the Proof Witness, or run the Time Anchor
+- [ ] Proof Witness operated by a party other than the Provider
 - [ ] DUT cannot observe, delay, modify, or suppress Proof Witness records
 - [ ] All parties with a financial interest disclosed in the run record
 
@@ -32,13 +32,13 @@
 - [ ] Outcome assigned only after Proof Witness records are committed, exactly once, never revised
 - [ ] Observations matched to canaries by effect token, Effect Point, and release window; unmatched observations recorded as wild
 - [ ] Effect tokens without ingress records recorded as replay findings, never scored
-- [ ] Gold canaries cite a dated Vendor claim included in the run record
+- [ ] Gold canaries cite a dated Provider claim included in the run record
 - [ ] Gold Missed published as a Claim Finding
-- [ ] Claim Accuracy Rate published when any Gold canary is in the flock
+- [ ] Claim Accuracy Rate published when any Gold canary is in the Proof Swarm
 
-## Flock (SPEC 8)
+## Proof Swarm (SPEC 8)
 
-- [ ] Flock contains both good and bad canaries
+- [ ] Proof Swarm contains both good and bad canaries
 - [ ] Ratio and order randomized from a Time Anchor pulse issued after commitment
 - [ ] Ratio and order not disclosed before the run concludes
 
@@ -60,7 +60,7 @@
 - [ ] Witness records timestamped, anchored, and committed before the Issuer's reveal
 - [ ] Proof Witness has no access to labels until its records are committed
 
-## Adjudication and publication (SPEC 11, 12, 14, 19)
+## Adjudication and publication (SPEC 11, 12, 14, 20)
 
 - [ ] Bad canaries whose effect occurred scored Missed regardless of alerts
 - [ ] Good canary pass threshold declared before the run
@@ -68,11 +68,14 @@
 - [ ] Efficacy Rate published together with False Block Rate
 - [ ] Novelty Efficacy Rate reported separately
 - [ ] Witness Coverage Map published with every result
+- [ ] Every non-observation classified Blind, Void, or Null in that order; nothing scored Stopped or False block unless Null
+- [ ] Released count equals the sum of all outcomes including Blind; Blind and Void shares published beside every rate
+- [ ] Production Stream clutches publish absence shares; `degraded` state shown wherever a series is cited
 - [ ] Every committed run published, including invalid and unfavorable runs
 
 ## Continuous Mode and drift (SPEC 15)
 
-- [ ] DUT Fingerprint recorded every run, captured or verified independently of the Vendor
+- [ ] DUT Fingerprint recorded every run, captured or verified independently of the Provider
 - [ ] Results bound to their fingerprint; prior results marked stale on fingerprint change
 - [ ] Trickle canaries follow all commitment and blinding rules
 - [ ] Full runs on a declared cadence and on every fingerprint, environment, or coverage change
@@ -92,7 +95,7 @@
 ### Bounded Mode
 - [ ] Start and end times declared before release
 - [ ] Effect Points, DUT, and SUT declared before release
-- [ ] Flock size and composition fixed and committed
+- [ ] Proof Swarm size and composition fixed and committed
 - [ ] Full commitment, blinding, release, observation, sealing, adjudication sequence completed
 - [ ] One result report produced with per-run fingerprints, rates, and findings
 - [ ] All evidence sealed and published before accepting results
@@ -107,3 +110,30 @@
 - [ ] Fingerprints and result series published no less than weekly
 - [ ] Results published as time series per Fingerprint version
 - [ ] Stale periods, silent drift findings, and black hole windows included in series
+
+## Integration Points (SPEC 18)
+
+- [ ] Every conformance claim names its Integration Point(s) as `PP-SPEC-077 IP-n` and the spec version
+- [ ] Every component publishes a Component Fingerprint captured independently of its Provider
+- [ ] Interface Manifest (party, product, version, fingerprint, interests per seam) published to the Registry before release
+- [ ] No component other than the Issuer can hold or infer labels before reveal
+- [ ] Separation: Issuer and Proof Witness differ; Proof Witness is not the DUT Provider; Time Anchor occupies no other seam; DUT Provider occupies none of IP-1, 3, 5, 6, 7, 9
+- [ ] IP-8 Adjudicator reproduces reference output on the conformance vectors
+- [ ] DUT is unmodified and cannot detect any seam
+
+## Records and registration (SPEC 9.6, 9.7, 21)
+
+- [ ] Every record's ID is the SHA-256 of its RFC 8785 canonical form with the signature envelope removed, under the `DCP-1:record` tag
+- [ ] Every record names a Holder with a public key; the Holder is never the Provider
+- [ ] Issuer and witness signatures present in the envelope; envelope is append-only and does not alter the Record ID
+- [ ] Result record registered before anything derived from it is published; Registry Receipt carried in the record
+- [ ] Revocations checked before any record is counted; revoked Units of Proof excluded from every rate
+- [ ] Bundles list the Record IDs their rates were computed from; no merging, splitting, or weighting of Units of Proof
+- [ ] Every record declares a Disclosure Level; non-public counts stated beside any published rate
+- [ ] Run described only as Executed, Conformant, or Registered, with the Section 21.13 meanings; unregistered rates labeled as such
+
+## Authorship Disclosure (SPEC 21.15)
+
+- [ ] Every component in the Interface Manifest carries a reference to its ai_disclosure.json
+- [ ] AI_DISCLOSURE.md and ai_disclosure.json present for the work, agreeing, with human and AI shares on all four dimensions, the AI systems named, and the method stated (self-estimated, or measured or attested with a named tool such as ProofJack.com)
+- [ ] No conformance claim at any seam by a component without a disclosure

@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/proofprotocol/prooflock/schemas/uop.schema.json",
   "title": "Prooflock Unit of Proof",
-  "description": "One adjudicated bad canary outcome in a valid Prooflock run (PP-SPEC-077, Section 11).",
+  "description": "One adjudicated bad canary outcome in a valid Prooflock run (PP-SPEC-077, Sections 11 and 21).",
   "type": "object",
   "required": [
     "spec",
@@ -41,7 +41,9 @@
       ]
     },
     "uop_id": {
-      "type": "string"
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$",
+      "description": "Record ID: SHA-256(\"DCP-1:record\" || canonical form without signatures, proofregister_uri, registry_receipt) (SPEC 21.1)"
     },
     "technique": {
       "type": "string",
@@ -232,6 +234,75 @@
       "items": {
         "type": "string"
       }
+    },
+    "registry_receipt": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$",
+      "description": "Hash of the Registry Receipt (SPEC 21.5)"
+    },
+    "holder": {
+      "type": "object",
+      "required": [
+        "id",
+        "public_key"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "public_key": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "description": "Party for whose benefit the run was commissioned (SPEC 21.3). Never the Provider."
+    },
+    "disclosure": {
+      "enum": [
+        "public",
+        "holder_only",
+        "embargoed",
+        "sealed"
+      ],
+      "description": "Disclosure Level (SPEC 21.9)"
+    },
+    "valid_through": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time",
+      "description": "End of validity window (SPEC 21.8)"
+    },
+    "signatures": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "role",
+          "key",
+          "sig"
+        ],
+        "properties": {
+          "role": {
+            "enum": [
+              "issuer",
+              "witness",
+              "holder",
+              "registry",
+              "endorser"
+            ]
+          },
+          "key": {
+            "type": "string"
+          },
+          "sig": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "description": "Detached, append-only Signature Envelope (SPEC 21.4). Excluded from uop_id."
     }
   },
   "additionalProperties": false,

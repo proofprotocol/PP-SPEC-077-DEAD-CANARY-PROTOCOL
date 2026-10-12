@@ -1,5 +1,33 @@
 # Changelog
 
+## 0.7.2 (2026-10-11)
+- Role terms: Provider replaces Vendor (any party that builds, maintains, sells, or operates the DUT, commercial or not); Implementor replaces buyer and is defined in Section 2
+- FUNDING.md funding disclosure ([FUNDED] Yes or No, [FUNDED BY] name and URL per funder); Proof Economy Code of Ethics applies
+- Flock renamed Proof Swarm throughout
+- Section 21, Records and Registration (replaces the Reserved placeholder): Record ID is the content hash of the RFC 8785 canonical form, excluding signatures; every record names a Holder, never the Vendor
+- Append-only Signature Envelope; endorser signatures may be added without changing the Record ID
+- Registry Receipt returned on registration and carried in the record; 9.7 registration precedes publication
+- Revocation records; Bundles (Merkle aggregation of Record IDs under one Holder); validity window; Disclosure Levels (public, holder_only, embargoed, sealed); Delegation
+- 21.11 a Unit of Proof is indivisible and unweighted at the record level
+- 21.12 Registry federation and cross-anchoring; any PP-SPEC-004 registry may serve
+- 21.13 run Conformance Levels: Executed, Conformant, Registered; unregistered runs produce no Units of Proof
+- Schema: `uop_id` constrained to the Record ID form; `registry_receipt`, `holder`, `disclosure`, `valid_through`, `signatures` added (optional this version, required from 0.8.0)
+- Execution step 9 registers before publishing; 18.3.5 separates component conformance from run Conformance Level
+
+## 0.7.1 (2026-10-10)
+- 14.3 Absence Ladder: every non-observation is Blind, Void, or Null, in that precedence; only Null scores
+- Closed accounting: released equals the sum of all outcomes including Blind; otherwise invalid
+- Blind and Void shares published beside every rate they would inflate
+- Blind added to the Outcome table (5.6.6); a Blind canary is a `blind` finding against the plan, not the DUT
+- 16.2.5: per-clutch absence shares in Production Stream; `degraded` series state
+
+## 0.7.0 (2026-10-10)
+- Section 18, Integration Points: IP-1 Issuer, IP-2 Time Anchor, IP-3 Release Driver, IP-4 Ingress Observer, IP-5 Fingerprint Capture, IP-6 Proof Witness, IP-7 Liveness Prober, IP-8 Adjudicator, IP-9 Registry, IP-10 Signer
+- Component Fingerprint for every component; Interface Manifest published to the Registry before release
+- Separation rules between seams; the DUT has no seam and must not detect any
+- Conformance is claimed per seam as `PP-SPEC-077 IP-n`
+- Renumbered 18 to 21 as 19 to 22
+
 ## 0.6.1 (2026-10-10)
 - Terminology: Registry, a PP-SPEC-004 (ProofRegister API) conformant ledger; public instance proofregister.com
 - 9.6: every published artifact goes to a Registry; `proofregister_uri` required in Units of Proof and result series
