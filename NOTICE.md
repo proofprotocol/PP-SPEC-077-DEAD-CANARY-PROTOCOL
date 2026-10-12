@@ -26,7 +26,7 @@ All patent rights in the methods, systems, and processes described in this work 
 
 Tricia Wang and Jim Schwoebel, for the name "No Bros Jail Mode Protocol". Josh Waldrep (Pipelabs), for his later receipt-based verification work applying proof concepts to agentic AI. See ACKNOWLEDGEMENTS.md.
 
-Lineage: the proof-of-efficacy method in this specification was first built by Craig Ellrod on a traditional EDR/MDR security product, before its application to agentic AI.
+Lineage: the proof-of-efficacy method in this specification was first built by Craig Ellrod on traditional WAF and EDR/MDR security products, beginning with the 2007 WAF Test Methodology (WebAppSec.org, co-authored with Ivan Ristic et al.), before its application to agentic AI.
 
 
 ## Prior art
