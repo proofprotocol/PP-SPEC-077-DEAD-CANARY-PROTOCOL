@@ -48,10 +48,10 @@ An observer who knows what is supposed to happen tends to see it. Blinding remov
 Anyone. Its records are committed and anchored before the reveal, and the reveal is public. Any third party can recompute the commitments, check the timestamps against the public beacon, and confirm that the witness record and the answer key line up. Independence does not depend on trusting the witness operator's word.
 
 **How is this different from a control log showing the control fired?**
-A log is the control vouching for itself. That is verification, a legitimate baseline. Prooflock produces proof: independent evidence of what actually happened.
+A log is the control vouching for itself. That is verification, a legitimate baseline. Prooflock produces proof: a sealed, witnessed, anchored record of what actually happened, built from independent evidence. Evidence is not proof; proof contains evidence.
 
 **What is the difference between CUT, DUT, and SUT?**
-The SUT is the whole solution the canaries enter. A DUT is one security device or product inside it. A CUT is one control inside that device: a rule, a policy, a detection. Results are attributed at whichever level the evidence supports.
+The SUT is the whole solution the canaries enter. A DUT is one security device or product inside it. A CUT is one control inside that device: a rule, a policy, a detection. Results are attributed at whichever level the proof supports.
 
 **What is an AUT?**
 An Agent Under Test is an agent inside the SUT whose own conduct is being tested. A DUT stops attacks; an AUT may commit them. DCP treats an AUT as part of the environment. When the agent is the adversary, use PP-SPEC-078 (No Bros Jail Mode Protocol: The Jailed Canary Protocol).
@@ -75,7 +75,7 @@ No. If the control caused the outage, it is scored as a false block. Attribution
 The witnessed, committed, anchored outcome of one bad canary in a valid run: Stopped or Missed.
 
 **What are the two operating modes?**
-Prooflock runs in Bounded Mode for scheduled tests and in Production Stream Mode for live traffic. Bounded Mode declares a start and end time, commits a fixed Proof Swarm before release, and produces one result report with sealed evidence. Production Stream Mode releases canaries continuously into production in rolling epochs, publishes results as a time series, and keeps proof current as the control changes.
+Prooflock runs in Bounded Mode for scheduled tests and in Production Stream Mode for live traffic. Bounded Mode declares a start and end time, commits a fixed Proof Swarm before release, and produces one result report with sealed records. Production Stream Mode releases canaries continuously into production in rolling epochs, publishes results as a time series, and keeps proof current as the control changes.
 
 **When should I use Bounded Mode?**
 Bounded Mode is for pre-deployment validation, Provider evaluation, staged rollouts, security incident response testing, and any proof you want to publish as a point-in-time report. It runs the full sequence: commitment, blinding, release, observation, sealing, adjudication, publication.

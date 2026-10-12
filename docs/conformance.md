@@ -15,7 +15,7 @@
 - [ ] Every bad canary commits its target level (SUT, DUT, or CUT) and target identifier
 - [ ] CUT attribution established only by differential runs, never by DUT logs alone
 - [ ] Unattributable outcomes assigned to the next coarser level
-- [ ] Rates reported per level, never finer than the evidence
+- [ ] Rates reported per level, never finer than the proof
 - [ ] CUT Fingerprints captured independently for every CUT with attributed results
 
 ## Canaries (SPEC 5, 6, 7)
@@ -98,7 +98,7 @@
 - [ ] Proof Swarm size and composition fixed and committed
 - [ ] Full commitment, blinding, release, observation, sealing, adjudication sequence completed
 - [ ] One result report produced with per-run fingerprints, rates, and findings
-- [ ] All evidence sealed and published before accepting results
+- [ ] All records sealed and published before accepting results
 
 ### Production Stream Mode
 - [ ] Canaries committed in rolling epochs with sealed answer keys

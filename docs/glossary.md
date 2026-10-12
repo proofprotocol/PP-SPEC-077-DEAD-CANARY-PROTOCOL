@@ -40,7 +40,7 @@
 | **Void (black hole)** | A canary released into a black hole. Never scored, never backfilled. |
 | **Black Hole Rate** | Share of canaries and time lost to black holes. Published with every result. |
 | **Witness Coverage Map** | The declared Effect Points and effect types the Proof Witness watches. Everything else is a blind spot. |
-| **Bounded Mode** | A scheduled test run with declared start and end times, a fixed committed Proof Swarm, sealed evidence, and a publishable point-in-time report. |
+| **Bounded Mode** | A scheduled test run with declared start and end times, a fixed committed Proof Swarm, sealed records, and a publishable point-in-time report. |
 | **Production Stream Mode** | Continuous canary release into live traffic with rolling epoch-based commitments, no declared end, and ongoing result series tracking drift and changes. |
 | **Roost** | The Proof Witness's standby state between and after runs. |
 | **Molt** | A DUT or CUT Fingerprint change. Prior results go stale. |
@@ -60,4 +60,4 @@
 | **Degraded** | A Production Stream series whose Blind plus Void share stayed over threshold for the declared number of clutches. Not proof for those clutches. |
 | **Verification** | Self-attestation. Baseline tier. |
 | **Validation** | One step above verification. |
-| **Proof** | Independent evidence of outcome under adversarial conditions. |
+| **Proof** | A sealed, witnessed, anchored record of outcome under adversarial conditions, built from independent evidence. Evidence is not proof; proof contains evidence. |

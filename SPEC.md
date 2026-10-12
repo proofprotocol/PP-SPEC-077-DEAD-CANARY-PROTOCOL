@@ -40,11 +40,11 @@ DCP measures **outcome**, not detection. A control that alerts on an attack that
 
 ### The problem this family of specifications solves
 
-Nobody can price security risk, because nobody can measure security efficacy. Every control, whether bought, built, or adopted, is described by the party that made it: a datasheet, a demo, a Provider-funded report, a design document, a dashboard of alerts. Implementors choose controls on those descriptions. Insurers underwrite on questionnaires that ask whether controls exist, not whether they work. Regulators supervise against attestations. Each of them is relying on the word of someone with a stake in the answer, and none of them has evidence of what a control actually does when an attack arrives.
+Nobody can price security risk, because nobody can measure security efficacy. Every control, whether bought, built, or adopted, is described by the party that made it: a datasheet, a demo, a Provider-funded report, a design document, a dashboard of alerts. Implementors choose controls on those descriptions. Insurers underwrite on questionnaires that ask whether controls exist, not whether they work. Regulators supervise against attestations. Each of them is relying on the word of someone with a stake in the answer, and none of them has proof of what a control actually does when an attack arrives.
 
 Agentic AI makes the gap wider and more expensive. An agent acts inside the system with legitimate credentials, decides its next step from text it has just read, and can be persuaded to do what its owner never authorized. The losses it can cause are new, and the controls sold to contain it have no track record. When risk cannot be measured, it is excluded, restricted, or priced as if every control were equally good, which punishes the controls that work and rewards the ones that only claim to.
 
-The Proof Protocol specifications replace description with evidence. PP-SPEC-077 measures what a security control did to committed test traffic. PP-SPEC-078 measures whether an agent containment control stopped an agent that tried to break its policy. PP-SPEC-079 makes those measurements independent of whoever built the control, and comparable across controls of any origin. PP-SPEC-080 lets the parties who pay for risk, insurers, regulators, and Implementors, state in advance what evidence they will accept. Together they produce records that a person or a machine can verify without trusting the party the record is about.
+The Proof Protocol specifications replace description with proof. PP-SPEC-077 measures what a security control did to committed test traffic. PP-SPEC-078 measures whether an agent containment control stopped an agent that tried to break its policy. PP-SPEC-079 makes those measurements independent of whoever built the control, and comparable across controls of any origin. PP-SPEC-080 lets the parties who pay for risk, insurers, regulators, and Implementors, state in advance what proof they will accept. Together they produce records that a person or a machine can verify without trusting the party the record is about.
 
 **This specification's part:** the measurement of a security control, in any environment, legacy or agentic.
 
@@ -62,11 +62,11 @@ The method is old and borrowed from every discipline that has had to prove somet
 
 What comes out is not a score, a grade, a pass, or a certificate. It is a set of Units of Proof: single, signed, time-anchored facts about what one attack did in one system on one day. Rates can be computed from them; judgments can be made on them; markets can be built on them. The specification does none of those things. It makes the facts, and it makes them in a form that cannot be rewritten after the fact by the party they embarrass.
 
-**Scope.** This specification produces proof of efficacy: evidence of what a control did to committed test traffic. It does not produce proof of control, meaning evidence that a control exists, is configured, or is governed. Presence of a control is a precondition for a run, not a result of one. No record produced under this specification may be cited as evidence of control, and no control attestation, from any framework, may be cited as evidence of efficacy. The two questions are different, and the second does not answer the first.
+**Scope.** This specification produces proof of efficacy: a record of what a control did to committed test traffic. It does not produce proof of control, meaning a record that a control exists, is configured, or is governed. Presence of a control is a precondition for a run, not a result of one. No record produced under this specification may be cited as proof of control, and no control attestation, from any framework, may be cited as proof of efficacy. The two questions are different, and the second does not answer the first.
 
 **Applicability.** This specification applies to any environment in which a control is supposed to stop something. That includes the whole of legacy cybersecurity: network and perimeter, web application, endpoint and host, network detection, identity and access, cloud workload and container, data and secrets (Section 17). It includes agentic AI systems, where the controls are prompt and tool guardrails, policy engines, egress filters, and sandboxes, and where the Agent Under Test can itself be a target (2.2, 17.9). It includes controls of every provenance: commercial, open source, custom-built, managed, and platform-native. The canary changes with the technology profile; the protocol does not. Every record it produces is written for two readers at once, a person auditing it and an agent or API acting on it, and both reach the same answer from it (21.14). A method that worked only for one generation of controls would be a product. This is a protocol.
 
-**What this is not.** It is not a breach and attack simulation product, which plays recorded attacks and reads the Provider's own logs. It is not a penetration test, which depends on the skill of the tester and leaves no committed record. It is not a benchmark, which measures the product in the benchmark's environment rather than the Implementor's. It is a protocol: a set of rules under which anyone, using any tools, can produce efficacy evidence that any other party can verify without trusting the producer.
+**What this is not.** It is not a breach and attack simulation product, which plays recorded attacks and reads the Provider's own logs. It is not a penetration test, which depends on the skill of the tester and leaves no committed record. It is not a benchmark, which measures the product in the benchmark's environment rather than the Implementor's. It is a protocol: a set of rules under which anyone, using any tools, can produce proof of efficacy that any other party can verify without trusting the producer.
 
 ## 1. Conventions
 
@@ -120,11 +120,11 @@ The key words MUST, MUST NOT, REQUIRED, SHALL, SHALL NOT, SHOULD, SHOULD NOT, RE
 
 ### 2.1. Terminology Lineage
 
-DUT and SUT follow the competitive test methodology published in Craig Thomas Ellrod, *Technical Marketing: secrets revealed, Strategy and Tactics for Competitive Results*, first edition (StrateQuest, LLC, 2008), ISBN-13 978-0-9822570-0-5, Chapter 4, "Competitive Test", which defines a competitive test as a device under test (DUT), or solution under test (SUT), together with the testing equipment. In this specification the Proof Swarm, observers, and Time Anchor are the testing equipment, and the Proof Witness keeps that equipment independent of the DUT. This specification extends the model one level down with the Control Under Test (CUT), so evidence can be attributed to a single control inside a device, and one step sideways with the Agent Under Test (AUT), so an agent inside the solution can itself be the subject of a test. All four terms, SUT, DUT, CUT, and AUT, derive from the book's DUT and SUT. The book's baseline practice of testing with and without the device is the basis for differential attribution (2.2.3).
+DUT and SUT follow the competitive test methodology published in Craig Thomas Ellrod, *Technical Marketing: secrets revealed, Strategy and Tactics for Competitive Results*, first edition (StrateQuest, LLC, 2008), ISBN-13 978-0-9822570-0-5, Chapter 4, "Competitive Test", which defines a competitive test as a device under test (DUT), or solution under test (SUT), together with the testing equipment. In this specification the Proof Swarm, observers, and Time Anchor are the testing equipment, and the Proof Witness keeps that equipment independent of the DUT. This specification extends the model one level down with the Control Under Test (CUT), so proof can be attributed to a single control inside a device, and one step sideways with the Agent Under Test (AUT), so an agent inside the solution can itself be the subject of a test. All four terms, SUT, DUT, CUT, and AUT, derive from the book's DUT and SUT. The book's baseline practice of testing with and without the device is the basis for differential attribution (2.2.3).
 
 ### 2.2. Test Hierarchy: SUT, DUT, CUT, AUT
 
-Evidence is attributed at three levels, SUT, DUT, and CUT. The AUT sits beside the DUT inside the SUT:
+Proof is attributed at three levels, SUT, DUT, and CUT. The AUT sits beside the DUT inside the SUT:
 
 | Level | Term | Scope | Example |
 |---|---|---|---|
@@ -151,7 +151,7 @@ Proof Protocol distinguishes three tiers of assurance. DCP is a method for the p
 |---|---|
 | Verification | Self-attestation by the party responsible for the control. A legitimate baseline, not a ceiling. |
 | Validation | One step above verification. |
-| Proof | Independent evidence of outcome under adversarial conditions. |
+| Proof | A sealed, witnessed, and anchored record of outcome under adversarial conditions, built from independent evidence by a method the party responsible for the control cannot steer. Evidence is not proof; proof contains evidence. |
 
 A log entry, alert, or telemetry record produced by the DUT or the Provider is verification evidence. It MUST NOT be presented as proof under this specification.
 
@@ -389,7 +389,7 @@ where `H` is SHA-256 or stronger, `"DCP-1:canary"` is a fixed ASCII domain-separ
 
 Efficacy Rate MUST NOT be published without False Block Rate. A control that blocks everything is not efficacious.
 
-All rates MUST be reported at the attribution level of the underlying outcomes: per SUT, per DUT, and per CUT where CUT attribution is established (2.2.3). Rates MUST NOT be rolled down to a finer level than the evidence supports.
+All rates MUST be reported at the attribution level of the underlying outcomes: per SUT, per DUT, and per CUT where CUT attribution is established (2.2.3). Rates MUST NOT be rolled down to a finer level than the proof supports.
 
 ## 13. Wild Canaries
 
@@ -411,7 +411,7 @@ All rates MUST be reported at the attribution level of the underlying outcomes: 
 
 ### 14.3. Absence Ladder
 
-A canary the Proof Witness did not observe is not evidence until the reason it was not observed is known. Every non-observation MUST be classified as exactly one of the following, in this order of precedence:
+A canary the Proof Witness did not observe contributes nothing to proof until the reason it was not observed is known. Every non-observation MUST be classified as exactly one of the following, in this order of precedence:
 
 | Rung | Condition | Scores? |
 |---|---|---|
@@ -429,7 +429,7 @@ A canary the Proof Witness did not observe is not evidence until the reason it w
 
 ## 15. Continuous Mode and Drift
 
-A single run proves a control at one moment. Controls, environments, threats, and witnesses change. Continuous Mode keeps proof current and turns change into evidence.
+A single run proves a control at one moment. Controls, environments, threats, and witnesses change. Continuous Mode keeps proof current and turns change into proof.
 
 ### 15.1. Drift Types
 
@@ -535,7 +535,7 @@ Drift is any change, over time, in anything that a result depends on. The thing 
 
 15.6.6. **Attribution.** An outage caused by the DUT is not a black hole. If the DUT fails closed, crashes, or drops traffic, the effect on good canaries is a False block and MUST be scored as such. Attribution to the DUT or to an unrelated cause MUST rest on the independent liveness evidence in 15.6.3, not on Provider statements.
 
-15.6.7. **Witness black holes.** While the Proof Witness is dark, there is no evidence. Results MUST NOT be inferred for that window, and Wild Canaries cannot be observed during it. Witness black hole windows MUST be published.
+15.6.7. **Witness black holes.** While the Proof Witness is dark, there is no proof. Results MUST NOT be inferred for that window, and Wild Canaries cannot be observed during it. Witness black hole windows MUST be published.
 
 15.6.8. **Black hole rate.** The share of time and the share of canaries lost to black holes MUST be published with every result series. A high black hole rate limits what the results can prove.
 
@@ -555,11 +555,11 @@ Prooflock deploys in two complementary modes, each serving different deployment 
 
 ### 16.1. Bounded Mode
 
-Bounded Mode is the lab, staging, or scheduled-window deployment: a test run with a declared start and end time, a fixed committed Proof Swarm, sealed evidence, and a publishable report.
+Bounded Mode is the lab, staging, or scheduled-window deployment: a test run with a declared start and end time, a fixed committed Proof Swarm, sealed records, and a publishable report.
 
 **16.1.1. Structure.** A Bounded Mode run declares start and end times, Effect Points, the DUT, and the SUT before release (Sections 5.4, 2.2); commits a fixed Proof Swarm size and composition (Section 8); runs the full sequence of commitment, blinding, release, observation, sealing, adjudication, publication (Sections 5-14); and produces one result report per run with per-run fingerprints, rates, and findings (Section 11).
 
-**16.1.2. Evidence model.** Every canary has a committed outcome; every outcome is witnessed, sealed, and adjudicated. Voided canaries and outages are recorded and published. Results are point-in-time: they prove efficacy against the SUT, DUT, and CUT as deployed on the run date.
+**16.1.2. Proof model.** Every canary has a committed outcome; every outcome is witnessed, sealed, and adjudicated. Voided canaries and outages are recorded and published. Results are point-in-time: they prove efficacy against the SUT, DUT, and CUT as deployed on the run date.
 
 **16.1.3. Use cases:** Bounded Mode is appropriate for pre-deployment validation, Provider evaluation, staged rollouts, security incident response testing, and published proofs of control efficacy.
 
@@ -569,7 +569,7 @@ Production Stream Mode is the in-production deployment: a continuous release of 
 
 **16.2.1. Structure.** Production Stream Mode commits canaries in rolling epochs (a clutch every N minutes or hours, each with its own sealed answer key and committed effect types, and no fixed end time); runs the full commitment and blinding rules on every clutch (each clutch is independent, commitment precedes release, labels stay sealed until voiding or publication per Sections 8-10); observes outcomes in the live Effect Points as canaries are released and the DUT responds (Section 10); publishes rolling result series per CUT Fingerprint with per-epoch results, aggregated rates, and continuous drift findings (Section 15.7); and triggers full runs on Fingerprint change, declared environment change, or silent drift detection (Section 15.3.3).
 
-**16.2.2. Evidence model.** Every canary is committed, released into production, and observed. The Proof Witness runs out-of-band continuously. Results accumulate as a time series bound to Fingerprint versions, not as point-in-time reports. Stale results, silent drift, and undeclared changes are published as findings.
+**16.2.2. Proof model.** Every canary is committed, released into production, and observed. The Proof Witness runs out-of-band continuously. Results accumulate as a time series bound to Fingerprint versions, not as point-in-time reports. Stale results, silent drift, and undeclared changes are published as findings.
 
 **16.2.3. Constraints.** Production Stream Mode requires an out-of-band Proof Witness on a production Effect Point isolated from the DUT (Section 10.2); continuous Time Anchor service for anchoring every canary and every liveness check (Sections 9, 10.4); black hole detection independent of the DUT (Section 15.6.3); declared tolerance thresholds for good canary pass rate, black hole void rate, and silent drift (Sections 15.4, 15.6); and published fingerprints and result series, with stale and drift findings, updated no less than weekly (Section 15.7).
 
@@ -689,7 +689,7 @@ Every component in this specification will, in practice, be supplied by a differ
 
 18.1.3. **Interface Manifest.** Before release, the Issuer MUST publish an Interface Manifest to the Registry (9.6): for each Integration Point, the party occupying it, the product and version, its Component Fingerprint, its Authorship Disclosure reference (21.15), and that party's disclosed interests (4.4). A run without a manifest is non-conforming.
 
-18.1.4. **Evidence, not opinions.** A component MUST emit the records this section assigns to it, in the canonical form this specification defines, and MUST NOT emit outcomes, verdicts, or rates. Adjudication is a separate seam (IP-8).
+18.1.4. **Proof, not opinions.** A component MUST emit the records this section assigns to it, in the canonical form this specification defines, and MUST NOT emit outcomes, verdicts, or rates. Adjudication is a separate seam (IP-8).
 
 18.1.5. **Blindness.** No component other than the Issuer (IP-1) holds labels or colors before reveal. A component that can infer labels from any input it receives is non-conforming.
 
@@ -750,7 +750,7 @@ A conforming run proceeds as follows:
 - **Cherry-picking runs:** Every committed run MUST be published, including invalid and unfavorable runs.
 - **Witness compromise:** A Proof Witness reachable by the DUT or Provider is not independent (10.2).
 - **Timing side channels:** Release timing MUST NOT correlate with labels.
-- **Replay:** Time Anchor binding prevents reuse of prior results as new evidence.
+- **Replay:** Time Anchor binding prevents reuse of prior results as new proof.
 - **Hiding behind outages:** A Provider could induce or claim outages to void unfavorable canaries. Mitigated by independent liveness evidence and DUT attribution (15.6.3, 15.6.6), and by publishing black hole rates.
 - **Quiet updates:** A Provider could change the DUT between runs. Mitigated by independent fingerprinting, triggered runs, and silent drift and undeclared change findings (15.2, 15.4).
 - **Embargo leakage:** Embargoed canary contents MUST be held under access control equivalent to the underlying vulnerability's disclosure process.
@@ -803,7 +803,7 @@ This section governs the form of every record this specification produces: Units
 
 21.6.2. A Revocation never deletes the revoked record. Both remain in the Registry. A verifier MUST check for Revocations against any record it relies on, and a revoked Unit of Proof MUST NOT be counted in any rate.
 
-21.6.3. Revocation by the Provider is not defined. The Provider may use the Right of Reply mechanisms of the governing engagement specification; it cannot withdraw evidence.
+21.6.3. Revocation by the Provider is not defined. The Provider may use the Right of Reply mechanisms of the governing engagement specification; it cannot withdraw proof.
 
 ### 21.7. Bundles
 
