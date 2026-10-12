@@ -24,7 +24,8 @@ All patent rights in the methods, systems, and processes described in this work 
 
 ## Acknowledgment
 
-Josh Waldrep, for his receipt-based verification work.
+Tricia Wang and Jim Schwoebel, for the Jail concept and the name "No Bros Jail Mode Protocol". Josh Waldrep (Pipelabs), for early work on a complete agentic AI proof system with receipts and verdicts. See ACKNOWLEDGEMENTS.md.
+
 
 ## Prior art
 
