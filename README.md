@@ -1,5 +1,7 @@
 # ProofSwarm: The Dead Canary Protocol
 
+![077 Dead Canary Protocol: a swarm of canaries in suits carrying briefcases, flying in formation at sunrise](docs/banner.jpg)
+
 > **Ownership and Attribution Notice**
 >
 > ProofSwarm and the Dead Canary Protocol (PP-SPEC-077) are authored by **Craig Ellrod** (Nebulonium, Inc., dba HACKERverse) and published as part of **Proof Protocol**. Copyright (c) 2026 Nebulonium, Inc.
