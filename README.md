@@ -65,6 +65,20 @@ Prooflock is a method for producing **proof of efficacy** for a security control
 - **Black holes are not blocks.** Network, node, and system failures are detected independently, and canaries lost to them are voided, never scored.
 - **Wild canaries.** Anything the witness sees that is not in the committed Proof Swarm did not come from the test. The standby witness surfaces real attacks by exclusion.
 
+## Proof is a term of art
+
+"Proof" in this specification, and throughout Proof Protocol, MUST NOT be renamed, and MUST NOT be washed out by absorption into any other term, including "Verification", "Validation", "Assurance", "Attestation", "Evidence", or "Testing". A derivative work, mapping, profile, translation, summary, or implementation that substitutes another term for "Proof", or presents Proof as a kind of verification or validation, does not describe this specification and MUST NOT claim conformance to it.
+
+Proof is a separate layer on top of verification and validation. The difference is in mechanics and method, not in naming:
+
+| Layer | What it is | What it rests on |
+|---|---|---|
+| Verification | Self-attestation: the control, or the party that built or operates it, reports what it saw through its own logs, alerts, dashboards, or configuration checks. A legitimate baseline. | The word of the party with a stake in the answer |
+| Validation | One step above verification: the reported result is checked against a stated requirement. | Evidence the interested party still produced or controls |
+| Proof | Independent evidence of what actually happened, produced by a method the interested party cannot steer: committed before the run, observed out of band by a witness the Provider does not control, sealed, anchored in time, and registered. | Nothing that has to be taken on trust |
+
+Evidence is not proof, but proof contains evidence. In the same way, verification and validation are not proof, but proof may contain them: a verification or validation record can sit inside a proof record as one input, never as its substitute.
+
 ## Repository
 
 | Path | Contents |
