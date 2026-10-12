@@ -1,6 +1,7 @@
 # Changelog
 
 ## Unreleased
+- Section 22, Ethics and Fair Dealing: governed by the PESA Code of Ethics, Fair Dealing and Non-Harmful Competitive Practices, adding to the LF Code of Conduct and LF Antitrust Policy (LFDT has no ethics or fair dealing clause); version pinning; conformance claims and PESA marks valid only while compliant, whatever license the text was received under; six minimum duties; PESA enforcement with withdrawal and Revocation records; machine form. Interpretation renumbered to 23.
 - Renamed to ProofSwarm: The Dead Canary Protocol (formerly Prooflock)
 - Proof, not evidence: wherever the text meant what the protocol produces, relies on, accepts, or prices, "evidence" is now "proof". Evidence remains the word for inputs inside a proof record (liveness, cause, differential, verification evidence). Evidence is not proof; proof contains evidence.
 
