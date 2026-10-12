@@ -1,10 +1,23 @@
 # License
 
-The text of this repository is licensed under the Creative Commons Attribution 4.0 International License (CC BY 4.0):
-https://creativecommons.org/licenses/by/4.0/legalcode
+This repository is licensed under the **Greater Good Open Source License 1.0** (`LicenseRef-GGL-OS-1.0`). Full text: [LICENSE-GGL-OS-1.0.md](LICENSE-GGL-OS-1.0.md).
 
-Attribution under this license MUST name Craig Ellrod, Nebulonium, Inc., and Proof Protocol, as set out in NOTICE.md.
+```
+License family: Greater Good License 1.0
+Covered Work: PP-SPEC-077, Prooflock: The Dead Canary Protocol, version 0.7.2
+Offered under: GGL-OS-1.0
+Original Inventor: Craig Thomas Ellrod, ORCID 0009-0004-1058-7666
+Inventor Record: DOI (pending)
+Specification text: CC BY-ND 4.0
+Patent Schedule: PATENT-SCHEDULE.md, version 1
+```
 
-CC BY 4.0 does not grant patent or trademark rights (Section 2(b)(2)).
+**Status.** The license text is marked DRAFT until the Inventor Record DOI (Section I) is published. Until the DRAFT marking is removed, no rights are granted beyond reading, citing, and discussing this work.
 
-**Patent rights reserved.** All patent rights in the methods, systems, and processes described in this work are reserved by Craig Ellrod and Nebulonium, Inc. Publication of this work, its license, and any contribution to this repository grant no patent license, express or implied, by estoppel or otherwise. No trademark license is granted or implied.
+**Specification text (Part S).** CC BY-ND 4.0: may be copied and shared verbatim with attribution, not adapted.
+
+**Patents (Part P).** Governed by [PATENT-SCHEDULE.md](PATENT-SCHEDULE.md). Claims not listed there are Reserved.
+
+**Contributions (Section M).** Nothing in this repository is contributed to any organization, standards body, consortium, foundation, or working group unless it lies between `[CONTRIBUTED TO <orgname>]` and `[/END OF CONTRIBUTED TO <orgname>]` markers and is listed in a Contribution Schedule. There is none.
+
+Licensor: Nebulonium, Inc. (dba HACKERverse), Castle Rock, Colorado. Licensing contact: 1proofprotocol@gmail.com.
