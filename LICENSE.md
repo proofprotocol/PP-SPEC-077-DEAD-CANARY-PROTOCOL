@@ -20,4 +20,6 @@ Patent Schedule: PATENT-SCHEDULE.md, version 1
 
 **Contributions (Section M).** Nothing in this repository is contributed to any organization, standards body, consortium, foundation, or working group unless it lies between `[CONTRIBUTED TO <orgname>]` and `[/END OF CONTRIBUTED TO <orgname>]` markers and is listed in a signed Contribution Schedule. There is none.
 
+**Conduct (Section K).** Rights are conditioned on compliance with the Proof Economy Code of Ethics, version 1.0 (https://github.com/proofprotocol/CODE-OF-ETHICS), governed by PESA. PESA determines breach; notice and 30 days to cure apply except for Critical breaches; termination ends license, patent, and mark rights but not CC text rights already granted.
+
 Licensor: Nebulonium, Inc. (dba HACKERverse), Castle Rock, Colorado. Licensing contact: 1proofprotocol@gmail.com.

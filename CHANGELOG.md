@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+- License: GGL-C-1.0 Section K, Conduct: Proof Economy Code of Ethics. Rights conditioned on Code compliance (version 1.0, later provisions by election; minimum duties always binding); PESA holds delegated authority to determine breach and suspend or terminate; notice and 30-day cure except Critical; termination ends license, patent, and mark rights, not CC text rights; competition-law savings clause. Section K added to the shared sections in Section 0. LICENSE.md summary updated.
+- Section 22, Ethics and Fair Dealing: governed by the Proof Economy Code of Ethics v1.0 under PESA, plus fair dealing and non-harmful competitive practices provisions PESA adds, adding to the LF Code of Conduct and LF Antitrust Policy (LFDT has no ethics or fair dealing clause); version pinning; conformance claims and PESA marks valid only while compliant, whatever license the text was received under; six minimum duties; PESA enforcement with withdrawal and Revocation records; machine form. Interpretation renumbered to 23.
 - Renamed to ProofSwarm: The Dead Canary Protocol (formerly Prooflock)
 - Proof, not evidence: wherever the text meant what the protocol produces, relies on, accepts, or prices, "evidence" is now "proof". Evidence remains the word for inputs inside a proof record (liveness, cause, differential, verification evidence). Evidence is not proof; proof contains evidence.
 

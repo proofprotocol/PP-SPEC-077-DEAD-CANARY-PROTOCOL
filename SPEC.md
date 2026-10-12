@@ -896,7 +896,58 @@ This section governs the form of every record this specification produces: Units
 
 Campaign-level chains across techniques and additional witness requirements remain reserved for future revisions by the maintainer. Nothing in this section assigns value to any record.
 
-## 22. Interpretation
+## 22. Ethics and Fair Dealing
+
+22.1. **Governing code.** Ethics, fair dealing, and competitive conduct under this specification are governed by the Proof Economy Code of Ethics (the Code), version 1.0, issued by Nebulonium, Inc. (dba HACKERverse) and governed by the Proof Economy Standards Alliance (PESA), published at https://github.com/proofprotocol/CODE-OF-ETHICS and https://proofeconomy.foundation, together with the fair dealing and non-harmful competitive practices provisions PESA adds to it. The Linux Foundation and LF Decentralized Trust (LFDT) charters set no ethics or fair dealing obligations beyond the LF Code of Conduct and the LF Antitrust Policy. Where any part of this specification is contributed to, hosted by, or used within LFDT, those LF policies continue to apply, and this section adds to them without replacing them.
+
+22.2. **Who is bound.** Every party that runs, witnesses, adjudicates, registers, publishes, relies on, or claims conformance under this specification, in any role this specification defines.
+
+22.3. **Version.** A party is bound by the Code version in effect when it first ran, published, or claimed conformance under this specification (version 1.0 at the date of this section), or by a later version it elects in writing. No later version, and no provision PESA adds later, applies retroactively. 22.5 binds in every case.
+
+22.4. **Conformance condition.** A conformance claim, a run Conformance Level, or a PESA mark under this specification is valid only while the claiming party complies with the Code. Under Code Section 1, this section is the participation term that makes the Code binding on a party that runs, publishes, relies on, or claims conformance under this specification. This condition attaches to the claim, so it applies whatever license the party received this text under, including any portion contributed to LFDT.
+
+22.5. **Minimum duties.** Independent of the Code version, every party bound by 22.2:
+
+1. MUST NOT present verification or validation as proof, and MUST label each claim at its true assurance level.
+2. MUST cite the Record ID or Registry Receipt that supports every public claim made under this specification.
+3. MUST disclose its funding tier and any financial interest in the outcome of a run it performs, witnesses, adjudicates, or publishes.
+4. MUST NOT test, witness, or adjudicate its own control or a control in which it holds a financial interest, except as this specification expressly permits with declared separation.
+5. MUST NOT sabotage, poison, or degrade another party's run, corpus, witness, or records, and MUST NOT tune a control to recognize the test rather than the behavior under test.
+6. MUST NOT use this specification, a conformance claim, or a PESA mark to exclude a competitor for any reason other than a proven breach. Nothing in this section limits any party's freedom to build, sell, price, or use any product, or to compete in any market, and it applies subject to applicable antitrust and competition law.
+
+22.6. **Enforcement.** Breach is determined by PESA, as the governing body applying the Code under Code Section 10, with notice, opportunity to respond, conflict-based recusal, and appeal as Code Sections 7, 8.5, and 10 require. On a PESA determination of breach, the party's conformance claims and PESA marks under this specification are withdrawn (Code Section 10), and each affected record receives a Revocation record under PP-SPEC-077 Section 21. Rights under the license that accompanies this specification end as Section K of that license provides.
+
+22.7. **Machine form.** Implementations and agents read this section as the following record. The record and the text above MUST give the same answer; where they differ, the text governs.
+
+```json
+{
+  "ethics_and_fair_dealing": {
+    "governing_code": "Proof Economy Code of Ethics",
+    "code_version": "1.0",
+    "code_source": "https://github.com/proofprotocol/CODE-OF-ETHICS",
+    "steward": "Proof Economy Standards Alliance (PESA)",
+    "url": "https://proofeconomy.foundation",
+    "version_rule": "in_effect_at_first_use_or_elected_later",
+    "later_additions": ["fair_dealing", "non_harmful_competitive_practices"],
+    "adds_to": ["LF Code of Conduct", "LF Antitrust Policy"],
+    "conformance_condition": true,
+    "minimum_duties": [
+      "no_verification_or_validation_as_proof",
+      "cite_record_id_or_registry_receipt",
+      "disclose_funding_tier_and_financial_interest",
+      "no_self_testing_without_declared_separation",
+      "no_sabotage_or_benchmark_gaming",
+      "no_exclusion_of_competitors_without_proven_breach"
+    ],
+    "enforcement": {
+      "authority": "PESA",
+      "on_breach": ["withdraw_conformance_claims", "withdraw_pesa_marks", "revocation_record_pp_spec_077_section_21"]
+    }
+  }
+}
+```
+
+## 23. Interpretation
 
 Nebulonium, Inc., as maintainer of Proof Protocol, reserves final interpretive discretion over this specification and over conformance claims made under it.
 
