@@ -16,7 +16,7 @@ This applies to standards bodies, working groups, consortia, open source project
 
 ## License
 
-Greater Good Open Source License 1.0 (LicenseRef-GGL-OS-1.0); specification text CC BY-ND 4.0 under Part S. See LICENSE.md. Original inventor: Craig Thomas Ellrod (ORCID 0009-0004-1058-7666).
+Greater Good Commercial License 1.0 (LicenseRef-GGL-C-1.0); specification text CC BY-ND 4.0 under Part S. See LICENSE.md. Original inventor: Craig Thomas Ellrod (ORCID 0009-0004-1058-7666).
 
 ## Patents
 

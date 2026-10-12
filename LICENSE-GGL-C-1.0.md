@@ -2,11 +2,11 @@
 
 <!-- GGL-PARAMS:BEGIN -->
 ```bash
-# Greater Good Open Source License 1.0 PARAMETERS. Every value is REQUIRED for this license to be valid.
+# Greater Good Commercial License 1.0 PARAMETERS. Every value is REQUIRED for this license to be valid.
 # LOCKED values never change once set for a Covered Work (Section I).
 # Check: python3 ggl.py check <this file>
-GGL_VARIANT="GGL-OS-1.0"
-GGL_BODY_SHA256="b2af06dacc66ae927f9d231aef2fc18e75d34c268d1f511a0d8abc658fe06eb2"
+GGL_VARIANT="GGL-C-1.0"
+GGL_BODY_SHA256="20c1a7422fdcc07e699e96c9f01e385644ed416944ec1bcc9e37328d235f656a"
 
 # Licensor
 LICENSOR_NAME="Nebulonium, Inc. (dba HACKERverse)"  # Legal name of the licensor (company or person)
@@ -29,13 +29,31 @@ MARKS="Proof Protocol, ProofSwarm, ProofFlock, ProofStamp, ProofRegister, HACKER
 COVERED_WORK="PP-SPEC-077, Prooflock: The Dead Canary Protocol"  # Name and number of the work this copy covers
 COVERED_WORK_VERSION="0.7.2"                      # Version of the covered work, x.y.z
 SPEC_LICENSE="CC BY-ND 4.0"                       # Part S license for the text
-OFFERED_LICENSES="GGL-OS-1.0"                     # Family licenses this work is offered under, comma separated: GGL-OS-1.0, GGL-EGR-1.0, GGL-C-1.0
+OFFERED_LICENSES="GGL-C-1.0"                      # Family licenses this work is offered under, comma separated: GGL-OS-1.0, GGL-EGR-1.0, GGL-C-1.0
 PATENT_SCHEDULE="PATENT-SCHEDULE.md"              # Path or URL of the Patent Schedule (P.1)
 PATENT_SCHEDULE_VERSION="1"                       # Patent Schedule version number
+
+# Commercial: Startup Tier
+SMALL_BIZ_MAX_WORKERS="25"                        # Small business worker ceiling (C.4)
+SMALL_BIZ_MAX_REVENUE_USD="1,000,000"             # Small business revenue ceiling in US dollars (C.4)
+INFLATION_BASE_YEAR="2026"                        # Base year for CPI-U adjustment (C.4)
+EVAL_DAYS="90"                                    # Free evaluation period in days (C.4)
+
+# Commercial: Fees
+REVENUE_SHARE_PCT="1"                             # Give-back share of Gross Revenue, percent (C.5)
+FEE_PER_UOP_USD=""                                # Fee per Unit of Proof in US dollars (C.5)
+MIN_ANNUAL_FEE_USD=""                             # Minimum annual fee in US dollars (C.5)
+ANNUAL_CAP_USD=""                                 # Annual fee cap in US dollars (C.5); must be at least the minimum fee
+RATES_URL=""                                      # https URL where commercial rates are published (C.8)
 
 # Lineage
 POOL_CAP_PCT="30"                                 # Most of the fee all pool shares in one ancestry may take (E.7)
 LINEAGE_URL="LINEAGE.json in the PP-SPEC-077-DEAD-CANARY-PROTOCOL repository"  # Where the canonical lineage file lives (E.9)
+
+# Commercial: Terms
+REPORT_DAYS="60"                                  # Days after fiscal year end to report and pay (C.7)
+AUDIT_UNDERPAY_PCT="5"                            # Underpayment that shifts audit cost to the licensee (C.7)
+FAIRNESS_DAYS="30"                                # Days the Licensor has to offer published terms (C.8)
 
 # Terms
 CURE_DAYS="30"                                    # Days to cure a violation (G.2)
@@ -48,17 +66,17 @@ VENUE="the state or federal courts located in Colorado"  # Exclusive venue for d
 <!-- GGL-PARAMS:END -->
 
 <!-- GGL-1.0 BODY: canonical text, do not edit below this line -->
-# The Greater Good Open Source License, Version 1.0 (GGL-OS-1.0)
+# The Greater Good Commercial License, Version 1.0 (GGL-C-1.0)
 
-*Open for everyone. Credit to the people who built it.*
+*Fair terms for those who profit, so the public-good work stays funded.*
 
-SPDX identifier: `LicenseRef-GGL-OS-1.0`
+SPDX identifier: `LicenseRef-GGL-C-1.0`
 
 Licensor: Nebulonium, Inc. (dba HACKERverse), Castle Rock, Colorado.
 
 Original Inventor: Craig Thomas Ellrod, ORCID 0009-0004-1058-7666. Inventor Record: DOI [[UNFILLED: INVENTOR_RECORD_DOI]]. See Section I. This line is permanent.
 
-Required Notice: Copyright 2026 Nebulonium, Inc. (dba HACKERverse). Licensed under the The Greater Good Open Source License 1.0. Original inventor: Craig Thomas Ellrod (ORCID 0009-0004-1058-7666), Inventor Record DOI [[UNFILLED: INVENTOR_RECORD_DOI]]. Licensing contact: 1proofprotocol@gmail.com.
+Required Notice: Copyright 2026 Nebulonium, Inc. (dba HACKERverse). Licensed under the The Greater Good Commercial License 1.0. Original inventor: Craig Thomas Ellrod (ORCID 0009-0004-1058-7666), Inventor Record DOI [[UNFILLED: INVENTOR_RECORD_DOI]]. Licensing contact: 1proofprotocol@gmail.com.
 
 ---
 
@@ -70,7 +88,7 @@ Required Notice: Copyright 2026 Nebulonium, Inc. (dba HACKERverse). Licensed und
 | **GGL-EGR-1.0**, Education, Government, and Research | Schools, governments, and research and nonprofit bodies | Free. Non-commercial. |
 | **GGL-C-1.0**, Commercial | Anyone using Covered Works commercially outside the other two | Fee. Waived for small businesses. |
 
-All three licenses share the same Section I (Original Inventor), Part S (Specification Text), Part P (Patents), Section E (Enrichment and Lineage), Section M (Contribution Markers), and Section G (General Terms), word for word. They differ only in their own Part: Part O, Part R, or Part C. This copy is **GGL-OS-1.0**, and its own Part is Part O.
+All three licenses share the same Section I (Original Inventor), Part S (Specification Text), Part P (Patents), Section E (Enrichment and Lineage), Section M (Contribution Markers), and Section G (General Terms), word for word. They differ only in their own Part: Part O, Part R, or Part C. This copy is **GGL-C-1.0**, and its own Part is Part C.
 
 **Offered licenses.** Each Covered Work's declaration lists the family licenses it is offered under. You may use it under any of those whose conditions you meet. If you meet none of them, you have no license to the Covered Work beyond Part S and P.2.
 
@@ -81,7 +99,7 @@ All three licenses share the same Section I (Original Inventor), Part S (Specifi
 ```
 License family: Greater Good License 1.0
 Covered Work: PP-SPEC-077, Prooflock: The Dead Canary Protocol, version 0.7.2
-Offered under: GGL-OS-1.0
+Offered under: GGL-C-1.0
 Original Inventor: Craig Thomas Ellrod, ORCID 0009-0004-1058-7666
 Inventor Record: DOI [[UNFILLED: INVENTOR_RECORD_DOI]]
 Specification text: CC BY-ND 4.0
@@ -126,23 +144,39 @@ For Part S, the Licensor designates the Inventor Line as the attribution require
 
 ---
 
-## Part O. Open Source Terms
+## Part C. Commercial Terms
 
-**O.1 Grant.** Anyone may use, copy, modify, and distribute the Open Source Software, for any purpose, including commercial use, at no cost, on the conditions in this license.
+**C.1 Who needs it.** Anyone using a Covered Work commercially who is not using it under GGL-OS-1.0 or GGL-EGR-1.0.
 
-**O.2 Open Source Software** means the Software a Covered Work's declaration offers under GGL-OS-1.0, and Derivative Works of it.
+**C.2 Acceptance.** Commercial use outside the Startup Tier and the evaluation period requires accepting GGL-C-1.0 by a signed order form or an online acceptance that names it. Using a Covered Work commercially without doing so is still acceptance of these terms, and fees accrue from first use.
 
-**O.3 Share-alike.** If you distribute Open Source Software or a Derivative Work of it, you must do so under GGL-OS-1.0, include its complete corresponding source, this license, the Required Notice, and the Inventor Line, and add no further restrictions.
+**C.3 Grant.** While you comply with Part C and your fees are paid, the Licensor grants you the right to use, copy, modify, and run the Covered Works offered under GGL-C-1.0 for any purpose; to embed the Software in your own products and distribute it inside them in object form; and to practice the Reserved Claims as embodied in the Software and in conforming implementations. Your own code stays yours and carries no share-alike obligation. Improvements to the Software itself that you distribute to others must be under GGL-C-1.0 or GGL-OS-1.0.
 
-**O.4 Network use.** If you modify Open Source Software and let others use it over a network, you must offer those users the complete source of your modified version under GGL-OS-1.0. Hosting is allowed. Hiding changes is not.
+**C.4 Startup Tier and evaluation.** A small business that, together with all its Affiliates, had fewer than 25 workers and less than 1,000,000 USD in gross revenue last tax year, adjusted each year for US inflation (CPI-U) from 2026, pays no fee. Every other term of GGL-C-1.0 applies to it. Anyone else may evaluate the Covered Works free for 90 days.
 
-**O.5 Your own work.** Software that only communicates with Open Source Software at a declared Integration Point, or only uses its outputs, results, and reports, is not covered by O.3.
+**C.5 Fees: the give-back.** A commercial licensee outside the Startup Tier pays the Licensor each year the **greatest** of:
 
-**O.6 Patents.** The Licensor grants you a worldwide, royalty-free, non-exclusive license under every claim it holds, Contributed or Reserved, that the Open Source Software as released by the Licensor necessarily practices, to make, use, sell, offer for sale, import, and distribute it and your Derivative Works of it. The grant does not reach a Reserved Claim that a Derivative Work practices only because of what was added to it.
+1. **1% of Gross Revenue** from any product or service that uses, includes, runs on, or is certified with the Software, including bundled and indirect revenue;
+2. **[[UNFILLED: FEE_PER_UOP_USD]] USD per Unit of Proof** produced with the Software; or
+3. **A minimum annual fee of [[UNFILLED: MIN_ANNUAL_FEE_USD]] USD.**
 
-**O.7 Other terms.** To combine Open Source Software into a product without share-alike, or to practice Reserved Claims beyond O.6, use GGL-C-1.0.
+Total fees are capped at **[[UNFILLED: ANNUAL_CAP_USD]] USD per year** per company, Affiliates combined, except as C.6 provides. Revenue is measured before expenses, worldwide, across all Affiliates.
 
-**O.8 Open source intent.** The Licensor intends GGL-OS-1.0 to meet the Open Source Definition. The Inventor Line and notices required by Section I are attribution requirements, not limits on who may use the Software or for what.
+**C.6 Per user, not per host.** Every organization that benefits from the Software pays for its own use, once.
+
+- **Hosting is not a loophole.** If you offer the Software, or a substantial part of its functionality, to others as a hosted service, managed service, API, marketplace listing, or platform feature, your license covers only your own internal use.
+- **Your customers need their own license.** Each customer using the Software through your service must hold its own license, or you pay the C.5 fee on all revenue from that service.
+- **No cap for resale.** The C.5 cap does not apply to revenue from offering the Software to others as a service.
+- **Free status does not pass through.** A customer's free use does not make your service free, and your license does not make your customers' use free.
+- **No double charge.** The same use is paid once. If a customer has paid the Licensor directly, you owe nothing further on that customer's use.
+
+**C.7 Reporting.** Report and pay once a year, within 60 days of your fiscal year end. The Licensor may audit once a year at its own cost, or at yours if you underpaid by more than 5%.
+
+**C.8 Same price for everyone.** The Licensor publishes its rates at [[UNFILLED: RATES_URL]]. Published rates paid by at least one unaffiliated customer are fair, reasonable, and nondiscriminatory by definition. If the Licensor fails to offer a commercial license on published terms within 30 days of your written request to the licensing contact, you may keep using the Software free until it does.
+
+**C.9 Authorized use only.** You may run the Software only against systems, models, and data you own or have written permission to test.
+
+**C.10 Where the fees go.** Fees fund the maintenance of the Covered Works, the Proof Protocol infrastructure, and the royalty pool in E.7. The Licensor publishes the pool calculation and payouts each year.
 
 ---
 
@@ -275,4 +309,4 @@ A modified Specification text must not carry a PP-SPEC number or present itself 
 
 ---
 
-*GGL-OS-1.0. Licensor: Nebulonium, Inc. (dba HACKERverse), Castle Rock, Colorado.*
+*GGL-C-1.0. Licensor: Nebulonium, Inc. (dba HACKERverse), Castle Rock, Colorado.*
