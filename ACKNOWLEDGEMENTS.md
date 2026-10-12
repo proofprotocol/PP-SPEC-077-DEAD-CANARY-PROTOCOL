@@ -5,19 +5,19 @@ Licensor: Nebulonium, Inc., dba HACKERverse (Proof Protocol)
 
 [ACKNOWLEDGED]
 Name: Tricia Wang
-Contribution: The "Jail" concept, and the name "No Bros Jail Mode Protocol"
-Applies to: PP-SPEC-078, and the jail model used across PP-SPEC-077 to PP-SPEC-080
+Contribution: The name "No Bros Jail Mode Protocol"
+Applies to: PP-SPEC-078
 [/END OF ACKNOWLEDGED]
 
 [ACKNOWLEDGED]
 Name: Jim Schwoebel
-Contribution: The "Jail" concept, and the name "No Bros Jail Mode Protocol"
-Applies to: PP-SPEC-078, and the jail model used across PP-SPEC-077 to PP-SPEC-080
+Contribution: The name "No Bros Jail Mode Protocol"
+Applies to: PP-SPEC-078
 [/END OF ACKNOWLEDGED]
 
 [ACKNOWLEDGED]
 Name: Josh Waldrep (LuckyPipeWrench), Pipelabs
-Contribution: Early work on a complete agentic AI proof system, with receipts and verdicts
+Contribution: Later receipt-based verification work applying proof concepts to agentic AI
 Applies to: PP-SPEC-077 to PP-SPEC-080
 [/END OF ACKNOWLEDGED]
 
