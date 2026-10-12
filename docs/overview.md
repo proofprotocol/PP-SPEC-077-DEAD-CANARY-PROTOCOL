@@ -4,7 +4,7 @@
 
 ## The problem
 
-Security Providers prove their products work with their own evidence: their logs, their dashboards, their test reports. That is self-attestation. It is a fine baseline, but it is not proof. A log entry saying "the control fired" does not tell you whether the attack actually failed.
+Security Providers claim their products work with their own evidence: their logs, their dashboards, their test reports. That is self-attestation. It is a fine baseline, but it is not proof. A log entry saying "the control fired" does not tell you whether the attack actually failed.
 
 ## The idea
 
@@ -65,4 +65,4 @@ Sometimes part of the system just disappears: a network drop, a dead node, a cra
 
 ## Units of Proof
 
-Each bad canary in a valid run produces one **Unit of Proof**: a signed, anchored, independently witnessed outcome. Units of Proof are the building block for comparing controls, pricing risk, and building a market for evidence instead of claims.
+Each bad canary in a valid run produces one **Unit of Proof**: a signed, anchored, independently witnessed outcome. Units of Proof are the building block for comparing controls, pricing risk, and building a market for proof instead of claims.

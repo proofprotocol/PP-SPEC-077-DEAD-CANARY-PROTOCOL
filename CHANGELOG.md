@@ -1,5 +1,8 @@
 # Changelog
 
+## Unreleased
+- Proof, not evidence: wherever the text meant what the protocol produces, relies on, accepts, or prices, "evidence" is now "proof". Evidence remains the word for inputs inside a proof record (liveness, cause, differential, verification evidence). Evidence is not proof; proof contains evidence.
+
 ## 0.7.2 (2026-10-11)
 - Role terms: Provider replaces Vendor (any party that builds, maintains, sells, or operates the DUT, commercial or not); Implementor replaces buyer and is defined in Section 2
 - FUNDING.md funding disclosure ([FUNDED] Yes or No, [FUNDED BY] name and URL per funder); Proof Economy Code of Ethics applies

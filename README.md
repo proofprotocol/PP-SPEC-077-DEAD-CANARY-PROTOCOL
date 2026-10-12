@@ -16,7 +16,7 @@
 
 **A Proof Swarm of canaries goes in. Not all of them come out.**
 
-Prooflock is a method for producing **proof of efficacy** for a security control: evidence that the control actually stops attacks, measured by what happened, not by what the Provider's own logs say.
+Prooflock is a method for producing **proof of efficacy** for a security control: a record, built from independent evidence, of whether the control actually stops attacks, measured by what happened, not by what the Provider's own logs say.
 
 ## How it works
 
