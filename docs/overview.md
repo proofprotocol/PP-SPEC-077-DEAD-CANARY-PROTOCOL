@@ -1,4 +1,4 @@
-# Overview: Prooflock in Plain English
+# Overview: ProofSwarm in Plain English
 
 *Informative. The normative text is [SPEC.md](../SPEC.md).*
 
@@ -10,7 +10,7 @@ Security Providers claim their products work with their own evidence: their logs
 
 Coal miners carried canaries. If the air turned bad, the canary died first, and nobody could fake a dead bird.
 
-Prooflock sends a Proof Swarm of canaries into the environment a security control protects:
+ProofSwarm sends a Proof Swarm of canaries into the environment a security control protects:
 
 - **Bad canaries** carry real attacks. If the control works, they die.
 - **Good canaries** do legitimate work. If the control works, they live.
@@ -28,7 +28,7 @@ Proof is attributed at three levels. The **Solution Under Test (SUT)** is the wh
 | Bad | **Missed.** The attack worked. | **Stopped.** The control did its job. |
 | Good | **Passed.** Business as usual. | **False block.** The control broke legitimate work. |
 
-A control that blocks everything stops every bad canary, but it also kills every good one. Prooflock always reports both sides.
+A control that blocks everything stops every bad canary, but it also kills every good one. ProofSwarm always reports both sides.
 
 ## Why nobody can cheat
 
@@ -40,7 +40,7 @@ A control that blocks everything stops every bad canary, but it also kills every
 
 ## What about new attacks and 0days?
 
-No test can prove resistance to an attack that does not exist yet. Prooflock measures the closest honest thing:
+No test can prove resistance to an attack that does not exist yet. ProofSwarm measures the closest honest thing:
 
 - **Mutations.** Every run uses fresh variants of each technique. Signature-matching controls fall apart on variants they have never seen.
 - **Holdouts.** A private pool of variants that is never published.
@@ -52,7 +52,7 @@ Every test canary is committed in advance. So if the standby Proof Witness ever 
 
 ## Proof that stays current
 
-A test proves a control on one day. Controls change constantly: rule pushes, policy edits, model updates. Prooflock's Continuous Mode keeps proof current:
+A test proves a control on one day. Controls change constantly: rule pushes, policy edits, model updates. ProofSwarm's Continuous Mode keeps proof current:
 
 - Every result is tied to a **fingerprint** of the exact deployed control. Change the control and the old proof goes **stale** until it is proven again.
 - A **trickle** of canaries runs all the time, with full runs on a schedule and whenever anything changes.
@@ -61,7 +61,7 @@ A test proves a control on one day. Controls change constantly: rule pushes, pol
 
 ## Black holes
 
-Sometimes part of the system just disappears: a network drop, a dead node, a crashed service. A canary that vanishes into an outage did not die at the hands of the control. Prooflock detects these **black holes** independently of the control, voids every canary caught in one, and publishes how much was lost. If the control itself caused the outage, it does not get to call it a black hole: that is a false block.
+Sometimes part of the system just disappears: a network drop, a dead node, a crashed service. A canary that vanishes into an outage did not die at the hands of the control. ProofSwarm detects these **black holes** independently of the control, voids every canary caught in one, and publishes how much was lost. If the control itself caused the outage, it does not get to call it a black hole: that is a false block.
 
 ## Units of Proof
 

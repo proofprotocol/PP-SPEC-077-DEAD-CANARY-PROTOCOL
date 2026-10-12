@@ -1,8 +1,8 @@
-# Prooflock: The Dead Canary Protocol
+# ProofSwarm: The Dead Canary Protocol
 
 > **Ownership and Attribution Notice**
 >
-> Prooflock and the Dead Canary Protocol (PP-SPEC-077) are authored by **Craig Ellrod** (Nebulonium, Inc., dba HACKERverse) and published as part of **Proof Protocol**. Copyright (c) 2026 Nebulonium, Inc.
+> ProofSwarm and the Dead Canary Protocol (PP-SPEC-077) are authored by **Craig Ellrod** (Nebulonium, Inc., dba HACKERverse) and published as part of **Proof Protocol**. Copyright (c) 2026 Nebulonium, Inc.
 >
 > Any use, implementation, derivative, citation, or incorporation of this work, in whole or in part, MUST attribute **Craig Ellrod, Nebulonium, Inc., and Proof Protocol**. See [NOTICE.md](NOTICE.md).
 >
@@ -16,11 +16,11 @@
 
 **A Proof Swarm of canaries goes in. Not all of them come out.**
 
-Prooflock is a method for producing **proof of efficacy** for a security control: a record, built from independent evidence, of whether the control actually stops attacks, measured by what happened, not by what the Provider's own logs say.
+ProofSwarm is a method for producing **proof of efficacy** for a security control: a record, built from independent evidence, of whether the control actually stops attacks, measured by what happened, not by what the Provider's own logs say.
 
 ## How it works
 
-![Prooflock architecture: Issuer, Time Anchor, Proof Swarm, Ingress Observer, SUT with DUT and CUTs, Effect Points, Proof Witness, liveness checks, reveal and adjudication, published results](docs/architecture.svg)
+![ProofSwarm architecture: Issuer, Time Anchor, Proof Swarm, Ingress Observer, SUT with DUT and CUTs, Effect Points, Proof Witness, liveness checks, reveal and adjudication, published results](docs/architecture.svg)
 
 ```
             Issuer (not the Provider)
@@ -113,6 +113,6 @@ Related: Proof Economy Prior Art Declaration, DOI [10.5281/zenodo.21379780](http
 ## Cite
 
 ```
-Ellrod, C. (2026). Prooflock: The Dead Canary Protocol (PP-SPEC-077), v0.7.2.
+Ellrod, C. (2026). ProofSwarm: The Dead Canary Protocol (PP-SPEC-077), v0.7.2.
 Nebulonium, Inc., Proof Protocol. https://doi.org/10.5281/zenodo.23285061
 ```

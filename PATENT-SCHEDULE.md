@@ -1,6 +1,6 @@
 # Patent Schedule (GGL Part P)
 
-Covered Work: PP-SPEC-077, Prooflock: The Dead Canary Protocol, version 0.7.2
+Covered Work: PP-SPEC-077, ProofSwarm: The Dead Canary Protocol, version 0.7.2
 Schedule version: 1, published 2026-10-12
 
 No claims are listed. Every claim of every patent and patent application the Licensor holds that bears on this Covered Work is Reserved (P.1). A claim may later be moved to Contributed by a new schedule version; a Contributed claim is never moved back (P.4).

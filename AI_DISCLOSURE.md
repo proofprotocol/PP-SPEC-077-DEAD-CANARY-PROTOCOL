@@ -8,7 +8,7 @@ This file states what in PP-SPEC-077 came from a human and what came from an AI 
 
 The method is Craig Ellrod's. The words were drafted with Claude.
 
-Prooflock, the Dead Canary Protocol, was conceived, designed, and decided by Craig Ellrod, a human. Claude, an AI assistant made by Anthropic, was used as a drafting, structuring, and editing tool under his direction. No part of the protocol's concept, purpose, or design originated with the AI. Every section was reviewed and accepted by Craig Ellrod before publication.
+ProofSwarm, the Dead Canary Protocol, was conceived, designed, and decided by Craig Ellrod, a human. Claude, an AI assistant made by Anthropic, was used as a drafting, structuring, and editing tool under his direction. No part of the protocol's concept, purpose, or design originated with the AI. Every section was reviewed and accepted by Craig Ellrod before publication.
 
 ## Ratio
 

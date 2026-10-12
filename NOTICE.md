@@ -1,6 +1,6 @@
 # NOTICE
 
-Prooflock: The Dead Canary Protocol (PP-SPEC-077)
+ProofSwarm: The Dead Canary Protocol (PP-SPEC-077)
 Copyright (c) 2026 Nebulonium, Inc. (dba HACKERverse)
 
 Author: Craig Ellrod (Nebulonium, Inc.).

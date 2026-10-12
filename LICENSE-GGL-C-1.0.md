@@ -26,7 +26,7 @@ ATTRIBUTION_NAMES="Nebulonium, Inc. and Proof Protocol"  # Names that attributio
 MARKS="Proof Protocol, ProofSwarm, ProofFlock, ProofStamp, ProofRegister, HACKERverse"  # Names and marks reserved under G.4, comma separated
 
 # Covered Work
-COVERED_WORK="PP-SPEC-077, Prooflock: The Dead Canary Protocol"  # Name and number of the work this copy covers
+COVERED_WORK="PP-SPEC-077, ProofSwarm: The Dead Canary Protocol"  # Name and number of the work this copy covers
 COVERED_WORK_VERSION="0.7.2"                      # Version of the covered work, x.y.z
 SPEC_LICENSE="CC BY-ND 4.0"                       # Part S license for the text
 OFFERED_LICENSES="GGL-C-1.0"                      # Family licenses this work is offered under, comma separated: GGL-OS-1.0, GGL-EGR-1.0, GGL-C-1.0
@@ -98,7 +98,7 @@ All three licenses share the same Section I (Original Inventor), Part S (Specifi
 
 ```
 License family: Greater Good License 1.0
-Covered Work: PP-SPEC-077, Prooflock: The Dead Canary Protocol, version 0.7.2
+Covered Work: PP-SPEC-077, ProofSwarm: The Dead Canary Protocol, version 0.7.2
 Offered under: GGL-C-1.0
 Original Inventor: Craig Thomas Ellrod, ORCID 0009-0004-1058-7666
 Inventor Record: DOI [[UNFILLED: INVENTOR_RECORD_DOI]]

@@ -1,4 +1,4 @@
-# Prooflock: The Dead Canary Protocol (DCP)
+# ProofSwarm: The Dead Canary Protocol (DCP)
 
 *A Proof Protocol specification*
 
@@ -28,7 +28,7 @@
 
 ## Abstract
 
-Prooflock, the Dead Canary Protocol (DCP), produces proof of efficacy for a security control.
+ProofSwarm, the Dead Canary Protocol (DCP), produces proof of efficacy for a security control.
 
 A Proof Swarm of canaries goes in. Not all of them come out. Good canaries are mixed with bad canaries, and neither the Device Under Test (DUT) nor the standby Proof Witness can tell them apart. Every canary is committed before release. The Proof Witness, positioned where an attack's effect would land and operating out of band from the control, records which canaries lived and which died. After the run, commitments are revealed and outcomes are adjudicated as Units of Proof.
 
@@ -58,7 +58,7 @@ The result is an industry that runs on self-attestation. Providers attest to the
 
 This specification exists to replace that assumption with a measurement that nobody in the transaction can bend.
 
-The method is old and borrowed from every discipline that has had to prove something to a skeptic. You do not inspect every molecule in a pipe; you add a dye and see where it comes out. You do not trust the drug company's claim; you give the pill to some and a sugar pill to others and let neither the patient nor the doctor know which. Prooflock does the same for a security control. It sends a Proof Swarm of canaries, some carrying real attacks and some carrying ordinary traffic, with every canary's true nature sealed in a hash before the control ever sees it. An independent witness, standing where the damage would land and reachable by nobody who sells the control, records which canaries arrive. Only after the witness has signed are the seals opened and the outcomes assigned. The order and the mix were chosen by a public randomness beacon, not by anyone with a stake. Every canary ends in exactly one bucket, and the buckets for "we could not see" and "the environment failed" are separated from the bucket for "the control stopped it," so that absence of evidence can never be dressed as evidence of efficacy.
+The method is old and borrowed from every discipline that has had to prove something to a skeptic. You do not inspect every molecule in a pipe; you add a dye and see where it comes out. You do not trust the drug company's claim; you give the pill to some and a sugar pill to others and let neither the patient nor the doctor know which. ProofSwarm does the same for a security control. It sends a Proof Swarm of canaries, some carrying real attacks and some carrying ordinary traffic, with every canary's true nature sealed in a hash before the control ever sees it. An independent witness, standing where the damage would land and reachable by nobody who sells the control, records which canaries arrive. Only after the witness has signed are the seals opened and the outcomes assigned. The order and the mix were chosen by a public randomness beacon, not by anyone with a stake. Every canary ends in exactly one bucket, and the buckets for "we could not see" and "the environment failed" are separated from the bucket for "the control stopped it," so that absence of evidence can never be dressed as evidence of efficacy.
 
 What comes out is not a score, a grade, a pass, or a certificate. It is a set of Units of Proof: single, signed, time-anchored facts about what one attack did in one system on one day. Rates can be computed from them; judgments can be made on them; markets can be built on them. The specification does none of those things. It makes the facts, and it makes them in a form that cannot be rewritten after the fact by the party they embarrass.
 
@@ -551,7 +551,7 @@ Drift is any change, over time, in anything that a result depends on. The thing 
 
 ## 16. Operating Modes
 
-Prooflock deploys in two complementary modes, each serving different deployment contexts and risk postures.
+ProofSwarm deploys in two complementary modes, each serving different deployment contexts and risk postures.
 
 ### 16.1. Bounded Mode
 
@@ -905,8 +905,8 @@ Nebulonium, Inc., as maintainer of Proof Protocol, reserves final interpretive d
 | Version | Date | Notes |
 |---|---|---|
 | 0.1.0 | 2026-10-10 | Initial draft as Witnessed Efficacy Probe (PP-WEP-0001) |
-| 0.2.0 | 2026-10-10 | Renamed Prooflock: The Dead Canary Protocol (PP-SPEC-077). Swarm renamed Flock. Added mutation and novelty, embargoed 0day canaries, wild canaries, witness coverage. |
-| 0.2.1 | 2026-10-10 | Renamed Prooflock: The Dead Canary Protocol. |
+| 0.2.0 | 2026-10-10 | Renamed ProofSwarm: The Dead Canary Protocol (PP-SPEC-077). Swarm renamed Flock. Added mutation and novelty, embargoed 0day canaries, wild canaries, witness coverage. |
+| 0.2.1 | 2026-10-10 | Renamed ProofSwarm: The Dead Canary Protocol. |
 | 0.2.2 | 2026-10-10 | Sole author Craig Ellrod. Patent rights reserved by Craig Ellrod and Nebulonium, Inc. Acknowledgment of Josh Waldrep for receipt-based verification work. |
 | 0.3.0 | 2026-10-10 | Added Section 15, Continuous Mode and Drift: DUT Fingerprint, trickle and triggered runs, silent drift, witness calibration, black hole drift, result series. Renumbered later sections. |
 | 0.3.1 | 2026-10-10 | Control Under Test (CUT) renamed Device Under Test (DUT); added Solution Under Test (SUT) and Terminology Lineage (2.1) citing Technical Marketing (2008). |
