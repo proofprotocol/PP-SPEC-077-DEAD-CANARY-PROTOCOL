@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/proofprotocol/prooflock/schemas/uop.schema.json",
-  "title": "Prooflock Unit of Proof",
-  "description": "One adjudicated bad canary outcome in a valid Prooflock run (PP-SPEC-077, Sections 11 and 21).",
+  "$id": "https://github.com/proofprotocol/PP-SPEC-077-DEAD-CANARY-PROTOCOL/schemas/uop.schema.json",
+  "title": "ProofSwarm Unit of Proof",
+  "description": "One adjudicated bad canary outcome in a valid ProofSwarm run (PP-SPEC-077, Sections 11 and 21).",
   "type": "object",
   "required": [
     "spec",

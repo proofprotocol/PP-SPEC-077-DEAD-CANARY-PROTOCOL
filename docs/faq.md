@@ -1,19 +1,19 @@
 # FAQ
 
 **Is this breach and attack simulation (BAS) or red teaming?**
-No. BAS and red teams are usually run by or for the party being evaluated, and they report what the tooling saw. Prooflock is a proof protocol: independent operators, sealed answer keys, an out-of-band witness at the outcome point, and mandatory publication of every run.
+No. BAS and red teams are usually run by or for the party being evaluated, and they report what the tooling saw. ProofSwarm is a proof protocol: independent operators, sealed answer keys, an out-of-band witness at the outcome point, and mandatory publication of every run.
 
 **Why do I need good canaries?**
 Two reasons. They prove the path was working, so a dead bad canary counts as a block and not an outage. And they expose controls that "win" by blocking everything. Efficacy is never published without the false block rate.
 
 **The control raised an alert. Why is that a miss?**
-Because the attack still landed. Prooflock measures outcome. Detection without prevention is recorded as an annotation, never as Stopped.
+Because the attack still landed. ProofSwarm measures outcome. Detection without prevention is recorded as an annotation, never as Stopped.
 
 **Can the Provider tune its product to pass?**
 Not without actually stopping attacks. Canaries are mutated every run, holdout variants are never published, good and bad canaries look alike, and the order comes from a public beacon after the answer key is sealed.
 
-**Does Prooflock prove a control will stop 0days?**
-No test can prove that. Prooflock measures resistance to novelty through mutations and holdouts, and it supports embargoed canaries for undisclosed vulnerabilities, committed before disclosure and revealed after.
+**Does ProofSwarm prove a control will stop 0days?**
+No test can prove that. ProofSwarm measures resistance to novelty through mutations and holdouts, and it supports embargoed canaries for undisclosed vulnerabilities, committed before disclosure and revealed after.
 
 **What is a wild canary?**
 An effect the standby Proof Witness sees that matches nothing in the committed Proof Swarm. Since every test canary is known in advance, anything else is real: an attack, a fault, or a false alarm. Wild canaries are reported separately and are never counted as Units of Proof.
@@ -48,7 +48,7 @@ An observer who knows what is supposed to happen tends to see it. Blinding remov
 Anyone. Its records are committed and anchored before the reveal, and the reveal is public. Any third party can recompute the commitments, check the timestamps against the public beacon, and confirm that the witness record and the answer key line up. Independence does not depend on trusting the witness operator's word.
 
 **How is this different from a control log showing the control fired?**
-A log is the control vouching for itself. That is verification, a legitimate baseline. Prooflock produces proof: a sealed, witnessed, anchored record of what actually happened, built from independent evidence. Evidence is not proof; proof contains evidence.
+A log is the control vouching for itself. That is verification, a legitimate baseline. ProofSwarm produces proof: a sealed, witnessed, anchored record of what actually happened, built from independent evidence. Evidence is not proof; proof contains evidence.
 
 **What is the difference between CUT, DUT, and SUT?**
 The SUT is the whole solution the canaries enter. A DUT is one security device or product inside it. A CUT is one control inside that device: a rule, a policy, a detection. Results are attributed at whichever level the proof supports.
@@ -75,7 +75,7 @@ No. If the control caused the outage, it is scored as a false block. Attribution
 The witnessed, committed, anchored outcome of one bad canary in a valid run: Stopped or Missed.
 
 **What are the two operating modes?**
-Prooflock runs in Bounded Mode for scheduled tests and in Production Stream Mode for live traffic. Bounded Mode declares a start and end time, commits a fixed Proof Swarm before release, and produces one result report with sealed records. Production Stream Mode releases canaries continuously into production in rolling epochs, publishes results as a time series, and keeps proof current as the control changes.
+ProofSwarm runs in Bounded Mode for scheduled tests and in Production Stream Mode for live traffic. Bounded Mode declares a start and end time, commits a fixed Proof Swarm before release, and produces one result report with sealed records. Production Stream Mode releases canaries continuously into production in rolling epochs, publishes results as a time series, and keeps proof current as the control changes.
 
 **When should I use Bounded Mode?**
 Bounded Mode is for pre-deployment validation, Provider evaluation, staged rollouts, security incident response testing, and any proof you want to publish as a point-in-time report. It runs the full sequence: commitment, blinding, release, observation, sealing, adjudication, publication.

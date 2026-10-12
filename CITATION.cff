@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use or reference this work, cite it as below and attribute Craig Ellrod, Nebulonium, Inc., and Proof Protocol (see NOTICE.md)."
-title: "Prooflock: The Dead Canary Protocol (PP-SPEC-077)"
+title: "ProofSwarm: The Dead Canary Protocol (PP-SPEC-077)"
 version: 0.7.2
 date-released: 2026-10-11
 doi: 10.5281/zenodo.23285061

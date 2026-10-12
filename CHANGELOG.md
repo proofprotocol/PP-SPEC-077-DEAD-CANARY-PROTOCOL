@@ -1,6 +1,7 @@
 # Changelog
 
 ## Unreleased
+- Renamed to ProofSwarm: The Dead Canary Protocol (formerly Prooflock)
 - Proof, not evidence: wherever the text meant what the protocol produces, relies on, accepts, or prices, "evidence" is now "proof". Evidence remains the word for inputs inside a proof record (liveness, cause, differential, verification evidence). Evidence is not proof; proof contains evidence.
 
 ## 0.7.2 (2026-10-11)
