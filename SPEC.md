@@ -915,7 +915,7 @@ Campaign-level chains across techniques and additional witness requirements rema
 5. MUST NOT sabotage, poison, or degrade another party's run, corpus, witness, or records, and MUST NOT tune a control to recognize the test rather than the behavior under test.
 6. MUST NOT use this specification, a conformance claim, or a PESA mark to exclude a competitor for any reason other than a proven breach. Nothing in this section limits any party's freedom to build, sell, price, or use any product, or to compete in any market, and it applies subject to applicable antitrust and competition law.
 
-22.6. **Enforcement.** Breach is determined by PESA under the PESA Code, with notice, cure, recusal, and appeal as that Code provides. On a PESA determination of breach, the party's conformance claims and PESA marks under this specification are withdrawn, and each affected record receives a Revocation record under PP-SPEC-077 Section 21. Rights under the license that accompanies this specification end as that license provides.
+22.6. **Enforcement.** Breach is determined by PESA under the PESA Code, with notice, cure, recusal, and appeal as that Code provides. On a PESA determination of breach, the party's conformance claims and PESA marks under this specification are withdrawn, and each affected record receives a Revocation record under PP-SPEC-077 Section 21. Rights under the license that accompanies this specification end as Section K of that license provides.
 
 22.7. **Machine form.** Implementations and agents read this section as the following record. The record and the text above MUST give the same answer; where they differ, the text governs.
 
