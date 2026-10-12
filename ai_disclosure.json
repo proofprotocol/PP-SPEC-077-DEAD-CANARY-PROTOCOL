@@ -15,6 +15,11 @@
       "provider": "Anthropic",
       "model": "Claude (Fable 5.1, Opus 5.5)",
       "role": "Drafting, structuring, editing, code"
+    },
+    {
+      "provider": "OpenAI",
+      "model": "ChatGPT",
+      "role": "Banner image (docs/banner.jpg), supplied by the author; decorative, not part of the specification"
     }
   ],
   "shares": {
