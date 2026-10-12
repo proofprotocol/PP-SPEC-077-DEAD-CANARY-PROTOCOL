@@ -12,16 +12,45 @@ Prooflock, the Dead Canary Protocol, was conceived, designed, and decided by Cra
 
 ## Ratio
 
-One number would misstate it, because the work splits along more than one line.
-
-| Dimension | Human (Craig Ellrod) | Machine (Claude) |
+| Dimension | Human | AI |
 |---|---|---|
-| Conception, method, every normative decision | 100% | 0% |
-| Design details and naming | 95% | 5% (Section 9 encoding constants and the terms roost, molt, clutch, proposed by Claude and accepted by Craig Ellrod) |
-| Words on the page, as typed | 10% | 90% |
+| Conception and every normative decision | 92% | 8% |
+| Design details and naming | 80% | 20% (Claude proposed: Section 9 encoding constants; roost, molt, clutch; Integration Point table; Section 21 record mechanics (Record ID construction, envelope, receipt, Bundles, Conformance Level words); drift segments; the profile, anchor, and specification drift types) |
+| Words, code, and schemas as written | 5% | 95% |
 | Review, direction, acceptance, decision to publish | 100% | 0% |
 
-In short: substance 95% human, 5% machine; expression 10% human, 90% machine.
+Method: self-estimated. Shares drafted by the AI from its itemized record of what it proposed and what the author directed, for the author to confirm or correct before release. MAY be re-measured with a tool such as ProofJack.com.
+
+Machine-readable form: [ai_disclosure.json](ai_disclosure.json), conforming to PP-SPEC-077 Section 21.15. The two forms agree; if they ever differ, the JSON is wrong and must be corrected.
+
+
+## This version (0.7.2, 2026-10-12)
+
+**Human:**
+- Dead canary method, Proof Swarm, Proof Witness, Effect Point, Time Anchor, Unit of Proof
+- Colors, three axes, wild, embargoed, holdout canaries, black holes, silent drift
+- SUT/DUT/CUT/AUT hierarchy and lineage from Technical Marketing (2008)
+- Absence Ladder: Blind, Void, Null
+- Integration Points requirement for vendor plug-ins
+- Registration to ProofRegister; rails for records without naming the economy layer
+- Drift of inputs and equipment: corpus, harness, pigtail, control drift
+- Applicability to legacy cybersecurity and agentic AI; any provenance
+- Humans and machines rule; Authorship Disclosure rule
+- All review and acceptance
+
+**AI:**
+- Text as written
+- Encoding constants and record mechanics listed above
+- Section 21 clause structure
+- Drift tables, fingerprints, and segment rules
+- Introduction prose
+
+**Proposed by the AI, pending the author's explicit acceptance:**
+- Profile, anchor, and specification drift types
+- Series segments and the fragmented state
+- Exact Record ID exclusion list
+
+AI systems: Anthropic Claude (Fable 5.1, Opus 5.5).
 
 ## Human: Craig Ellrod
 
@@ -29,7 +58,7 @@ The following originated with Craig Ellrod and reflect his judgment, experience,
 
 - The founding thesis: proof of efficacy for security controls, measured by outcome at the point where an attack lands, witnessed by a party independent of the vendor. This thesis predates this document and is the basis of Nebulonium, Inc. (founded 2021) and the Proof Economy Prior Art Declaration (DOI 10.5281/zenodo.21379780).
 - The dead canary method: a blind mix of real malicious and benign actions, committed in advance, released into the control, and adjudicated by what actually happened rather than what the control reported.
-- The core concepts and their names: good and bad canaries, the flock, the Proof Witness, the Ingress Observer, the Effect Point, the Time Anchor, the Unit of Proof, wild canaries, embargoed canaries, holdout canaries, black holes, silent drift, Bounded Mode and Production Stream Mode.
+- The core concepts and their names: good and bad canaries, the Proof Swarm, the Proof Witness, the Ingress Observer, the Effect Point, the Time Anchor, the Unit of Proof, wild canaries, embargoed canaries, holdout canaries, black holes, silent drift, Bounded Mode and Production Stream Mode.
 - The assurance ladder of verification, validation, and proof, and the rule that a control's own logs are verification evidence and never proof.
 - The test hierarchy of Solution Under Test, Device Under Test, and Control Under Test, and the rule that credit to a single control is earned only by differential runs. DUT and SUT come from his book *Technical Marketing* (2008), which he authored.
 - Every normative decision: what MUST, SHOULD, and MAY, which parties are forbidden which roles, what invalidates a run, what is voided, what is published.
