@@ -10,7 +10,7 @@
 >
 > **Patent rights reserved.** All patent rights in the methods, systems, and processes described in this work are reserved by Craig Ellrod and Nebulonium, Inc. Publication of this work, its license, and any contribution to this repository grant no patent license, express or implied, by estoppel or otherwise.
 >
-> **Acknowledgements:** Tricia Wang and Jim Schwoebel, for the Jail concept; Josh Waldrep (Pipelabs), for early work on a complete agentic AI proof system with receipts and verdicts. See [ACKNOWLEDGEMENTS.md](ACKNOWLEDGEMENTS.md).
+> **Acknowledgements:** Tricia Wang and Jim Schwoebel, for the name "No Bros Jail Mode Protocol"; Josh Waldrep (Pipelabs), for his later receipt-based verification work applying proof concepts to agentic AI. See [ACKNOWLEDGEMENTS.md](ACKNOWLEDGEMENTS.md).
 
 ---
 

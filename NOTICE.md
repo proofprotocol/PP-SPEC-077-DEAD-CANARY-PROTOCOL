@@ -24,7 +24,9 @@ All patent rights in the methods, systems, and processes described in this work 
 
 ## Acknowledgment
 
-Tricia Wang and Jim Schwoebel, for the Jail concept and the name "No Bros Jail Mode Protocol". Josh Waldrep (Pipelabs), for early work on a complete agentic AI proof system with receipts and verdicts. See ACKNOWLEDGEMENTS.md.
+Tricia Wang and Jim Schwoebel, for the name "No Bros Jail Mode Protocol". Josh Waldrep (Pipelabs), for his later receipt-based verification work applying proof concepts to agentic AI. See ACKNOWLEDGEMENTS.md.
+
+Lineage: the proof-of-efficacy method in this specification was first built by Craig Ellrod on a traditional EDR/MDR security product, before its application to agentic AI.
 
 
 ## Prior art
