@@ -1,5 +1,8 @@
 # Changelog
 
+## Unreleased
+- docs/faq.md: notes that PP-SPEC-079 v0.1.2 (4.2.3) does not allow the Lab to run the Proof Witness in Independent Test Lab Mode
+
 ## 0.7.3 (2026-10-12)
 - Proof is attributed at four levels: SUT, DUT, CUT, and AUT. In this specification the AUT is the path an attack travels; outcomes caused by the agent's own conduct are attributed to the AUT under PP-SPEC-078 (2.2, 2.2.5). Overview, FAQ, and glossary updated.
 

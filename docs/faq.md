@@ -33,7 +33,7 @@ Five things, and all of them are required:
 Because a test the Provider controls is just a more elaborate self-attestation. A Provider log, a Provider dashboard, or a Provider-run test is the control vouching for itself. That is verification. Proof starts where the party with something to gain stops having a hand in the evidence.
 
 **Can the test operator also run the Proof Witness?**
-It is allowed, but it is the weakest conforming setup. The operator built the Proof Swarm and holds the labels. The strongest setup separates the three jobs: the Issuer builds and seals the Proof Swarm, the Proof Witness observes, and the Time Anchor keeps time, each run by a different party.
+It is allowed, but it is the weakest conforming setup. The operator built the Proof Swarm and holds the labels. The strongest setup separates the three jobs: the Issuer builds and seals the Proof Swarm, the Proof Witness observes, and the Time Anchor keeps time, each run by a different party. Under a PP-SPEC-079 Engagement in Independent Test Lab Mode it is not allowed: 079 4.2.3 (v0.1.2) requires a Proof Witness independent of the Lab and its affiliates.
 
 **What if the Provider pays for the test?**
 Payment must be disclosed in the run record, along with every other financial interest in the outcome. Paying for a test buys a test, not a result. The Provider still never touches canaries, labels, the witness, or the anchor.
