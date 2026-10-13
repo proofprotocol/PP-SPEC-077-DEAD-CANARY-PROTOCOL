@@ -19,7 +19,7 @@ The Proof Swarm is mixed blind, so the control cannot cheat by spotting the test
 
 ## Solution, device, control
 
-Proof is attributed at three levels. The **Solution Under Test (SUT)** is the whole deployment. Inside it, each **Device Under Test (DUT)** is a security product or guardrail. Inside each device, each **Control Under Test (CUT)** is a single rule, policy, or detection. A device log claiming which rule fired does not count: a single control earns credit only when matched runs show the attack lands with that control off and dies with it on.
+Proof is attributed at four levels. The **Solution Under Test (SUT)** is the whole deployment. Inside it, each **Device Under Test (DUT)** is a security product or guardrail. Inside each device, each **Control Under Test (CUT)** is a single rule, policy, or detection. Beside the devices, each **Agent Under Test (AUT)** is an AI agent whose own conduct is on trial. ProofSwarm attributes outcomes to the SUT, DUT, and CUT; when the agent itself misbehaves, PP-SPEC-078 attributes that to the AUT. A device log claiming which rule fired does not count: a single control earns credit only when matched runs show the attack lands with that control off and dies with it on.
 
 ## The four outcomes
 

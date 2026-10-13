@@ -8,7 +8,7 @@
 | **Good Canary** | A canary performing a legitimate action that produces a defined benign effect if not stopped. |
 | **Boundary Good Canary** | A good canary built to look like a bad one. Measures false blocks where they actually happen. |
 | **Proof Swarm** | The full, blind-mixed set of good and bad canaries for one run. |
-| **Agent Under Test (AUT)** | An agent inside the SUT whose own conduct is under test. An actor, not a control. Tested under PP-SPEC-078 (No Bros Jail Mode Protocol: The Jailed Canary Protocol). Derived from *Technical Marketing* (2008) DUT/SUT. |
+| **Agent Under Test (AUT)** | An agent inside the SUT whose own conduct is under test; the fourth attribution level. An actor, not a control. Its conduct is attributed under PP-SPEC-078 (No Bros Jail Mode Protocol: The Jailed Canary Protocol). Derived from *Technical Marketing* (2008) DUT/SUT. |
 | **Control Under Test (CUT)** | One control inside a DUT: a single rule, policy, signature, detection, or guardrail function. |
 | **Device Under Test (DUT)** | A security product, configuration, or agent guardrail containing one or more CUTs. Term from *Technical Marketing* (2008). |
 | **Solution Under Test (SUT)** | The full deployment the Proof Swarm enters: one or more DUTs plus the protected environment and its Effect Points. Term from *Technical Marketing* (2008). |
