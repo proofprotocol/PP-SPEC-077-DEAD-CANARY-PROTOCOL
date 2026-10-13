@@ -24,9 +24,10 @@ Method: self-estimated. Shares drafted by the AI from its itemized record of wha
 Machine-readable form: [ai_disclosure.json](ai_disclosure.json), conforming to PP-SPEC-077 Section 21.15. The two forms agree; if they ever differ, the JSON is wrong and must be corrected.
 
 
-## This version (0.7.2, 2026-10-12)
+## This version (0.7.3, 2026-10-12)
 
 **Human:**
+- Four attribution levels, AUT included, so the spec reads as covering agentic AI (directed in 0.7.3; wording by the AI)
 - Dead canary method, Proof Swarm, Proof Witness, Effect Point, Time Anchor, Unit of Proof
 - Colors, three axes, wild, embargoed, holdout canaries, black holes, silent drift
 - SUT/DUT/CUT/AUT hierarchy and lineage from Technical Marketing (2008)

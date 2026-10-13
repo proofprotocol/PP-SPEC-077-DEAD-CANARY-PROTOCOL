@@ -1,6 +1,9 @@
 # Changelog
 
-## Unreleased
+## 0.7.3 (2026-10-12)
+- Proof is attributed at four levels: SUT, DUT, CUT, and AUT. In this specification the AUT is the path an attack travels; outcomes caused by the agent's own conduct are attributed to the AUT under PP-SPEC-078 (2.2, 2.2.5). Overview, FAQ, and glossary updated.
+
+## 0.7.2 additions (2026-10-12)
 - Renamed to ProofSwarm: The Dead Canary Protocol (formerly Prooflock)
 - Proof, not evidence: wherever the text meant what the protocol produces, relies on, accepts, or prices, "evidence" is now "proof". Evidence remains the word for inputs inside a proof record (liveness, cause, differential, verification evidence). Evidence is not proof; proof contains evidence.
 

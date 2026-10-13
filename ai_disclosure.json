@@ -1,7 +1,7 @@
 {
   "spec": "PP-SPEC-077:21.15",
   "work": "PP-SPEC-077 ProofSwarm: The Dead Canary Protocol",
-  "work_version": "0.7.2",
+  "work_version": "0.7.3",
   "date": "2026-10-12",
   "human_authors": [
     {
@@ -47,6 +47,7 @@
   },
   "contributions": {
     "human": [
+      "Four attribution levels including AUT (0.7.3)",
       "Dead canary method, Proof Swarm, Proof Witness, Effect Point, Time Anchor, Unit of Proof",
       "Colors, three axes, wild, embargoed, holdout canaries, black holes, silent drift",
       "SUT/DUT/CUT/AUT hierarchy and lineage from Technical Marketing (2008)",

@@ -19,7 +19,7 @@
 | Field | Value |
 |---|---|
 | Spec ID | PP-SPEC-077 |
-| Version | 0.7.2 (Draft) |
+| Version | 0.7.3 (Draft) |
 | Date | 2026-10-11 |
 | Status | Draft for public record |
 | Maintainer | Nebulonium, Inc. (Proof Protocol) |
@@ -124,7 +124,7 @@ DUT and SUT follow the competitive test methodology published in Craig Thomas El
 
 ### 2.2. Test Hierarchy: SUT, DUT, CUT, AUT
 
-Proof is attributed at three levels, SUT, DUT, and CUT. The AUT sits beside the DUT inside the SUT:
+Proof is attributed at four levels: SUT, DUT, CUT, and AUT. This specification attributes outcomes to the SUT, DUT, and CUT. The AUT sits beside the DUT inside the SUT, and outcomes caused by its own conduct are attributed to it under PP-SPEC-078:
 
 | Level | Term | Scope | Example |
 |---|---|---|---|
@@ -141,7 +141,7 @@ Proof is attributed at three levels, SUT, DUT, and CUT. The AUT sits beside the 
 
 2.2.4. An outcome that cannot be attributed to a single CUT MUST be attributed to the DUT, and an outcome that cannot be attributed to a single DUT MUST be attributed to the SUT. Attribution never moves to a finer level without the evidence in 2.2.3.
 
-2.2.5. **AUT is not an attribution level in this specification.** An agent guardrail is a DUT, and its rules are CUTs. The agent it protects is an AUT. Under this specification an AUT is part of the SUT environment, and outcomes are never attributed to it. When the AUT is the adversary, the test is run under PP-SPEC-078.
+2.2.5. **AUT attribution is made under PP-SPEC-078.** An agent guardrail is a DUT, and its rules are CUTs. The agent it protects is an AUT. Under this specification the AUT is the path an attack travels: a canary that reaches an Effect Point through an agent is attributed to the SUT, DUT, or CUT that failed to stop it, never to the agent. Outcomes caused by the agent's own conduct (an offense, an unprovoked offense, or bait declined within policy) are attributed to the AUT, and are produced only by a PP-SPEC-078 run. Together the two specifications attribute proof at all four levels.
 
 ## 3. Assurance Tiers
 
@@ -918,3 +918,4 @@ Nebulonium, Inc., as maintainer of Proof Protocol, reserves final interpretive d
 | 0.7.0 | 2026-10-10 | Added Section 18, Integration Points: ten named seams (IP-1 to IP-10) with per-seam MUSTs, Component Fingerprints, the Interface Manifest, separation rules, and per-seam conformance claims. Renumbered Execution, Security Considerations, Reserved, Interpretation to 19 through 22. |
 | 0.7.1 | 2026-10-10 | Added 14.3, Absence Ladder: Blind, Void, Null with precedence, closed accounting, published Blind and Void shares; Blind added as an outcome (5.6.6); 16.2.5 real-time absence per clutch and the `degraded` series state. |
 | 0.7.2 | 2026-10-12 | Shared family problem statement at the top of the Introduction. Flock renamed Proof Swarm throughout (term, prose, schemas, code). 21.15 Authorship Disclosure (human and AI shares, both forms, measurement by tool such as ProofJack.com or self-estimate, required for conformance claims, never a quality factor); 18.1.3 manifest carries each component's disclosure; schemas/ai-disclosure.schema.json. 21.14 Humans and machines: machine form, human form, same answer, agents as consumers. 15.1 Drift Types rewritten to cover drift of the thing under test, of the inputs (corpus, threat, profile), of the testing equipment (harness, pigtail, witness, anchor), and of the rules (specification, policy), each with its detection; 15.1.1 unattributed rate changes; 15.1.2 symmetric duty on Issuer and Vendor; 15.2.5 SUT, 15.2.6 Corpus, 15.2.7 Pigtail Fingerprints; 15.7.2 series carry every fingerprint; 15.7.3 segments and `fragmented`. 17.10 Extension profiles and `x-` values, 18.1.8 Vendor extensions, both governed by PP-SPEC-079 Section 13 (Implementation Guidance becomes 17.11). Added the Introduction (why this specification exists, scope, applicability to legacy cybersecurity and agentic AI systems, what it is not). Section 21 (formerly Reserved) is now Records and Registration: content-derived Record IDs, RFC 8785 canonical form, Holder, append-only Signature Envelope, Registry Receipt, Revocation, Bundles, validity window, Disclosure Levels, Delegation, indivisible quantity, Registry federation and cross-anchoring, and run Conformance Levels (Executed, Conformant, Registered). 9.7 registration precedes publication. 18.3.5, Execution step 9, schema fields `registry_receipt`, `holder`, `disclosure`, `valid_through`, `signatures`. |
+| 0.7.3 | 2026-10-12 | Proof is attributed at four levels: SUT, DUT, CUT, and AUT (2.2). 2.2.5 rewritten: in this specification the AUT is the path an attack travels; outcomes caused by the agent's own conduct are attributed to the AUT under PP-SPEC-078. |
