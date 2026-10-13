@@ -1,6 +1,8 @@
 # Changelog
 
-## Unreleased
+## 0.7.4 (2026-10-13)
+- Section 22: maintainer responsible for editorial text only; conformance determined from the records, not decided by the maintainer
+- CONTRIBUTING.md updated to match
 - docs/faq.md: notes that PP-SPEC-079 v0.1.2 (4.2.3) does not allow the Lab to run the Proof Witness in Independent Test Lab Mode
 
 ## 0.7.3 (2026-10-12)

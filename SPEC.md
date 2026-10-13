@@ -19,8 +19,8 @@
 | Field | Value |
 |---|---|
 | Spec ID | PP-SPEC-077 |
-| Version | 0.7.3 (Draft) |
-| Date | 2026-10-11 |
+| Version | 0.7.4 (Draft) |
+| Date | 2026-10-13 |
 | Status | Draft for public record |
 | Maintainer | Nebulonium, Inc. (Proof Protocol) |
 
@@ -898,7 +898,7 @@ Campaign-level chains across techniques and additional witness requirements rema
 
 ## 22. Interpretation
 
-Nebulonium, Inc., as maintainer of Proof Protocol, reserves final interpretive discretion over this specification and over conformance claims made under it.
+Nebulonium, Inc., as maintainer of Proof Protocol, is responsible for the editorial text of this specification. Whether a run or record conforms is determined from its records against the normative text, and is not decided by the maintainer.
 
 ## Revision History
 
@@ -919,3 +919,4 @@ Nebulonium, Inc., as maintainer of Proof Protocol, reserves final interpretive d
 | 0.7.1 | 2026-10-10 | Added 14.3, Absence Ladder: Blind, Void, Null with precedence, closed accounting, published Blind and Void shares; Blind added as an outcome (5.6.6); 16.2.5 real-time absence per clutch and the `degraded` series state. |
 | 0.7.2 | 2026-10-12 | Shared family problem statement at the top of the Introduction. Flock renamed Proof Swarm throughout (term, prose, schemas, code). 21.15 Authorship Disclosure (human and AI shares, both forms, measurement by tool such as ProofJack.com or self-estimate, required for conformance claims, never a quality factor); 18.1.3 manifest carries each component's disclosure; schemas/ai-disclosure.schema.json. 21.14 Humans and machines: machine form, human form, same answer, agents as consumers. 15.1 Drift Types rewritten to cover drift of the thing under test, of the inputs (corpus, threat, profile), of the testing equipment (harness, pigtail, witness, anchor), and of the rules (specification, policy), each with its detection; 15.1.1 unattributed rate changes; 15.1.2 symmetric duty on Issuer and Vendor; 15.2.5 SUT, 15.2.6 Corpus, 15.2.7 Pigtail Fingerprints; 15.7.2 series carry every fingerprint; 15.7.3 segments and `fragmented`. 17.10 Extension profiles and `x-` values, 18.1.8 Vendor extensions, both governed by PP-SPEC-079 Section 13 (Implementation Guidance becomes 17.11). Added the Introduction (why this specification exists, scope, applicability to legacy cybersecurity and agentic AI systems, what it is not). Section 21 (formerly Reserved) is now Records and Registration: content-derived Record IDs, RFC 8785 canonical form, Holder, append-only Signature Envelope, Registry Receipt, Revocation, Bundles, validity window, Disclosure Levels, Delegation, indivisible quantity, Registry federation and cross-anchoring, and run Conformance Levels (Executed, Conformant, Registered). 9.7 registration precedes publication. 18.3.5, Execution step 9, schema fields `registry_receipt`, `holder`, `disclosure`, `valid_through`, `signatures`. |
 | 0.7.3 | 2026-10-12 | Proof is attributed at four levels: SUT, DUT, CUT, and AUT (2.2). 2.2.5 rewritten: in this specification the AUT is the path an attack travels; outcomes caused by the agent's own conduct are attributed to the AUT under PP-SPEC-078. |
+| 0.7.4 | 2026-10-13 | Section 22 limited to editorial responsibility: conformance is determined from the records against the normative text, not decided by the maintainer. |
