@@ -108,13 +108,13 @@ Draft, version 0.7.4, 2026-10-13. Maintained by Nebulonium, Inc. as part of Proo
 
 Where results live: every commitment, witness root, fingerprint, and result is published to a registry conforming to [PP-SPEC-004](https://github.com/proofprotocol/registry-api-spec), the ProofRegister API. The public instance is [proofregister.com](https://proofregister.com).
 
-Archived on Zenodo: v0.7.3, DOI [10.5281/zenodo.23330050](https://doi.org/10.5281/zenodo.23330050). All versions: [10.5281/zenodo.23285060](https://doi.org/10.5281/zenodo.23285060).
+Archived on Zenodo: v0.7.4, DOI [10.5281/zenodo.23347914](https://doi.org/10.5281/zenodo.23347914). All versions: [10.5281/zenodo.23285060](https://doi.org/10.5281/zenodo.23285060).
 
-Related: Proof Economy Prior Art Declaration, DOI [10.5281/zenodo.21379780](https://doi.org/10.5281/zenodo.21379780). PP-SPEC-078, No Bros Jail Mode Protocol, DOI [10.5281/zenodo.23330057](https://doi.org/10.5281/zenodo.23330057), builds on this specification.
+Related: Proof Economy Prior Art Declaration, DOI [10.5281/zenodo.21379780](https://doi.org/10.5281/zenodo.21379780). PP-SPEC-078, No Bros Jail Mode Protocol, DOI [10.5281/zenodo.23347986](https://doi.org/10.5281/zenodo.23347986), builds on this specification.
 
 ## Cite
 
 ```
-Ellrod, C. (2026). ProofSwarm: The Dead Canary Protocol (PP-SPEC-077), v0.7.3.
-Nebulonium, Inc., Proof Protocol. https://doi.org/10.5281/zenodo.23330050
+Ellrod, C. (2026). ProofSwarm: The Dead Canary Protocol (PP-SPEC-077), v0.7.4.
+Nebulonium, Inc., Proof Protocol. https://doi.org/10.5281/zenodo.23347914
 ```
