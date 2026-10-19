@@ -5,7 +5,6 @@ version: 0.7.4
 date-released: 2026-10-13
 doi: 10.5281/zenodo.23347914
 type: standard
-license-url: "https://github.com/proofprotocol/PP-SPEC-077-DEAD-CANARY-PROTOCOL/blob/main/LICENSE.md"
 authors:
   - family-names: Ellrod
     given-names: Craig Thomas
@@ -15,3 +14,5 @@ references:
   - type: generic
     title: "Proof Economy Prior Art Declaration"
     doi: 10.5281/zenodo.21379780
+license: Apache-2.0
+license-url: "LICENSE.md"

@@ -1,4 +1,4 @@
-# Patent Schedule (GGL Part P)
+# Patent Schedule (Proof Protocol License 1.0 Part P)
 
 Covered Work: PP-SPEC-077, ProofSwarm: The Dead Canary Protocol, version 0.7.4
 Schedule version: 1, published 2026-10-12
