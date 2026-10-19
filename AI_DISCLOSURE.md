@@ -76,7 +76,7 @@ The following originated with Craig Ellrod and reflect his judgment, experience,
 - The assurance ladder of verification, validation, and proof, and the rule that a control's own logs are verification evidence and never proof.
 - The test hierarchy of Solution Under Test, Device Under Test, and Control Under Test, and the rule that credit to a single control is earned only by differential runs. DUT and SUT come from his book *Technical Marketing* (2008), which he authored.
 - Every normative decision: what MUST, SHOULD, and MAY, which parties are forbidden which roles, what invalidates a run, what is voided, what is published.
-- The ownership position: sole authorship, Greater Good Commercial License 1.0 (text CC BY 4.0), patent rights reserved, mandatory attribution, and the acknowledgment of Josh Waldrep for receipt-based verification work.
+- The ownership position: sole authorship, a prior license (since superseded by the Proof Protocol License 1.0), patent rights reserved, mandatory attribution, and the acknowledgment of Josh Waldrep for receipt-based verification work.
 - All review, acceptance, rejection, and revision direction across every version listed in the Revision History.
 
 ## AI: Claude (Anthropic)
