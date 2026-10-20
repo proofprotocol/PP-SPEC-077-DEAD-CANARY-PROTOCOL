@@ -45,7 +45,7 @@ It should not be able to. The witness sits outside the control's path and author
 An observer who knows what is supposed to happen tends to see it. Blinding removes that bias. The witness records only what it observes, commits those records, and only then learns which canaries were good or bad.
 
 **Who checks the Proof Witness?**
-Anyone. Its records are committed and anchored before the reveal, and the reveal is public. Any third party can recompute the commitments, check the timestamps against the public beacon, and confirm that the witness record and the answer key line up. Independence does not depend on trusting the witness operator's word.
+Anyone. Its records are committed and anchored before the reveal, and the public reveal is open to anyone. Any third party can recompute the commitments, check the timestamps against the public beacon, and confirm that the witness record and the answer key line up. Independence does not depend on trusting the witness operator's word.
 
 **How is this different from a control log showing the control fired?**
 A log is the control vouching for itself. That is verification, a legitimate baseline. ProofSwarm produces proof: a sealed, witnessed, anchored record of what actually happened, built from independent evidence. Evidence is not proof; proof contains evidence.
@@ -88,3 +88,6 @@ An out-of-band Proof Witness on a production Effect Point isolated from the DUT;
 
 **Can I implement this?**
 Yes, with attribution to Craig Ellrod, Nebulonium, Inc., and Proof Protocol. See [NOTICE.md](../NOTICE.md). Patent rights are reserved by Craig Ellrod and Nebulonium, Inc. No patent license is granted.
+
+**Why is canary content not published?**
+Publishing every canary after every run would hand the corpus to anyone who wants to tune a product against it. Since 0.8.0 each commitment binds a salted digest of the content. The public reveal proves the run was not changed after the fact; the content itself goes to the Holder and to Content Verifiers the Holder or Issuer authorizes, who check that each bad canary was a real technique. Every published result says who checked the content and when.

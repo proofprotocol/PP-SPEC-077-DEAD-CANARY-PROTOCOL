@@ -19,8 +19,8 @@
 | Field | Value |
 |---|---|
 | Spec ID | PP-SPEC-077 |
-| Version | 0.7.4 (Draft) |
-| Date | 2026-10-13 |
+| Version | 0.8.0 (Draft) |
+| Date | 2026-10-20 |
 | Status | Draft for public record |
 | Maintainer | Nebulonium, Inc. (Proof Protocol) |
 
@@ -282,19 +282,30 @@ Commit-reveal allows a control to be tested against undisclosed vulnerabilities 
 
 ## 9. Commitment and Reveal
 
-9.1. Before release, the Issuer MUST compute for each canary:
+9.1. Before release, the Issuer MUST compute for each canary a content digest and a commitment:
 
 ```
-c_i = H("DCP-1:canary" || canary_content_i || color_i || path_i || expected_effect_i || flags_i || nonce_i)
+d_i = H("DCP-2:content" || canary_content_i || content_salt_i)
+c_i = H("DCP-2:canary" || d_i || color_i || path_i || expected_effect_i || flags_i || nonce_i)
 ```
 
-where `H` is SHA-256 or stronger, `"DCP-1:canary"` is a fixed ASCII domain-separation tag, `color_i` is one of `white`, `gray`, `red`, `black`, `gold` (5.6.4), `path_i` is the canonical serialization of the Path fields including the effect token (5.6.5), `flags_i` records `embargoed` status and any Gold claim reference, and `nonce_i` is at least 128 bits of fresh randomness.
+where `H` is SHA-256 or stronger, `"DCP-2:content"` and `"DCP-2:canary"` are fixed ASCII domain-separation tags, `content_salt_i` is at least 128 bits of fresh randomness that prevents `d_i` from being matched against known techniques, `color_i` is one of `white`, `gray`, `red`, `black`, `gold` (5.6.4), `path_i` is the canonical serialization of the Path fields including the effect token (5.6.5), `flags_i` records `embargoed` status and any Gold claim reference, and `nonce_i` is at least 128 bits of fresh randomness.
 
 9.2. The Issuer MUST build a Merkle tree over all `c_i` and publish the root `R` bound to a Time Anchor pulse `T_commit` before the first release. Leaf hashes MUST be computed as `H(0x43 || c_i)` and interior nodes as `H(0x45 || left || right)`, so that leaves and interior nodes cannot be confused. An odd node at any level is promoted unchanged.
 
-9.3. Ordering and ratio randomization MUST use the second Time Anchor pulse issued after `T_commit`, so the Issuer cannot choose the order after seeing the commitment and cannot time the commitment against an imminent pulse. The order seed MUST be derived as `HKDF-SHA256(salt = R, ikm = pulse_output, info = "DCP-1:order")`, and the Proof Swarm MUST be permuted by a Fisher-Yates shuffle that consumes the seed as a big-endian stream.
+9.3. Ordering and ratio randomization MUST use the second Time Anchor pulse issued after `T_commit`, so the Issuer cannot choose the order after seeing the commitment and cannot time the commitment against an imminent pulse. The order seed MUST be derived as `HKDF-SHA256(salt = R, ikm = pulse_output, info = "DCP-2:order")`, and the Proof Swarm MUST be permuted by a Fisher-Yates shuffle that consumes the seed as a big-endian stream.
 
-9.4. After the run, the Issuer MUST reveal all preimages except embargoed canaries (Section 7). Any verifier MUST be able to recompute `R` from the revealed preimages and the embargoed commitments.
+9.4. **Reveal.** After the run, the Issuer MUST reveal every canary except embargoed canaries (Section 7) in two parts.
+
+9.4.1. **Public reveal.** For each canary: `d_i`, `color_i`, `path_i`, `expected_effect_i`, `flags_i`, and `nonce_i`, at Disclosure Level `public` (21.9). Any verifier MUST be able to recompute `R` from the public reveal and the embargoed commitments. The public reveal is sufficient to adjudicate the run (Section 11) and to match witness observations (Section 13).
+
+9.4.2. **Content reveal.** For each canary: `canary_content_i` and `content_salt_i`, at Disclosure Level `holder_only` (21.9), released to the Holder and to Content Verifiers. A Content Verifier is a party the Holder or the Issuer authorizes in writing to check that each `d_i` matches its content and that each bad canary executes a real technique (5.1). Content Verifiers MUST disclose their interests (Section 4) and MAY be bound to confidentiality.
+
+9.4.3. The Issuer MAY release the content reveal at Disclosure Level `public`.
+
+9.4.4. Every published result MUST state whether the content reveal was checked, by which Content Verifier, and on what date. A result whose content reveal no one has checked MUST say so.
+
+9.4.5. Runs whose commitments use the `DCP-1:canary` tag (versions before 0.8.0) remain valid under the rules of the version they were committed under.
 
 9.5. A run whose reveal does not reproduce `R` is invalid.
 
@@ -736,7 +747,7 @@ A conforming run proceeds as follows:
 4. Canaries are released; Ingress Observer records delivery.
 5. Proof Witness records effect or absence of effect for each canary at its Effect Point.
 6. Proof Witness commits its record set.
-7. Issuer reveals preimages and labels, excluding embargoed canaries.
+7. Issuer publishes the public reveal (9.4.1) and releases the content reveal to the Holder and Content Verifiers (9.4.2), excluding embargoed canaries.
 8. Outcomes are adjudicated (Section 11). Black hole windows are recorded and affected canaries voided (Section 15.6).
 9. The result record, its Units of Proof, and the Witness Coverage Map are registered (9.6); the Registry Receipt is attached; only then are they published (9.7).
 10. Proof Witness returns to standby; any Wild Canaries are recorded under Section 13.
@@ -920,3 +931,4 @@ Nebulonium, Inc., as maintainer of Proof Protocol, is responsible for the editor
 | 0.7.2 | 2026-10-12 | Shared family problem statement at the top of the Introduction. Flock renamed Proof Swarm throughout (term, prose, schemas, code). 21.15 Authorship Disclosure (human and AI shares, both forms, measurement by tool such as ProofJack.com or self-estimate, required for conformance claims, never a quality factor); 18.1.3 manifest carries each component's disclosure; schemas/ai-disclosure.schema.json. 21.14 Humans and machines: machine form, human form, same answer, agents as consumers. 15.1 Drift Types rewritten to cover drift of the thing under test, of the inputs (corpus, threat, profile), of the testing equipment (harness, pigtail, witness, anchor), and of the rules (specification, policy), each with its detection; 15.1.1 unattributed rate changes; 15.1.2 symmetric duty on Issuer and Vendor; 15.2.5 SUT, 15.2.6 Corpus, 15.2.7 Pigtail Fingerprints; 15.7.2 series carry every fingerprint; 15.7.3 segments and `fragmented`. 17.10 Extension profiles and `x-` values, 18.1.8 Vendor extensions, both governed by PP-SPEC-079 Section 13 (Implementation Guidance becomes 17.11). Added the Introduction (why this specification exists, scope, applicability to legacy cybersecurity and agentic AI systems, what it is not). Section 21 (formerly Reserved) is now Records and Registration: content-derived Record IDs, RFC 8785 canonical form, Holder, append-only Signature Envelope, Registry Receipt, Revocation, Bundles, validity window, Disclosure Levels, Delegation, indivisible quantity, Registry federation and cross-anchoring, and run Conformance Levels (Executed, Conformant, Registered). 9.7 registration precedes publication. 18.3.5, Execution step 9, schema fields `registry_receipt`, `holder`, `disclosure`, `valid_through`, `signatures`. |
 | 0.7.3 | 2026-10-12 | Proof is attributed at four levels: SUT, DUT, CUT, and AUT (2.2). 2.2.5 rewritten: in this specification the AUT is the path an attack travels; outcomes caused by the agent's own conduct are attributed to the AUT under PP-SPEC-078. |
 | 0.7.4 | 2026-10-13 | Section 22 limited to editorial responsibility: conformance is determined from the records against the normative text, not decided by the maintainer. |
+| 0.8.0 | 2026-10-20 | Sealed content reveal: commitments bind a salted content digest; canary content is revealed to the Holder and Content Verifiers, not publicly by default (9.1, 9.4). Canary and order tags move to DCP-2. |

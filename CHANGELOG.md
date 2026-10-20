@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.8.0 (2026-10-20)
+- Sealed content reveal (9.1, 9.4): each commitment binds a salted content digest `d_i`. The public reveal carries the digest, color, path, effect, flags and nonce, enough to recompute `R` and adjudicate. Canary content and salt are released at `holder_only` to the Holder and Content Verifiers. Results state who checked the content and when.
+- Canary and order domain-separation tags move to `DCP-2` (record IDs keep `DCP-1:record`); runs committed under `DCP-1:canary` stay valid under their own version.
+- Conformance checklist, FAQ and glossary updated.
+
 ## 2026-10-19
 
 - Adopted the Proof Protocol License 1.0 (LICENSE.md). Specifications: Apache-2.0. Software: proprietary.

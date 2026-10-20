@@ -24,7 +24,17 @@ Method: self-estimated. Shares drafted by the AI from its itemized record of wha
 Machine-readable form: [ai_disclosure.json](ai_disclosure.json), conforming to PP-SPEC-077 Section 21.15. The two forms agree; if they ever differ, the JSON is wrong and must be corrected.
 
 
-## This version (0.7.4, 2026-10-13)
+## This version (0.8.0, 2026-10-20)
+
+**Human:**
+- Decision to stop publishing canary content and release it only to the Holder and authorized verifiers
+- Review and acceptance (pending)
+
+**AI:**
+- Sealed-reveal mechanism: salted content digest, DCP-2 tags, Content Verifier role
+- Text of 9.1, 9.4, the execution step, conformance, FAQ, glossary and changelog entries
+
+## Version 0.7.4 (2026-10-13)
 
 **Human:**
 - Decision to limit the maintainer to editorial responsibility (Section 22), matching PP-SPEC-079 v0.1.2
