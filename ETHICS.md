@@ -2,11 +2,11 @@
 
 # ETHICS
 
-**Proof Economy Code of Ethics, as adopted by Nebulonium, Inc.**
+**Proof Economy Code of Ethics, as adopted by Craig Thomas Ellrod**
 
 **Version:** 1.0
 **Effective Date:** October 19, 2026
-**Adopted by:** Nebulonium, Inc.
+**Adopted by:** Craig Thomas Ellrod
 **Applies to:** every Proof Protocol and Proof Controller repository, the Software, every Proof issued, the Ledger and the Marks
 **Enforced by:** LICENSE.md, Part C8
 
@@ -14,11 +14,11 @@
 
 ## 1. Purpose
 
-A proof is only worth something if the party issuing it can be trusted when the result is inconvenient. This document states the rules Nebulonium holds itself, its customers and its contributors to, and how anyone can report a breach.
+A proof is only worth something if the party issuing it can be trusted when the result is inconvenient. This document states the rules Craig Thomas Ellrod holds themselves, their customers and their contributors to, and how anyone can report a breach.
 
 ## 2. Founding Principles
 
-Nebulonium adopts the Founding Principles of the Proof Economy Foundation (https://proofeconomy.foundation). If this document and the Founding Principles conflict, the Founding Principles control.
+Craig Thomas Ellrod adopts the Founding Principles of the Proof Economy Foundation (https://proofeconomy.foundation). If this document and the Founding Principles conflict, the Founding Principles control.
 
 1. **Vendor Independence.** Parties with a commercial stake in conformance outcomes may contribute and observe, but may not set or vote on the requirements they are measured against.
 2. **Open Specification.** Core protocol specifications are published under open licenses so anyone can implement, test and verify them.
@@ -28,7 +28,7 @@ Nebulonium adopts the Founding Principles of the Proof Economy Foundation (https
 6. **Prior Art Recognition.** Credit for who defined a term and when is preserved. Renaming terms to bury earlier originators is a governance failure.
 7. **Public Governance by Default.** Proceedings, outputs and decisions are public unless a closed session is explicitly justified and has a sunset date.
 
-## 3. Nebulonium Commitments
+## 3. Licensor Commitments
 
 ### 3.1 Proof Integrity
 
@@ -41,7 +41,7 @@ Nebulonium adopts the Founding Principles of the Proof Economy Foundation (https
 ### 3.2 Verifiability
 
 - The Specifications fully define the proof format, signatures, Ledger entries and verification algorithm, so anyone can build an independent verifier.
-- Nebulonium provides a verifier free of charge.
+- Craig Thomas Ellrod provides a verifier free of charge.
 - Signing keys and the out-of-band witness stay outside the customer's trust boundary.
 
 ### 3.3 Transparency
@@ -53,14 +53,14 @@ Nebulonium adopts the Founding Principles of the Proof Economy Foundation (https
 
 ### 3.4 Conflicts of Interest
 
-- When Nebulonium publishes research, a paper or a comparison involving a product, it discloses any commercial relationship with that product's vendor or its competitors.
+- When Craig Thomas Ellrod publishes research, a paper or a comparison involving a product, they disclose any commercial relationship with that product's vendor or its competitors.
 - Paying customers have no vote over methodology, test requirements or scoring.
 - A conflict that cannot be managed by disclosure is resolved by declining the engagement or the publication.
 
 ### 3.5 Attribution and Prior Art
 
 - The original inventor attribution in NOTICE.md is preserved and never altered.
-- Nebulonium credits other people's prior work accurately, including competitors.
+- Craig Thomas Ellrod credits other people's prior work accurately, including competitors.
 
 ### 3.6 Data
 
@@ -69,17 +69,18 @@ Nebulonium adopts the Founding Principles of the Proof Economy Foundation (https
 
 ### 3.7 Fair Dealing
 
-- No disparagement of competitors through claims Nebulonium cannot support with evidence.
+- No disparagement of competitors through claims Craig Thomas Ellrod cannot support with evidence.
 - No use of a Proof, the Ledger or the Marks to coerce, threaten or extract payment.
 - Competitors may implement the Specifications, run conformance tests and verify Proofs on the same terms as everyone else.
 
 ## 4. Known Tension and How It Is Handled
 
-Nebulonium writes the Proof Protocol specifications and also issues Proofs, and its customers are often the vendors being tested. That sits against Principles 1 and 5. Nebulonium handles it this way:
+Craig Thomas Ellrod writes the Proof Protocol specifications and also issues Proofs, and their customers are often the vendors being tested. That sits against Principles 1 and 5. They handle it this way:
 
 - **Proofs are attestations of observed outcomes, not certifications.** A Proof states what happened, where, when and at what trust rung. It does not certify a product.
 - **Conformance testing and conformance marks will move to an independent body,** such as the Proof Economy Standards Alliance (PESA), as provided in LICENSE.md A3(d). Until then, conformance is decided only by the published conformance suite, which anyone can run.
 - **Vendor-funded work is labeled as such** on every Proof and publication it produces.
+- **ProofStamp issuance stays with Craig Thomas Ellrod** (LICENSE.md C9). What moves to an independent body is conformance testing and conformance marks, not the ProofStamp.
 
 This section stays in place until the transfer is complete, and each change to it is recorded in CHANGELOG.md.
 
@@ -94,14 +95,14 @@ Contributors to any Proof Protocol or Proof Controller repository must:
 
 ## 6. Reporting a Breach
 
-Anyone may report a suspected breach by Nebulonium, a customer or a contributor.
+Anyone may report a suspected breach by Craig Thomas Ellrod, a customer or a contributor.
 
-- **Contact:** craig@hackerverse.ai, subject line "ETHICS REPORT"
+- **Contact:** CraigEllrod@gmail.com, subject line "ETHICS REPORT"
 - **Acknowledgement:** within 7 days
 - **Finding:** within 30 days, or a stated reason for more time
 - **Publication:** findings are recorded publicly in CHANGELOG.md, following Principle 7. Reporter identities are kept confidential unless the reporter agrees otherwise.
 - **No retaliation** against anyone who reports in good faith.
-- Reports about Nebulonium itself may also be sent to PESA once it accepts such reports.
+- Reports about Craig Thomas Ellrod may also be sent to PESA once it accepts such reports.
 
 ## 7. Enforcement
 
@@ -109,10 +110,10 @@ Breach of this document is handled under LICENSE.md, Part C8. Remedies include r
 
 ## 8. Changes
 
-Nebulonium may update this document. Each version is dated and recorded in CHANGELOG.md. A change may not weaken sections 2, 3.1 or 6 without public notice at least 30 days in advance.
+Craig Thomas Ellrod may update this document. Each version is dated and recorded in CHANGELOG.md. A change may not weaken sections 2, 3.1 or 6 without public notice at least 30 days in advance.
 
 ---
 
-*AI disclosure: drafted with AI assistance (Claude, Anthropic) at the direction of Craig Thomas Ellrod; subject to his human review before adoption.*
+*AI disclosure: drafted with AI assistance (Claude, Anthropic) at the direction of Craig Thomas Ellrod; subject to their human review before adoption.*
 
-Copyright (c) 2026 Nebulonium, Inc.
+Copyright (c) 2026 Craig Thomas Ellrod.

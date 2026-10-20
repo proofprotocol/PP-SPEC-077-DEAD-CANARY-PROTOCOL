@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "If you use or reference this work, cite it as below and attribute Craig Ellrod, Nebulonium, Inc., and Proof Protocol (see NOTICE.md)."
+message: "If you use or reference this work, cite it as below and attribute Craig Thomas Ellrod and Proof Protocol (see NOTICE.md)."
 title: "ProofSwarm: The Dead Canary Protocol (PP-SPEC-077)"
 version: 0.8.0
 date-released: 2026-10-20
@@ -9,7 +9,7 @@ authors:
   - family-names: Ellrod
     given-names: Craig Thomas
     orcid: "https://orcid.org/0009-0004-1058-7666"
-    affiliation: "Nebulonium, Inc. (dba HACKERverse)"
+    affiliation: "Craig Thomas Ellrod"
 references:
   - type: generic
     title: "Proof Economy Prior Art Declaration"

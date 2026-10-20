@@ -87,7 +87,7 @@ Production Stream Mode is for continuous verification of live controls, real-tim
 An out-of-band Proof Witness on a production Effect Point isolated from the DUT; continuous Time Anchor service; black hole detection independent of the DUT; declared tolerance thresholds for pass rate, void rate, and silent drift; and published fingerprints and result series updated no less than weekly.
 
 **Can I implement this?**
-Yes, with attribution to Craig Ellrod, Nebulonium, Inc., and Proof Protocol. See [NOTICE.md](../NOTICE.md). Patent rights are reserved by Craig Ellrod and Nebulonium, Inc. No patent license is granted.
+Yes, with attribution to Craig Thomas Ellrod and Proof Protocol. See [NOTICE.md](../NOTICE.md). Patent rights are reserved by Craig Thomas Ellrod. No patent license is granted.
 
 **Why is canary content not published?**
 Publishing every canary after every run would hand the corpus to anyone who wants to tune a product against it. Since 0.8.0 each commitment binds a salted digest of the content. The public reveal proves the run was not changed after the fact; the content itself goes to the Holder and to Content Verifiers the Holder or Issuer authorizes, who check that each bad canary was a real technique. Every published result says who checked the content and when.

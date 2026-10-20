@@ -4,13 +4,13 @@
 
 > **Ownership and Attribution Notice**
 >
-> This specification is authored by **Craig Ellrod** (Nebulonium, Inc., dba HACKERverse) and is published as part of **Proof Protocol**. Copyright (c) 2026 Nebulonium, Inc.
+> This specification is authored by **Craig Thomas Ellrod** and is published as part of **Proof Protocol**. Copyright (c) 2026 Craig Thomas Ellrod.
 >
-> Any use, implementation, derivative, citation, or incorporation of this specification, in whole or in part, MUST attribute **Craig Ellrod, Nebulonium, Inc., and Proof Protocol**. This requirement applies to standards bodies, working groups, consortia, and commercial implementations.
+> Any use, implementation, derivative, citation, or incorporation of this specification, in whole or in part, MUST attribute **Craig Thomas Ellrod and Proof Protocol**. This requirement applies to standards bodies, working groups, consortia, and commercial implementations.
 >
 > This specification is licensed under the Proof Protocol License 1.0 (see LICENSE.md); text Apache License 2.0 under Part A. Original inventor: Craig Thomas Ellrod (ORCID 0009-0004-1058-7666).
 >
-> **Patents.** Patent terms are in [PATENT-SCHEDULE.md](PATENT-SCHEDULE.md). Claims not listed there are reserved by Craig Ellrod and Nebulonium, Inc. Licensing: 1proofprotocol@gmail.com.
+> **Patents.** Patent terms are in [PATENT-SCHEDULE.md](PATENT-SCHEDULE.md). Claims not listed there are reserved by Craig Thomas Ellrod. Licensing: 1proofprotocol@gmail.com.
 >
 > **Acknowledgment:** Josh Waldrep, for his receipt-based verification work.
 >
@@ -22,7 +22,7 @@
 | Version | 0.8.0 (Draft) |
 | Date | 2026-10-20 |
 | Status | Draft for public record |
-| Maintainer | Nebulonium, Inc. (Proof Protocol) |
+| Maintainer | Craig Thomas Ellrod (Proof Protocol) |
 
 ---
 
@@ -909,7 +909,7 @@ Campaign-level chains across techniques and additional witness requirements rema
 
 ## 22. Interpretation
 
-Nebulonium, Inc., as maintainer of Proof Protocol, is responsible for the editorial text of this specification. Whether a run or record conforms is determined from its records against the normative text, and is not decided by the maintainer.
+Craig Thomas Ellrod, as maintainer of Proof Protocol, is responsible for the editorial text of this specification. Whether a run or record conforms is determined from its records against the normative text, and is not decided by the maintainer.
 
 ## Revision History
 
@@ -918,7 +918,7 @@ Nebulonium, Inc., as maintainer of Proof Protocol, is responsible for the editor
 | 0.1.0 | 2026-10-10 | Initial draft as Witnessed Efficacy Probe (PP-WEP-0001) |
 | 0.2.0 | 2026-10-10 | Renamed ProofSwarm: The Dead Canary Protocol (PP-SPEC-077). Swarm renamed Flock. Added mutation and novelty, embargoed 0day canaries, wild canaries, witness coverage. |
 | 0.2.1 | 2026-10-10 | Renamed ProofSwarm: The Dead Canary Protocol. |
-| 0.2.2 | 2026-10-10 | Sole author Craig Ellrod. Patent rights reserved by Craig Ellrod and Nebulonium, Inc. Acknowledgment of Josh Waldrep for receipt-based verification work. |
+| 0.2.2 | 2026-10-10 | Sole author Craig Ellrod. Patent rights reserved by Craig Thomas Ellrod. Acknowledgment of Josh Waldrep for receipt-based verification work. |
 | 0.3.0 | 2026-10-10 | Added Section 15, Continuous Mode and Drift: DUT Fingerprint, trickle and triggered runs, silent drift, witness calibration, black hole drift, result series. Renumbered later sections. |
 | 0.3.1 | 2026-10-10 | Control Under Test (CUT) renamed Device Under Test (DUT); added Solution Under Test (SUT) and Terminology Lineage (2.1) citing Technical Marketing (2008). |
 | 0.4.0 | 2026-10-10 | Restored Control Under Test (CUT) as a single control inside the DUT. Added Test Hierarchy SUT, DUT, CUT (2.2), differential CUT attribution, target level in commitments, per-level rates, CUT Fingerprints. |

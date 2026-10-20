@@ -4,13 +4,13 @@
 
 > **Ownership and Attribution Notice**
 >
-> ProofSwarm and the Dead Canary Protocol (PP-SPEC-077) are authored by **Craig Ellrod** (Nebulonium, Inc., dba HACKERverse) and published as part of **Proof Protocol**. Copyright (c) 2026 Nebulonium, Inc.
+> ProofSwarm and the Dead Canary Protocol (PP-SPEC-077) are authored by **Craig Thomas Ellrod** and published as part of **Proof Protocol**. Copyright (c) 2026 Craig Thomas Ellrod.
 >
-> Any use, implementation, derivative, citation, or incorporation of this work, in whole or in part, MUST attribute **Craig Ellrod, Nebulonium, Inc., and Proof Protocol**. See [NOTICE.md](NOTICE.md).
+> Any use, implementation, derivative, citation, or incorporation of this work, in whole or in part, MUST attribute **Craig Thomas Ellrod and Proof Protocol**. See [NOTICE.md](NOTICE.md).
 >
 > Licensed under the Proof Protocol License 1.0 (see LICENSE.md); text Apache License 2.0 under Part A. Original inventor: Craig Thomas Ellrod (ORCID 0009-0004-1058-7666).
 >
-> **Patents.** Patent terms are in [PATENT-SCHEDULE.md](PATENT-SCHEDULE.md). Claims not listed there are reserved by Craig Ellrod and Nebulonium, Inc. Licensing: 1proofprotocol@gmail.com.
+> **Patents.** Patent terms are in [PATENT-SCHEDULE.md](PATENT-SCHEDULE.md). Claims not listed there are reserved by Craig Thomas Ellrod. Licensing: 1proofprotocol@gmail.com.
 >
 > **Acknowledgements:** Tricia Wang and Jim Schwoebel, for the name "No Bros Jail Mode Protocol"; Josh Waldrep (Pipelabs), for his later receipt-based verification work applying proof concepts to agentic AI. See [ACKNOWLEDGEMENTS.md](ACKNOWLEDGEMENTS.md).
 
@@ -104,7 +104,7 @@ Proof of Control and Proof of Efficacy are different claims. Proof of Control es
 
 ## Status
 
-Draft, version 0.8.0, 2026-10-20. Maintained by Nebulonium, Inc. as part of Proof Protocol.
+Draft, version 0.8.0, 2026-10-20. Maintained by Craig Thomas Ellrod as part of Proof Protocol.
 
 Where results live: every commitment, witness root, fingerprint, and result is published to a registry conforming to [PP-SPEC-004](https://github.com/proofprotocol/registry-api-spec), the ProofRegister API. The public instance is [proofregister.com](https://proofregister.com).
 
@@ -116,5 +116,5 @@ Related: Proof Economy Prior Art Declaration, DOI [10.5281/zenodo.21379780](http
 
 ```
 Ellrod, C. (2026). ProofSwarm: The Dead Canary Protocol (PP-SPEC-077), v0.7.4.
-Nebulonium, Inc., Proof Protocol. https://doi.org/10.5281/zenodo.23347914
+Craig Thomas Ellrod, Proof Protocol. https://doi.org/10.5281/zenodo.23347914
 ```
