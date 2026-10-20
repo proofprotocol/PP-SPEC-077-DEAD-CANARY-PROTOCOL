@@ -21,7 +21,8 @@
 | **Ingress Observer** | Passive observer at the release point. Proves delivery. |
 | **Time Anchor** | External public time and randomness source, such as the NIST Randomness Beacon. |
 | **Commitment** | Hash of a canary, its label, expected effect, flags, and a nonce, published before release. |
-| **Reveal** | Publication of commitment preimages after the run, so anyone can check nothing changed. |
+| **Reveal** | After the run: the public reveal (content digests, colors, paths, effects, flags, nonces) so anyone can check nothing changed, and the content reveal to the Holder and Content Verifiers. |
+| **Content Verifier** | A party authorized by the Holder or Issuer to check canary content against its committed digest and confirm each bad canary is a real technique. |
 | **Stopped** | Bad canary died. |
 | **Missed** | Bad canary lived, regardless of any alert. |
 | **Passed** | Good canary lived. |

@@ -45,11 +45,13 @@
 ## Commitment and reveal (SPEC 9)
 
 - [ ] Per-canary commitments computed with SHA-256 or stronger and a fresh nonce of at least 128 bits
-- [ ] Commitments use the `DCP-1:canary` domain tag; Merkle leaves prefixed 0x43, interior nodes 0x45
+- [ ] Content digests use the `DCP-2:content` tag with a fresh content salt of at least 128 bits; commitments use the `DCP-2:canary` tag; Merkle leaves prefixed 0x43, interior nodes 0x45
 - [ ] Merkle root published and bound to a Time Anchor pulse before first release
-- [ ] Order seed derived from the second pulse after `T_commit` via HKDF-SHA256 with info `DCP-1:order`
-- [ ] All non-embargoed preimages revealed after the run
-- [ ] Reveal reproduces the committed root
+- [ ] Order seed derived from the second pulse after `T_commit` via HKDF-SHA256 with info `DCP-2:order`
+- [ ] Public reveal (9.4.1) published for every non-embargoed canary
+- [ ] Content reveal (9.4.2) released to the Holder and any Content Verifier at `holder_only`
+- [ ] Published result states whether, by whom, and when the content reveal was checked (9.4.4)
+- [ ] Public reveal reproduces the committed root
 - [ ] Commitment root, witness root, reveal, fingerprints, results, findings, and coverage map published to a PP-SPEC-004 registry; `proofregister_uri` in every Unit of Proof
 
 ## Proof Witness (SPEC 10)

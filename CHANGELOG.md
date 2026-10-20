@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-10-20 (licensor)
+
+- Licensor, copyright holder, maintainer and author changed from Nebulonium, Inc. (dba HACKERverse) to Craig Thomas Ellrod. Contact: CraigEllrod@gmail.com. Historical statements of what HACKERverse published and when are unchanged.
+- LICENSE.md: ProofStamp named as a Mark; new C9 makes ProofStamp issuance exclusive to the Licensor and excludes it from any transfer to PESA. ETHICS.md section 4 states the same.
+
+## 0.8.0 (2026-10-20)
+- Sealed content reveal (9.1, 9.4): each commitment binds a salted content digest `d_i`. The public reveal carries the digest, color, path, effect, flags and nonce, enough to recompute `R` and adjudicate. Canary content and salt are released at `holder_only` to the Holder and Content Verifiers. Results state who checked the content and when.
+- Canary and order domain-separation tags move to `DCP-2` (record IDs keep `DCP-1:record`); runs committed under `DCP-1:canary` stay valid under their own version.
+- Conformance checklist, FAQ and glossary updated.
+
 ## 2026-10-19
 
 - Adopted the Proof Protocol License 1.0 (LICENSE.md). Specifications: Apache-2.0. Software: proprietary.
@@ -98,7 +108,7 @@
 ## 0.2.2 (2026-10-10)
 - Spec ID set to PP-SPEC-077 in the Proof Protocol series
 - Sole author: Craig Ellrod
-- Patent rights reserved by Craig Ellrod and Nebulonium, Inc.
+- Patent rights reserved by Craig Thomas Ellrod.
 - Acknowledgment: Josh Waldrep, for his receipt-based verification work
 
 ## 0.2.1 (2026-10-10)

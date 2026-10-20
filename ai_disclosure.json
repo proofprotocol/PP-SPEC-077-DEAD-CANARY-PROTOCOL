@@ -1,8 +1,8 @@
 {
   "spec": "PP-SPEC-077:21.15",
   "work": "PP-SPEC-077 ProofSwarm: The Dead Canary Protocol",
-  "work_version": "0.7.4",
-  "date": "2026-10-13",
+  "work_version": "0.8.0",
+  "date": "2026-10-20",
   "human_authors": [
     {
       "name": "Craig Thomas Ellrod",
@@ -58,7 +58,8 @@
       "Applicability to legacy cybersecurity and agentic AI; any provenance",
       "Humans and machines rule; Authorship Disclosure rule",
       "All review and acceptance",
-      "0.7.4: decision to limit the maintainer to editorial responsibility (Section 22), matching PP-SPEC-079 v0.1.2"
+      "0.7.4: decision to limit the maintainer to editorial responsibility (Section 22), matching PP-SPEC-079 v0.1.2",
+      "0.8.0: decision to stop publishing canary content and release it only to the Holder and authorized verifiers"
     ],
     "ai": [
       "Text as written",
@@ -66,7 +67,8 @@
       "Section 21 clause structure",
       "Drift tables, fingerprints, and segment rules",
       "Introduction prose",
-      "0.7.4: text of the Section 22 change and the matching changelog and CONTRIBUTING entries"
+      "0.7.4: text of the Section 22 change and the matching changelog and CONTRIBUTING entries",
+      "0.8.0: sealed-reveal mechanism (salted content digest, DCP-2 tags, Content Verifier role) and its text"
     ]
   },
   "pending_acceptance": [

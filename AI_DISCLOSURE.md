@@ -24,7 +24,17 @@ Method: self-estimated. Shares drafted by the AI from its itemized record of wha
 Machine-readable form: [ai_disclosure.json](ai_disclosure.json), conforming to PP-SPEC-077 Section 21.15. The two forms agree; if they ever differ, the JSON is wrong and must be corrected.
 
 
-## This version (0.7.4, 2026-10-13)
+## This version (0.8.0, 2026-10-20)
+
+**Human:**
+- Decision to stop publishing canary content and release it only to the Holder and authorized verifiers
+- Review and acceptance (pending)
+
+**AI:**
+- Sealed-reveal mechanism: salted content digest, DCP-2 tags, Content Verifier role
+- Text of 9.1, 9.4, the execution step, conformance, FAQ, glossary and changelog entries
+
+## Version 0.7.4 (2026-10-13)
 
 **Human:**
 - Decision to limit the maintainer to editorial responsibility (Section 22), matching PP-SPEC-079 v0.1.2
@@ -70,7 +80,7 @@ AI systems: Anthropic Claude (Fable 5.1, Opus 5.5); OpenAI ChatGPT (banner image
 
 The following originated with Craig Ellrod and reflect his judgment, experience, and decisions:
 
-- The founding thesis: proof of efficacy for security controls, measured by outcome at the point where an attack lands, witnessed by a party independent of the vendor. This thesis predates this document and is the basis of Nebulonium, Inc. (founded 2021) and the Proof Economy Prior Art Declaration (DOI 10.5281/zenodo.21379780).
+- The founding thesis: proof of efficacy for security controls, measured by outcome at the point where an attack lands, witnessed by a party independent of the vendor. This thesis predates this document and is the basis of Craig Thomas Ellrod (founded 2021) and the Proof Economy Prior Art Declaration (DOI 10.5281/zenodo.21379780).
 - The dead canary method: a blind mix of real malicious and benign actions, committed in advance, released into the control, and adjudicated by what actually happened rather than what the control reported.
 - The core concepts and their names: good and bad canaries, the Proof Swarm, the Proof Witness, the Ingress Observer, the Effect Point, the Time Anchor, the Unit of Proof, wild canaries, embargoed canaries, holdout canaries, black holes, silent drift, Bounded Mode and Production Stream Mode.
 - The assurance ladder of verification, validation, and proof, and the rule that a control's own logs are verification evidence and never proof.
@@ -108,7 +118,7 @@ Nothing in this file changes the terms in NOTICE.md or LICENSE.md.
 This file will be updated with each release. If a future version contains material drafted without AI assistance, or AI contributions of a different kind, this file will say so.
 
 Craig Ellrod
-Nebulonium, Inc., Proof Protocol
+Craig Thomas Ellrod, Proof Protocol
 2026-10-10
 
 ## 2026-10-19: License and ethics change

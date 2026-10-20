@@ -1,7 +1,7 @@
 # Review Disclosure
 
 Work: PP-SPEC-077 ProofSwarm: The Dead Canary Protocol
-Licensor: Nebulonium, Inc., dba HACKERverse (Proof Protocol)
+Licensor: Craig Thomas Ellrod (Proof Protocol)
 
 ## Declaration
 

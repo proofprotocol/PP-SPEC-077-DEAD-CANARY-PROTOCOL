@@ -2,7 +2,7 @@
 
 ## Reporting a flaw in the protocol
 
-If you find a weakness in the Dead Canary Protocol itself (a way to game results, leak labels, defeat commitments, or compromise witness independence), report it privately to the maintainer, Nebulonium, Inc., before public disclosure. Open a GitHub security advisory on this repository or contact the maintainer directly.
+If you find a weakness in the Dead Canary Protocol itself (a way to game results, leak labels, defeat commitments, or compromise witness independence), report it privately to the maintainer, Craig Thomas Ellrod, before public disclosure. Open a GitHub security advisory on this repository or contact the maintainer directly.
 
 ## Embargoed canaries
 

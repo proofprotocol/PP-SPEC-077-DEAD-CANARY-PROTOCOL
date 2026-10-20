@@ -2,8 +2,8 @@
 
 **Version:** 1.0
 **Effective Date:** October 19, 2026
-**Licensor:** Nebulonium, Inc., a Delaware corporation ("Licensor")
-**Contact:** craig@hackerverse.ai
+**Licensor:** Craig Thomas Ellrod, an individual ("Licensor")
+**Contact:** CraigEllrod@gmail.com
 
 This License has four parts. Part A covers the open Specifications. Part B covers the closed Software, in both the Free Tier and the Commercial Edition. Part C covers Proofs, the Ledger, the Marks and the Code of Ethics. Part D contains general terms that apply to all parts.
 
@@ -29,7 +29,7 @@ This License has four parts. Part A covers the open Specifications. Part B cover
 
 **"Ledger"** means Licensor's append-only, tamper-evident record of test runs and Proofs.
 
-**"Marks"** means the names, logos and badges of Licensor, including "Proof Protocol", "Proof Controller" and any proof or conformance mark.
+**"Marks"** means the names, logos and badges of Licensor, including "Proof Protocol", "Proof Controller", "ProofStamp" and any proof or conformance mark.
 
 **"Conforming Implementation"** means an implementation that implements all mandatory (MUST) requirements of a specific version of a Specification and passes that version's published conformance suite.
 
@@ -69,7 +69,7 @@ The Specifications are licensed under the Apache License, Version 2.0 (`SPDX-Lic
 
 (c) You may fork and modify the Specifications, but a modified version must not use the Marks or any confusingly similar name, and must state clearly that it is not the original Specification.
 
-(d) Consistent with the Code of Ethics principle that the body writing specifications does not certify, Licensor may transfer administration of conformance testing and conformance marks to an independent standards body, such as the Proof Economy Standards Alliance (PESA). On transfer, references to Licensor in A3(b) mean that body.
+(d) Consistent with the Code of Ethics principle that the body writing specifications does not certify, Licensor may transfer administration of conformance testing and conformance marks to an independent standards body, such as the Proof Economy Standards Alliance (PESA). On transfer, references to Licensor in A3(b) mean that body. Issuance of ProofStamps is not part of any such transfer and remains with Licensor under C9.
 
 ### A4. Contributions
 
@@ -178,6 +178,13 @@ You may use the Marks only as permitted by the Mark Usage Policy. Licensor may s
 - (c) Licensor is bound by the Code of Ethics in issuing Proofs, operating the Ledger and administering the Marks. Anyone may report a suspected breach by Licensor as stated in ETHICS.md.
 - (d) Rights in the Specifications under the Apache License, Version 2.0 are not conditioned on the Code of Ethics and cannot be terminated for a breach of it. That limit does not extend to use of the Marks under A3.
 
+
+### C9. ProofStamp
+
+- (a) Only Licensor, or a party Licensor authorizes in writing, may issue a ProofStamp.
+- (b) A Conforming Implementation may produce its own test records and Proofs, but must not call them ProofStamps, display the ProofStamp mark, or present them as issued or endorsed by Licensor.
+- (c) A ProofStamp is valid only if its authorization token verifies against the issuer public key Licensor publishes.
+
 ---
 
 ## PART D. GENERAL
@@ -220,7 +227,7 @@ If there is a conflict: (1) a signed Order Form controls over Parts B through D 
 
 ### D10. Entire Agreement and Miscellaneous
 
-This License, together with any Order Form and the documents it references, is the entire agreement on its subject and supersedes all prior licenses Licensor issued for the same Software and Specifications. All prior versions of the Specifications, including every version previously published under any other license, are licensed under the Apache License, Version 2.0, effective as of their original publication date, and Licensor no longer offers them under any prior license. All prior versions of the Software remain proprietary under Part B. If any provision is unenforceable, the rest remains in effect. A waiver must be in writing. Notices to Licensor go to craig@hackerverse.ai.
+This License, together with any Order Form and the documents it references, is the entire agreement on its subject and supersedes all prior licenses Licensor issued for the same Software and Specifications. All prior versions of the Specifications, including every version previously published under any other license, are licensed under the Apache License, Version 2.0, effective as of their original publication date, and Licensor no longer offers them under any prior license. All prior versions of the Software remain proprietary under Part B. If any provision is unenforceable, the rest remains in effect. A waiver must be in writing. Notices to Licensor go to CraigEllrod@gmail.com.
 
 ### D11. Versions
 
@@ -255,6 +262,6 @@ Licensor may publish new versions of this License. Each Specification version an
 
 ---
 
-*AI disclosure: this License was drafted with AI assistance (Claude, Anthropic) at the direction of Craig Thomas Ellrod and is subject to his human review before adoption.*
+*AI disclosure: this License was drafted with AI assistance (Claude, Anthropic) at the direction of Craig Thomas Ellrod and is subject to their human review before adoption.*
 
-Copyright (c) 2026 Nebulonium, Inc. All rights reserved, except as licensed under Part A.
+Copyright (c) 2026 Craig Thomas Ellrod. All rights reserved, except as licensed under Part A.
