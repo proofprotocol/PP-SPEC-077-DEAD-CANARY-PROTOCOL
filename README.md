@@ -110,13 +110,13 @@ Draft, version 0.8.2, 2026-10-23. Maintained by Craig Thomas Ellrod as part of P
 
 Where results live: every commitment, witness root, fingerprint, and result is published to a registry conforming to [PP-SPEC-004](https://github.com/proofprotocol/registry-api-spec), the ProofRegister API. The public instance is [proofregister.com](https://proofregister.com).
 
-Archived on Zenodo: v0.7.4, DOI [10.5281/zenodo.23347914](https://doi.org/10.5281/zenodo.23347914). All versions: [10.5281/zenodo.23285060](https://doi.org/10.5281/zenodo.23285060).
+Archived on Zenodo: v0.8.2, DOI [10.5281/zenodo.23607731](https://doi.org/10.5281/zenodo.23607731). All versions: [10.5281/zenodo.23285060](https://doi.org/10.5281/zenodo.23285060).
 
-Related: Proof Economy Prior Art Declaration, DOI [10.5281/zenodo.21379780](https://doi.org/10.5281/zenodo.21379780). PP-SPEC-078, No Bros Jail Mode Protocol, DOI [10.5281/zenodo.23347986](https://doi.org/10.5281/zenodo.23347986), builds on this specification.
+Related: Proof Economy Prior Art Declaration, DOI [10.5281/zenodo.21379780](https://doi.org/10.5281/zenodo.21379780). PP-SPEC-078, No Bros Jail Mode Protocol, DOI [10.5281/zenodo.23347986](https://doi.org/10.5281/zenodo.23347986), builds on this specification. PP-SPEC-081, Reproof: The Umpire Assay Protocol, DOI [10.5281/zenodo.23607721](https://doi.org/10.5281/zenodo.23607721).
 
 ## Cite
 
 ```
-Ellrod, C. (2026). ProofSwarm: The Dead Canary Protocol (PP-SPEC-077), v0.7.4.
-Craig Thomas Ellrod, Proof Protocol. https://doi.org/10.5281/zenodo.23347914
+Ellrod, C. (2026). ProofSwarm: The Dead Canary Protocol (PP-SPEC-077), v0.8.2.
+Craig Thomas Ellrod, Proof Protocol. https://doi.org/10.5281/zenodo.23607731
 ```
