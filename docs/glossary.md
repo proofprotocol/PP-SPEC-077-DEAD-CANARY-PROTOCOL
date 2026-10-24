@@ -4,6 +4,7 @@
 
 | Term | Meaning |
 |---|---|
+| **Canary** | One unit of committed test traffic or test action released through a control. Not a decoy system, honeypot, honeytoken, stack canary, or warrant canary. |
 | **Bad Canary** | A canary carrying a real adversary technique (MITRE ATT&CK or ATLAS) that produces a defined malicious effect if not stopped. |
 | **Good Canary** | A canary performing a legitimate action that produces a defined benign effect if not stopped. |
 | **Boundary Good Canary** | A good canary built to look like a bad one. Measures false blocks where they actually happen. |

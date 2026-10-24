@@ -81,6 +81,7 @@ The key words MUST, MUST NOT, REQUIRED, SHALL, SHALL NOT, SHOULD, SHOULD NOT, RE
 - **Provider:** The party that builds, maintains, sells, or operates the DUT: a commercial vendor, an open source project, a managed service, a cloud platform, or an internal team. Every rule that constrains the Provider applies to all of them equally.
 - **Implementor:** The party that operates, or intends to operate, the SUT in which the DUT is deployed, and for whose benefit a run is usually commissioned.
 - **Issuer:** The party that generates the Proof Swarm, holds the labels, and publishes commitments. The Issuer MUST NOT be the Provider.
+- **Canary:** One unit of committed test traffic or test action released through a control under this specification. It is not a decoy system, honeypot, honeytoken, stack canary, or warrant canary.
 - **Bad Canary:** A canary that executes a real adversary technique (for example, a MITRE ATT&CK or ATLAS TTP instance) and, if unstopped, produces a defined malicious effect.
 - **Good Canary:** A canary that performs a legitimate action and, if unstopped, produces a defined benign effect.
 - **Proof Swarm:** The full, ordered set of good and bad canaries for one run. Called Flock in versions 0.2.0 to 0.7.1.
