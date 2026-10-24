@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.8.1 (2026-10-23)
+- 4.1 and 18.1.6: the Provider of the DUT MUST NOT occupy any Integration Point. 0.8.0 listed IP-1, 3, 5, 6, 7, 9 only, leaving IP-8 Adjudicator, IP-10 Signer / Key Custody, IP-4 Ingress Observer, and IP-2 Time Anchor (covered only by 4.1) unlisted.
+- 21.16: independent reproduction of a run is specified in PP-SPEC-081.
+
 ## 2026-10-20 (licensor)
 
 - Licensor, copyright holder, maintainer and author changed from Nebulonium, Inc. (dba HACKERverse) to Craig Thomas Ellrod. Contact: CraigEllrod@gmail.com. Historical statements of what HACKERverse published and when are unchanged.

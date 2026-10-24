@@ -19,8 +19,8 @@
 | Field | Value |
 |---|---|
 | Spec ID | PP-SPEC-077 |
-| Version | 0.8.0 (Draft) |
-| Date | 2026-10-20 |
+| Version | 0.8.1 (Draft) |
+| Date | 2026-10-23 |
 | Status | Draft for public record |
 | Maintainer | Craig Thomas Ellrod (Proof Protocol) |
 
@@ -157,7 +157,7 @@ A log entry, alert, or telemetry record produced by the DUT or the Provider is v
 
 ## 4. Roles and Independence
 
-4.1. The Provider MUST NOT generate canaries, hold labels, operate the Proof Witness, or operate the Time Anchor.
+4.1. The Provider MUST NOT generate canaries, hold labels, operate the Proof Witness, operate the Time Anchor, adjudicate, hold signing keys for any record of the run, or occupy any other Integration Point (18.1.6).
 
 4.2. The Proof Witness MUST be operated by a party other than the Provider. It SHOULD be operated by the customer or a third party rather than the Issuer.
 
@@ -704,7 +704,7 @@ Every component in this specification will, in practice, be supplied by a differ
 
 18.1.5. **Blindness.** No component other than the Issuer (IP-1) holds labels or colors before reveal. A component that can infer labels from any input it receives is non-conforming.
 
-18.1.6. **Separation.** The following seams MUST be occupied by different parties: IP-1 Issuer and IP-6 Proof Witness; IP-6 Proof Witness and the Provider of the DUT; IP-2 Time Anchor and any other seam. The Provider of the DUT MUST NOT occupy IP-1, IP-3, IP-5, IP-6, IP-7, or IP-9.
+18.1.6. **Separation.** The following seams MUST be occupied by different parties: IP-1 Issuer and IP-6 Proof Witness; IP-6 Proof Witness and the Provider of the DUT; IP-2 Time Anchor and any other seam. The Provider of the DUT MUST NOT occupy any Integration Point, including IP-8 Adjudicator and IP-10 Signer / Key Custody. A Provider that supplies a component for a different DUT is a component supplier for that run, not the Provider.
 
 18.1.7. **Transport neutrality.** This specification defines what crosses each seam, not how. Records MAY move by API, message bus, file, or signed log. A reference transport is given in the reference implementation, not here.
 
@@ -905,7 +905,7 @@ This section governs the form of every record this specification produces: Units
 
 ### 21.16. Reserved
 
-Campaign-level chains across techniques and additional witness requirements remain reserved for future revisions by the maintainer. Nothing in this section assigns value to any record.
+Campaign-level chains across techniques and additional witness requirements remain reserved for future revisions by the maintainer. Independent reproduction of a run by other parties is specified in PP-SPEC-081, Reproof: The Umpire Assay Protocol. Nothing in this section assigns value to any record.
 
 ## 22. Interpretation
 
@@ -932,3 +932,4 @@ Craig Thomas Ellrod, as maintainer of Proof Protocol, is responsible for the edi
 | 0.7.3 | 2026-10-12 | Proof is attributed at four levels: SUT, DUT, CUT, and AUT (2.2). 2.2.5 rewritten: in this specification the AUT is the path an attack travels; outcomes caused by the agent's own conduct are attributed to the AUT under PP-SPEC-078. |
 | 0.7.4 | 2026-10-13 | Section 22 limited to editorial responsibility: conformance is determined from the records against the normative text, not decided by the maintainer. |
 | 0.8.0 | 2026-10-20 | Sealed content reveal: commitments bind a salted content digest; canary content is revealed to the Holder and Content Verifiers, not publicly by default (9.1, 9.4). Canary and order tags move to DCP-2. |
+| 0.8.1 | 2026-10-23 | The Provider of the DUT occupies no Integration Point (4.1, 18.1.6); closes IP-8 Adjudicator, IP-10 Signer, IP-4, and IP-2, which 0.8.0 did not list. 21.16 points to PP-SPEC-081 for independent reproduction. |

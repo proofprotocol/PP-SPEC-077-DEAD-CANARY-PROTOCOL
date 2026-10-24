@@ -104,7 +104,7 @@ Proof of Control and Proof of Efficacy are different claims. Proof of Control es
 
 ## Status
 
-Draft, version 0.8.0, 2026-10-20. Maintained by Craig Thomas Ellrod as part of Proof Protocol.
+Draft, version 0.8.1, 2026-10-23. Maintained by Craig Thomas Ellrod as part of Proof Protocol.
 
 Where results live: every commitment, witness root, fingerprint, and result is published to a registry conforming to [PP-SPEC-004](https://github.com/proofprotocol/registry-api-spec), the ProofRegister API. The public instance is [proofregister.com](https://proofregister.com).
 

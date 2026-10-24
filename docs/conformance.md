@@ -6,6 +6,7 @@
 
 - [ ] Issuer is not the Provider
 - [ ] Provider does not generate canaries, hold labels, run the Proof Witness, or run the Time Anchor
+- [ ] Provider of the DUT occupies no Integration Point, including Adjudicator (IP-8) and Signer (IP-10)
 - [ ] Proof Witness operated by a party other than the Provider
 - [ ] DUT cannot observe, delay, modify, or suppress Proof Witness records
 - [ ] All parties with a financial interest disclosed in the run record

@@ -1,8 +1,8 @@
 {
   "spec": "PP-SPEC-077:21.15",
   "work": "PP-SPEC-077 ProofSwarm: The Dead Canary Protocol",
-  "work_version": "0.8.0",
-  "date": "2026-10-20",
+  "work_version": "0.8.1",
+  "date": "2026-10-23",
   "human_authors": [
     {
       "name": "Craig Thomas Ellrod",
