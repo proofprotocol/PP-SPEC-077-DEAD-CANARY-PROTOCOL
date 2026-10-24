@@ -4,6 +4,8 @@
 
 | Term | Meaning |
 |---|---|
+| **Composition Manifest** | Counts of canaries per technique class, Color, target level, and Effect Point type; committed before release, revealed publicly, so a run can be reproven. |
+| **Reproof** | Independent re-execution of a run by parties who had no part in it, compared under limits fixed in advance (PP-SPEC-081). |
 | **Canary** | One unit of committed test traffic or test action released through a control. Not a decoy system, honeypot, honeytoken, stack canary, or warrant canary. |
 | **Bad Canary** | A canary carrying a real adversary technique (MITRE ATT&CK or ATLAS) that produces a defined malicious effect if not stopped. |
 | **Good Canary** | A canary performing a legitimate action that produces a defined benign effect if not stopped. |

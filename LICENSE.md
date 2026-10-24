@@ -1,13 +1,13 @@
-# Proof Protocol License 1.0
+# Proof Protocol License 1.1
 
-**Version:** 1.0
-**Effective Date:** October 19, 2026
+**Version:** 1.1 (supersedes 1.0 of October 19, 2026)
+**Effective Date:** October 23, 2026
 **Licensor:** Craig Thomas Ellrod, an individual ("Licensor")
 **Contact:** CraigEllrod@gmail.com
 
 This License has four parts. Part A covers the open Specifications. Part B covers the closed Software, in both the Free Tier and the Commercial Edition. Part C covers Proofs, the Ledger, the Marks and the Code of Ethics. Part D contains general terms that apply to all parts.
 
-`SPDX-License-Identifier: LicenseRef-ProofProtocol-1.0` (this License as a whole). Specifications: `Apache-2.0`. Software: `LicenseRef-ProofProtocol-Proprietary`.
+`SPDX-License-Identifier: LicenseRef-ProofProtocol-1.1` (this License as a whole). Specifications: `CC-BY-4.0` for versions released on or after October 23, 2026; `Apache-2.0` for earlier versions (A6). Software: `LicenseRef-ProofProtocol-Proprietary`.
 
 ---
 
@@ -47,7 +47,7 @@ This License has four parts. Part A covers the open Specifications. Part B cover
 
 ### A1. License
 
-The Specifications are licensed under the Apache License, Version 2.0 (`SPDX-License-Identifier: Apache-2.0`). The full text is in LICENSE-APACHE-2.0.md and at https://www.apache.org/licenses/LICENSE-2.0. Nothing in Parts B through D restricts Your rights in the Specifications under the Apache License, Version 2.0, except as stated in A3 for the Marks.
+The text of the Specifications is licensed under the Creative Commons Attribution 4.0 International License (`SPDX-License-Identifier: CC-BY-4.0`). The license is in LICENSE-CC-BY-4.0.md and its legal code at https://creativecommons.org/licenses/by/4.0/legalcode. As that license states in its Section 2(b)(2), it grants no patent or trademark rights. Patent rights are governed only by A2 and PATENT-SCHEDULE.md, and rights in the Marks only by A3. Nothing in Parts B through D restricts Your rights in the Specification text under CC BY 4.0.
 
 ### A2. Patent Commitment
 
@@ -59,11 +59,11 @@ The Specifications are licensed under the Apache License, Version 2.0 (`SPDX-Lic
 
 (d) **Schedule.** PATENT-SCHEDULE.md and its machine-readable copy patent_schedule.json list the Committed Claims and Reserved Claims for each Specification version. If they conflict, PATENT-SCHEDULE.md controls.
 
-(e) **Supplement.** This commitment is in addition to any patent license granted by the Apache License, Version 2.0.
+(e) **Sole patent terms.** For Specification versions licensed under CC BY 4.0, this commitment is the only patent permission Licensor grants. No patent license is granted by implication, estoppel or otherwise. For earlier versions licensed under the Apache License, Version 2.0, A6 applies.
 
 ### A3. Marks and Conformance
 
-(a) The Apache License, Version 2.0 grants no rights in the Marks.
+(a) Neither CC BY 4.0 nor the Apache License, Version 2.0 grants any rights in the Marks.
 
 (b) You may state that an implementation is "Proof Protocol Conformant", or use any conformance mark, only if it is a Conforming Implementation and only as permitted by the Mark Usage Policy.
 
@@ -73,7 +73,7 @@ The Specifications are licensed under the Apache License, Version 2.0 (`SPDX-Lic
 
 ### A4. Contributions
 
-(a) Contributions to the Specifications are made under the Apache License, Version 2.0, as provided in its Section 5.
+(a) Contributions to the Specification text are made under CC BY 4.0. A contribution grants no patent license except the commitment in A4(c).
 
 (b) Each contribution must carry a Developer Certificate of Origin sign-off (`Signed-off-by:`).
 
@@ -83,7 +83,15 @@ The Specifications are licensed under the Apache License, Version 2.0 (`SPDX-Lic
 
 ### A5. Attribution
 
-NOTICE.md, which must be retained in all redistributions as required by the Apache License, Version 2.0, identifies Craig Thomas Ellrod (ORCID iD 0009-0004-1058-7666) as the original inventor and author of the Proof Protocol, and records the Zenodo DOI for each Specification. This attribution may not be removed or altered. Later contributors may be added beneath it.
+NOTICE.md, which provides the attribution CC BY 4.0 Section 3(a) requires and must be retained in all redistributions, identifies Craig Thomas Ellrod (ORCID iD 0009-0004-1058-7666) as the original inventor and author of the Proof Protocol, and records the Zenodo DOI for each Specification. This attribution may not be removed or altered. Later contributors may be added beneath it.
+
+### A6. Earlier Versions
+
+(a) Specification versions released before October 23, 2026 were released under the Apache License, Version 2.0 (LICENSE-APACHE-2.0.md). Rights already granted in those versions are not withdrawn.
+
+(b) Versions released on or after October 23, 2026 are licensed under CC BY 4.0 only. Material first published in such a version, including any material that also appears in an earlier version, is not licensed under the Apache License, Version 2.0 by reason of its publication in the later version.
+
+(c) Each Specification's CHANGELOG.md names the first version licensed under CC BY 4.0.
 
 ---
 
@@ -176,7 +184,7 @@ You may use the Marks only as permitted by the Mark Usage Policy. Licensor may s
 - (a) Your use of the Software, Proofs, the Ledger and the Marks is conditioned on compliance with the Code of Ethics in ETHICS.md.
 - (b) If You materially breach the Code of Ethics, Licensor may, after written notice: revoke affected Proofs under C3; suspend or end Your use of the Marks under C7; suspend or terminate Your rights under Part B; and refer the matter to PESA or another independent body named in ETHICS.md.
 - (c) Licensor is bound by the Code of Ethics in issuing Proofs, operating the Ledger and administering the Marks. Anyone may report a suspected breach by Licensor as stated in ETHICS.md.
-- (d) Rights in the Specifications under the Apache License, Version 2.0 are not conditioned on the Code of Ethics and cannot be terminated for a breach of it. That limit does not extend to use of the Marks under A3.
+- (d) Rights in the Specification text under CC BY 4.0, or under the Apache License, Version 2.0 for earlier versions, are not conditioned on the Code of Ethics and cannot be terminated for a breach of it. That limit does not extend to use of the Marks under A3.
 
 
 ### C9. ProofStamp
@@ -223,11 +231,11 @@ You may not assign this License without Licensor's prior written consent. Licens
 
 ### D9. Order of Precedence
 
-If there is a conflict: (1) a signed Order Form controls over Parts B through D for the Commercial Edition; (2) this License controls over the Mark Usage Policy and Free Tier documentation; and (3) the Apache License, Version 2.0 controls for the Specifications, except as stated in A2 and A3.
+If there is a conflict: (1) a signed Order Form controls over Parts B through D for the Commercial Edition; (2) this License controls over the Mark Usage Policy and Free Tier documentation; and (3) CC BY 4.0 controls for the Specification text, and the Apache License, Version 2.0 for earlier versions under A6, except that patent rights are governed only by A2 and rights in the Marks only by A3.
 
 ### D10. Entire Agreement and Miscellaneous
 
-This License, together with any Order Form and the documents it references, is the entire agreement on its subject and supersedes all prior licenses Licensor issued for the same Software and Specifications. All prior versions of the Specifications, including every version previously published under any other license, are licensed under the Apache License, Version 2.0, effective as of their original publication date, and Licensor no longer offers them under any prior license. All prior versions of the Software remain proprietary under Part B. If any provision is unenforceable, the rest remains in effect. A waiver must be in writing. Notices to Licensor go to CraigEllrod@gmail.com.
+This License, together with any Order Form and the documents it references, is the entire agreement on its subject and supersedes all prior licenses Licensor issued for the same Software and Specifications. Specification versions released before October 23, 2026 remain licensed under the Apache License, Version 2.0 as stated in A6; versions released on or after that date are licensed under CC BY 4.0. All prior versions of the Software remain proprietary under Part B. If any provision is unenforceable, the rest remains in effect. A waiver must be in writing. Notices to Licensor go to CraigEllrod@gmail.com.
 
 ### D11. Versions
 
@@ -240,7 +248,8 @@ Licensor may publish new versions of this License. Each Specification version an
 | Document | Purpose |
 |---|---|
 | LICENSE.md | This License |
-| LICENSE-APACHE-2.0.md | Apache License, Version 2.0, full text (Specifications) |
+| LICENSE-CC-BY-4.0.md | CC BY 4.0 (Specification text, current and future versions) |
+| LICENSE-APACHE-2.0.md | Apache License, Version 2.0, full text (Specification versions before October 23, 2026, A6) |
 | ETHICS.md | Proof Economy Code of Ethics and Licensor ethics commitments |
 | NOTICE.md | Inventor attribution, ORCID, Zenodo DOIs |
 | PATENT-SCHEDULE.md / patent_schedule.json | Committed and Reserved Claims per Specification version |
@@ -256,8 +265,9 @@ Licensor may publish new versions of this License. Each Specification version an
 
 | Material | Identifier |
 |---|---|
-| This License as a whole | `LicenseRef-ProofProtocol-1.0` |
-| Specifications, schemas, test vectors | `Apache-2.0` |
+| This License as a whole | `LicenseRef-ProofProtocol-1.1` |
+| Specification text, schemas, test vectors (on or after October 23, 2026) | `CC-BY-4.0` |
+| Specification versions before October 23, 2026 | `Apache-2.0` |
 | All Software (Free Tier and Commercial Edition) | `LicenseRef-ProofProtocol-Proprietary` |
 
 ---

@@ -16,7 +16,7 @@ This applies to standards bodies, working groups, consortia, open source project
 
 ## License
 
-Proof Protocol License 1.0; specification text Apache License 2.0 under Part A. See LICENSE.md. Original inventor: Craig Thomas Ellrod (ORCID 0009-0004-1058-7666).
+Proof Protocol License 1.1; specification text CC BY 4.0 under Part A from version 0.8.2; earlier versions Apache License 2.0 (Part A6). See LICENSE.md. Original inventor: Craig Thomas Ellrod (ORCID 0009-0004-1058-7666).
 
 ## Patents
 
@@ -39,8 +39,8 @@ Craig Thomas Ellrod is the original inventor and author of the Proof Protocol (O
 
 ## License
 
-Licensed under the Proof Protocol License 1.0 (LICENSE.md). Specifications are Apache-2.0 (LICENSE-APACHE-2.0.md). Software is proprietary to Craig Thomas Ellrod.
+Licensed under the Proof Protocol License 1.1 (LICENSE.md). Specification text is CC-BY-4.0 (LICENSE-CC-BY-4.0.md) from version 0.8.2; earlier versions are Apache-2.0 (LICENSE-APACHE-2.0.md). Software is proprietary to Craig Thomas Ellrod.
 
-All prior versions of the specifications in this repository, including every earlier commit, release and archive, are licensed under the Apache License, Version 2.0, effective as of their original publication date. Licensor no longer offers them under any prior license.
+Versions of the specification in this repository released before 0.8.2 remain licensed under the Apache License, Version 2.0. Version 0.8.2 and later are licensed under CC BY 4.0, which grants no patent rights.
 
 Copyright (c) 2026 Craig Thomas Ellrod.
