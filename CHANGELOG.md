@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.8.2 (2026-10-23)
+- Section 3: proof is reproducible; verifying a record is not reproving it; reproof under PP-SPEC-081.
+- 9.8 Composition Manifest: counts per technique class, Color, target level, and Effect Point type, committed with `R` (tag `DCP-2:composition`), revealed at `public`.
+- 11.7 Reproducibility duty: a Conformant run publishes what a Check Assay needs; no contract may prevent a Check Assay of a Registered run.
+- Section 20: single-run error.
+- 21.8.3: Reproof Status is computed from the Registry, never stored in a record.
+- License: Proof Protocol License 1.1. Specification text is CC BY 4.0 from this version (LICENSE-CC-BY-4.0.md), which grants no patent rights; patents only under LICENSE.md Part A2 and PATENT-SCHEDULE.md. Versions before 0.8.2 remain Apache-2.0 (Part A6).
+
 ## 0.8.1 (2026-10-23)
 - 4.1 and 18.1.6: the Provider of the DUT MUST NOT occupy any Integration Point. 0.8.0 listed IP-1, 3, 5, 6, 7, 9 only, leaving IP-8 Adjudicator, IP-10 Signer / Key Custody, IP-4 Ingress Observer, and IP-2 Time Anchor (covered only by 4.1) unlisted.
 - 21.16: independent reproduction of a run is specified in PP-SPEC-081.

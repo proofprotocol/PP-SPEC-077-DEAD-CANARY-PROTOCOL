@@ -24,7 +24,18 @@ Method: self-estimated. Shares drafted by the AI from its itemized record of wha
 Machine-readable form: [ai_disclosure.json](ai_disclosure.json), conforming to PP-SPEC-077 Section 21.15. The two forms agree; if they ever differ, the JSON is wrong and must be corrected.
 
 
-## This version (0.8.1, 2026-10-23)
+## This version (0.8.2, 2026-10-23)
+
+**Human (Craig Ellrod):**
+- Originated reproof and directed that 077 to 080 carry it
+- Decision to publish, and to license the text under CC BY 4.0
+- Review and acceptance (pending)
+
+**AI (Claude Opus 5.5), at the author's direction:**
+- Found that the public reveal did not carry enough to reproduce a run; proposed the Composition Manifest
+- Text of Section 3 line, 9.8, 11.7, the Section 20 entry, 21.8.3, and the license changes
+
+## Version 0.8.1 (2026-10-23)
 
 **Human:**
 - Decision to close the Provider seam gap and link PP-SPEC-081

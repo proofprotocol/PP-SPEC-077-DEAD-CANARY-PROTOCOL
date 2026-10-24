@@ -6,6 +6,8 @@
 
 - [ ] Issuer is not the Provider
 - [ ] Provider does not generate canaries, hold labels, run the Proof Witness, or run the Time Anchor
+- [ ] Composition Manifest committed with `R` and revealed publicly; counts match the public reveal (9.8)
+- [ ] Everything a Check Assay needs is published (11.7); no contract prevents a Check Assay of a Registered run
 - [ ] Provider of the DUT occupies no Integration Point, including Adjudicator (IP-8) and Signer (IP-10)
 - [ ] Proof Witness operated by a party other than the Provider
 - [ ] DUT cannot observe, delay, modify, or suppress Proof Witness records

@@ -8,7 +8,7 @@
 >
 > Any use, implementation, derivative, citation, or incorporation of this specification, in whole or in part, MUST attribute **Craig Thomas Ellrod and Proof Protocol**. This requirement applies to standards bodies, working groups, consortia, and commercial implementations.
 >
-> This specification is licensed under the Proof Protocol License 1.0 (see LICENSE.md); text Apache License 2.0 under Part A. Original inventor: Craig Thomas Ellrod (ORCID 0009-0004-1058-7666).
+> This specification is licensed under the Proof Protocol License 1.1 (see LICENSE.md); text CC BY 4.0 under Part A, which grants no patent rights. Original inventor: Craig Thomas Ellrod (ORCID 0009-0004-1058-7666).
 >
 > **Patents.** Patent terms are in [PATENT-SCHEDULE.md](PATENT-SCHEDULE.md). Claims not listed there are reserved by Craig Thomas Ellrod. Licensing: 1proofprotocol@gmail.com.
 >
@@ -19,7 +19,7 @@
 | Field | Value |
 |---|---|
 | Spec ID | PP-SPEC-077 |
-| Version | 0.8.1 (Draft) |
+| Version | 0.8.2 (Draft) |
 | Date | 2026-10-23 |
 | Status | Draft for public record |
 | Maintainer | Craig Thomas Ellrod (Proof Protocol) |
@@ -155,6 +155,8 @@ Proof Protocol distinguishes three tiers of assurance. DCP is a method for the p
 | Proof | A sealed, witnessed, and anchored record of outcome under adversarial conditions, built from independent evidence by a method the party responsible for the control cannot steer. Evidence is not proof; proof contains evidence. |
 
 A log entry, alert, or telemetry record produced by the DUT or the Provider is verification evidence. It MUST NOT be presented as proof under this specification.
+
+Proof is reproducible. Verifying a record establishes that the record is the one that was made; it does not establish that the outcome would recur. Independent reproduction of a run by parties who had no part in it, its comparison, and its settlement are specified in PP-SPEC-081, Reproof: The Umpire Assay Protocol. A run that cannot be reproven under PP-SPEC-081 is a demonstration, not proof (Proof Economy Prior Art Declaration, Category 4a).
 
 ## 4. Roles and Independence
 
@@ -314,6 +316,8 @@ where `H` is SHA-256 or stronger, `"DCP-2:content"` and `"DCP-2:canary"` are fix
 
 9.7. **Registration precedes publication.** A run is Conformant only if its result record is registered under 9.6 before any result derived from it is published or cited, and the Registry Receipt (21.5) is included in the published result. A run that is executed under this specification but not registered MAY be described as "executed under PP-SPEC-077". It MUST NOT be described as Conformant and it produces no Units of Proof (21.13).
 
+9.8. **Composition Manifest.** Before the first release, the Issuer MUST compute a Composition Manifest: the count of canaries in each cell of technique class, Color, target level (2.2), and Effect Point type, where technique class is the catalog identifier the Technology Profile uses (for example a MITRE ATT&CK or ATLAS technique identifier), never a variant, payload family, or mutation. The Issuer MUST bind `H("DCP-2:composition" || canonical_form(manifest))` into the commitment published with `R` (9.2) and MUST publish the manifest itself at Disclosure Level `public` with the public reveal (9.4.1). The manifest is sealed until reveal so that 8.3 holds; after reveal it is public so that the run can be reproven (11.7). A reveal whose manifest does not reproduce its committed hash, or whose counts do not equal the counts of the public reveal, is invalid.
+
 ## 10. Proof Witness Placement
 
 10.1. **Outcome position.** The Proof Witness MUST observe the Effect Point of each canary. Observation of the network path or the DUT alone does not satisfy this requirement.
@@ -385,6 +389,8 @@ where `H` is SHA-256 or stronger, `"DCP-2:content"` and `"DCP-2:canary"` are fix
 `uop_id` is the Record ID (21.1). `signatures`, `proofregister_uri`, and `registry_receipt` are registration fields and are excluded from the hash that produces `uop_id`.
 
 11.6. **Claim Findings.** A Gold canary adjudicated Missed MUST be recorded as a Claim Finding: the cited Provider claim, the technique, the variant, the DUT Fingerprint, and the Unit of Proof. Claim Findings MUST be published with the run. A Gold canary adjudicated Stopped is a Unit of Proof like any other bad canary and additionally confirms witness and path function for that run.
+
+11.7. **Reproducibility duty.** A run is Conformant only if it publishes, at Disclosure Level `public` or `holder_only` with the Holder's consent to disclose to a Commissioner under PP-SPEC-081, everything an independent Check Assay needs to hold the Split constant: the Composition Manifest (9.8), the DUT, CUT, and SUT Fingerprints (15.2), the Witness Coverage Map (Section 14), the Claim Sheet reference for Gold canaries, the declared run thresholds (11.3), and the Technology Profile and its version. It MUST NOT be required to publish canary content, nonces before reveal, holdout contents, or embargoed details. A Holder MUST NOT contract with any party to prevent a Check Assay of a Registered run.
 
 ## 12. Run Metrics
 
@@ -767,6 +773,7 @@ A conforming run proceeds as follows:
 - **Quiet updates:** A Provider could change the DUT between runs. Mitigated by independent fingerprinting, triggered runs, and silent drift and undeclared change findings (15.2, 15.4).
 - **Embargo leakage:** Embargoed canary contents MUST be held under access control equivalent to the underlying vulnerability's disclosure process.
 - **Canary replay:** A party that captures a canary could re-send it to manufacture an effect or a block. Mitigated by single-use effect tokens, Ingress Observer records, and release windows. An effect token seen without its ingress record, or outside its window, is a finding, never a Unit of Proof.
+- **Single-run error:** An honest run can be wrong: a corpus that happens to suit the control, a miscalibrated witness, an unusual day. Every cryptographic check still passes, because the cryptography proves the record was not changed, not that it was right. Mitigated by the reproducibility duty (11.7) and independent reproduction under PP-SPEC-081.
 - **Test as cover:** An attacker aware of a run window may attack during it, expecting alerts to be dismissed as test traffic. Operators MUST treat any effect without a matched effect token as real. The Proof Witness classifies by exclusion, and a run never suspends normal incident response. Publication of the method does not weaken this: the secret is the nonce, the holdout pool, and embargoed payloads, not the mechanism.
 
 ## 21. Records and Registration
@@ -830,6 +837,8 @@ This section governs the form of every record this specification produces: Units
 21.8.1. Every record MAY carry `valid_through`, the time after which its producer no longer asserts that it describes the current SUT. A Unit of Proof's validity ends no later than the next Molt of its DUT or CUT Fingerprint (15.2.3).
 
 21.8.2. A record past its validity window is not wrong; it is historical. Verifiers MUST distinguish current from historical records when computing anything about the present.
+
+21.8.3. **Reproof Status is not stored.** A record's Reproof Status under PP-SPEC-081 is computed from the Registry, never written into the record, and never changes its Record ID. Any rendering of a record that states a Reproof Status MUST also state that status's scope, count, and history (081 Sections 9 and 10).
 
 ### 21.9. Disclosure level
 
@@ -934,3 +943,4 @@ Craig Thomas Ellrod, as maintainer of Proof Protocol, is responsible for the edi
 | 0.7.4 | 2026-10-13 | Section 22 limited to editorial responsibility: conformance is determined from the records against the normative text, not decided by the maintainer. |
 | 0.8.0 | 2026-10-20 | Sealed content reveal: commitments bind a salted content digest; canary content is revealed to the Holder and Content Verifiers, not publicly by default (9.1, 9.4). Canary and order tags move to DCP-2. |
 | 0.8.1 | 2026-10-23 | The Provider of the DUT occupies no Integration Point (4.1, 18.1.6); closes IP-8 Adjudicator, IP-10 Signer, IP-4, and IP-2, which 0.8.0 did not list. 21.16 points to PP-SPEC-081 for independent reproduction. |
+| 0.8.2 | 2026-10-23 | Proof is reproducible (Section 3). 9.8 Composition Manifest: technique class, Color, target, Effect Point type counts, committed with `R`, revealed publicly. 11.7 reproducibility duty. 20 single-run error. 21.8.3 Reproof Status is computed, never stored. Licensed under Proof Protocol License 1.1: text CC BY 4.0 from this version; earlier versions remain Apache-2.0. |

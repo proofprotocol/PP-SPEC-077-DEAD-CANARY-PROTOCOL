@@ -8,7 +8,7 @@
 >
 > Any use, implementation, derivative, citation, or incorporation of this work, in whole or in part, MUST attribute **Craig Thomas Ellrod and Proof Protocol**. See [NOTICE.md](NOTICE.md).
 >
-> Licensed under the Proof Protocol License 1.0 (see LICENSE.md); text Apache License 2.0 under Part A. Original inventor: Craig Thomas Ellrod (ORCID 0009-0004-1058-7666).
+> Licensed under the Proof Protocol License 1.1 (see LICENSE.md); text CC BY 4.0 under Part A, which grants no patent rights. Original inventor: Craig Thomas Ellrod (ORCID 0009-0004-1058-7666).
 >
 > **Patents.** Patent terms are in [PATENT-SCHEDULE.md](PATENT-SCHEDULE.md). Claims not listed there are reserved by Craig Thomas Ellrod. Licensing: 1proofprotocol@gmail.com.
 >
@@ -101,10 +101,12 @@ Proof of Control and Proof of Efficacy are different claims. Proof of Control es
 | [CITATION.cff](CITATION.cff) | Citation metadata |
 | [SECURITY.md](SECURITY.md) | Reporting protocol flaws |
 | [LICENSE.md](LICENSE.md) | License terms |
+| [LICENSE-CC-BY-4.0.md](LICENSE-CC-BY-4.0.md) | CC BY 4.0, specification text from 0.8.2 |
+| [LICENSE-APACHE-2.0.md](LICENSE-APACHE-2.0.md) | Apache 2.0, versions before 0.8.2 |
 
 ## Status
 
-Draft, version 0.8.1, 2026-10-23. Maintained by Craig Thomas Ellrod as part of Proof Protocol.
+Draft, version 0.8.2, 2026-10-23. Maintained by Craig Thomas Ellrod as part of Proof Protocol.
 
 Where results live: every commitment, witness root, fingerprint, and result is published to a registry conforming to [PP-SPEC-004](https://github.com/proofprotocol/registry-api-spec), the ProofRegister API. The public instance is [proofregister.com](https://proofregister.com).
 
