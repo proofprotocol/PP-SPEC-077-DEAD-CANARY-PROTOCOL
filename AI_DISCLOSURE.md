@@ -24,7 +24,16 @@ Method: self-estimated. Shares drafted by the AI from its itemized record of wha
 Machine-readable form: [ai_disclosure.json](ai_disclosure.json), conforming to PP-SPEC-077 Section 21.15. The two forms agree; if they ever differ, the JSON is wrong and must be corrected.
 
 
-## This version (0.8.0, 2026-10-20)
+## This version (0.8.1, 2026-10-23)
+
+**Human:**
+- Decision to close the Provider seam gap and link PP-SPEC-081
+- Review and acceptance (pending)
+
+**AI (Claude Opus 5.5):**
+- Found that 18.1.6 omitted IP-8, IP-10, IP-4, and IP-2; text of the fix
+
+## Version 0.8.0 (2026-10-20)
 
 **Human:**
 - Decision to stop publishing canary content and release it only to the Holder and authorized verifiers
