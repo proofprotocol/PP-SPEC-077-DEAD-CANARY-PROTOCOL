@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased (2026-10-29)
+- lean/: Lean 4 formalization of adjudication (5.6.6, 11.1, 11.2, 12, 14.3, 15.6.5). Seven machine-checked theorems, including closed accounting and that absence is never scored as Stopped; nine conformance vectors; checked on every push by .github/workflows/lean.yml.
+- lean/FINDINGS.md: four Outcome precedence cases the text leaves open (F1 to F4), with proposed 5.6.6.2 text for the maintainer's decision.
+
 ## 0.8.3 (2026-10-29)
 - Section 3: formal verification, called Proof of Correctness, is verification evidence about a control's design (what it is bounded to do within a formal model). It is not proof of outcome and does not establish that the specification states the intended policy, that the deployment matches the model, or that an attack stays inside it.
 - 5.6.4.4 Formal claims: a Gold canary may test a formally verified Provider claim; the citation names the theorem, the formal specification, the prover and version, a hash of the proof artifacts, and the configuration the Provider says the proof covers, recorded beside the captured DUT Fingerprint.

@@ -1,0 +1,28 @@
+# Re-checks the Lean formalization of adjudication (lean/) on every push and pull request.
+# A green run means the Lean kernel accepted every theorem and conformance vector.
+name: Lean proofs
+
+on:
+  push:
+    paths: ['lean/**', '.github/workflows/lean.yml']
+  pull_request:
+    paths: ['lean/**', '.github/workflows/lean.yml']
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: lean
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install the pinned Lean toolchain
+        run: |
+          curl -sSfL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Build and check every proof
+        run: lake build
+      - name: Refuse sorry and extra axioms
+        run: |
+          ! grep -rnE '\bsorry\b|\badmit\b|^axiom ' DCP

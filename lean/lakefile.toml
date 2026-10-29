@@ -1,0 +1,5 @@
+name = "DCP"
+defaultTargets = ["DCP"]
+
+[[lean_lib]]
+name = "DCP"

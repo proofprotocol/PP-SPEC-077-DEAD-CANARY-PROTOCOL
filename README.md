@@ -88,6 +88,7 @@ Proof of Control and Proof of Efficacy are different claims. Proof of Control es
 | Path | Contents |
 |---|---|
 | [SPEC.md](SPEC.md) | The normative specification, PP-SPEC-077 |
+| [lean/](lean/) | Lean formalization of adjudication: closed accounting, the Absence Ladder and outcome rules, machine-checked |
 | [docs/overview.md](docs/overview.md) | Plain-English walkthrough |
 | [docs/architecture.svg](docs/architecture.svg) | One-page diagram of every component and flow |
 | [docs/glossary.md](docs/glossary.md) | Terms |
