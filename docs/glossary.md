@@ -54,6 +54,8 @@
 | **Outcome** | What happened: Stopped, Missed, Passed, False block, Void, Undelivered, Sealed. Assigned once, after the fact. |
 | **Effect Token** | Unique per-canary identifier visible at the Effect Point. Matches an observation to its canary after reveal. No token means wild. |
 | **Gold Canary** | A bad canary testing a technique the Provider claims in writing to stop. Gold Missed is a Claim Finding. |
+| **Proof of Correctness** | A machine-checked proof (Lean, Coq, Isabelle, SMT) that a control's logic satisfies a formal specification. Verification evidence about the design, never proof of outcome. May be tested as a Gold claim (5.6.4.4). |
+| **Formal Claim Finding** | A Gold canary Missed against a formally verified claim, with gap `spec_gap`, `deployment_gap`, `model_gap`, or `undetermined` (11.6.1). |
 | **Claim Accuracy Rate** | Gold Stopped over all Gold. The Provider's own claims graded against outcome. |
 | **Registry** | The append-only public ledger results are published to, per PP-SPEC-004 (ProofRegister API). Public instance: proofregister.com. |
 | **Integration Point (IP-n)** | A named seam a third-party component plugs into, with its own MUSTs, evidence, and conformance claim (Section 18). |

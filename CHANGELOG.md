@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.8.3 (2026-10-29)
+- Section 3: formal verification, called Proof of Correctness, is verification evidence about a control's design (what it is bounded to do within a formal model). It is not proof of outcome and does not establish that the specification states the intended policy, that the deployment matches the model, or that an attack stays inside it.
+- 5.6.4.4 Formal claims: a Gold canary may test a formally verified Provider claim; the citation names the theorem, the formal specification, the prover and version, a hash of the proof artifacts, and the configuration the Provider says the proof covers, recorded beside the captured DUT Fingerprint.
+- 11.6.1 Formal Claim Findings: kind `formal_claim`, with gap `spec_gap`, `deployment_gap`, `model_gap`, or `undetermined`. A Missed formal claim shows the proven property does not cover the outcome, not that the proof is wrong.
+
 ## 0.8.2 (2026-10-23)
 - Section 3: proof is reproducible; verifying a record is not reproving it; reproof under PP-SPEC-081.
 - 9.8 Composition Manifest: counts per technique class, Color, target level, and Effect Point type, committed with `R` (tag `DCP-2:composition`), revealed at `public`.

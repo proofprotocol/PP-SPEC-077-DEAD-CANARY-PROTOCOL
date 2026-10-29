@@ -24,7 +24,24 @@ Method: self-estimated. Shares drafted by the AI from its itemized record of wha
 Machine-readable form: [ai_disclosure.json](ai_disclosure.json), conforming to PP-SPEC-077 Section 21.15. The two forms agree; if they ever differ, the JSON is wrong and must be corrected.
 
 
-## This version (0.8.2, 2026-10-23)
+## This version (0.8.3, 2026-10-29)
+
+**Human (Craig Ellrod):**
+- The question whether Lean and formal verification threaten Proof of Efficacy, and the direction to define formal verification as a tier beneath it and to test formally verified claims with Gold canaries
+- Decision to publish
+- Review and acceptance (pending)
+
+**AI (Claude Opus 5.5), at the author's direction:**
+- The analysis that a formal proof covers the logic within a model, not the specification's intent, the deployment, or out-of-model attacks
+- The 5.6.4.4 citation fields
+- Text of the Section 3 paragraph, 5.6.4.4, 11.6.1, and the changelog and revision entries
+
+**Proposed by the AI, accepted by Craig Ellrod on 2026-10-29:**
+- The name Proof of Correctness
+- The term Formal Claim Finding and its record kind `formal_claim`
+- The gap values `spec_gap`, `deployment_gap`, `model_gap`, `undetermined`
+
+## Version 0.8.2 (2026-10-23)
 
 **Human (Craig Ellrod):**
 - Originated reproof and directed that 077 to 080 carry it

@@ -37,6 +37,8 @@
 - [ ] Effect tokens without ingress records recorded as replay findings, never scored
 - [ ] Gold canaries cite a dated Provider claim included in the run record
 - [ ] Gold Missed published as a Claim Finding
+- [ ] Formal Gold claims cite theorem, formal specification, prover and version, proof artifact hash, and asserted configuration beside the captured DUT Fingerprint (5.6.4.4)
+- [ ] Formal Claim Findings carry kind `formal_claim` and exactly one gap value (11.6.1)
 - [ ] Claim Accuracy Rate published when any Gold canary is in the Proof Swarm
 
 ## Proof Swarm (SPEC 8)

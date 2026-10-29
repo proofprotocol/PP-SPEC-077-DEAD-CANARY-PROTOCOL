@@ -19,7 +19,7 @@
 | Field | Value |
 |---|---|
 | Spec ID | PP-SPEC-077 |
-| Version | 0.8.2 (Draft) |
+| Version | 0.8.3 (Draft) |
 | Date | 2026-10-23 |
 | Status | Draft for public record |
 | Maintainer | Craig Thomas Ellrod (Proof Protocol) |
@@ -156,6 +156,8 @@ Proof Protocol distinguishes three tiers of assurance. DCP is a method for the p
 
 A log entry, alert, or telemetry record produced by the DUT or the Provider is verification evidence. It MUST NOT be presented as proof under this specification.
 
+**Formal verification.** A machine-checked proof that a control's logic satisfies a formal specification (for example, a theorem checked by Lean, Coq, Isabelle, or an SMT-based reasoner), called here **Proof of Correctness**, establishes what the control is bounded to do within the model it was proven against. It is verification evidence about the design, not proof of outcome, and it MUST NOT be presented as proof under this specification. It does not establish that the formal specification states the intended policy, that the deployed control matches the model, or that an attack stays within the model. A Proof of Correctness result MAY be cited as a Gold claim (5.6.4.4), where it is tested like any other claim: the logic was proven; whether it stops the attack is measured.
+
 Proof is reproducible. Verifying a record establishes that the record is the one that was made; it does not establish that the outcome would recur. Independent reproduction of a run by parties who had no part in it, its comparison, and its settlement are specified in PP-SPEC-081, Reproof: The Umpire Assay Protocol. A run that cannot be reproven under PP-SPEC-081 is a demonstration, not proof (Proof Economy Prior Art Declaration, Category 4a).
 
 ## 4. Roles and Independence
@@ -213,6 +215,8 @@ Every canary is described on exactly three axes. Each axis answers one question,
 5.6.4.2. Gold canaries MUST cite the Provider claim they test: document, version, and the specific statement. The claim MUST predate the run and MUST be included in the run record.
 
 5.6.4.3. A Proof Swarm MUST contain White and Red. It SHOULD contain Gray and Black. It MAY contain Gold.
+
+5.6.4.4. **Formal claims.** A Gold canary MAY test a Provider claim established by formal verification (Section 3). The claim citation (5.6.4.2) MUST then also identify the theorem or property proven, the formal specification it was proven against, the prover and its version, a content hash of the proof artifacts, and the deployed configuration the Provider asserts the result covers. The DUT Fingerprint captured for the run (15.2) MUST be recorded beside that asserted configuration.
 
 #### 5.6.5. Path
 
@@ -389,6 +393,8 @@ where `H` is SHA-256 or stronger, `"DCP-2:content"` and `"DCP-2:canary"` are fix
 `uop_id` is the Record ID (21.1). `signatures`, `proofregister_uri`, and `registry_receipt` are registration fields and are excluded from the hash that produces `uop_id`.
 
 11.6. **Claim Findings.** A Gold canary adjudicated Missed MUST be recorded as a Claim Finding: the cited Provider claim, the technique, the variant, the DUT Fingerprint, and the Unit of Proof. Claim Findings MUST be published with the run. A Gold canary adjudicated Stopped is a Unit of Proof like any other bad canary and additionally confirms witness and path function for that run.
+
+11.6.1. **Formal Claim Findings.** A Claim Finding against a formal claim (5.6.4.4) MUST be recorded with kind `formal_claim` and a `gap` of exactly one of: `spec_gap`, the formal specification permits the observed effect; `deployment_gap`, the captured DUT Fingerprint differs from the configuration the proof covers; `model_gap`, the attack path lies outside the formal model; or `undetermined`, the records do not establish which. A formal claim Missed is not a finding that the proof is invalid. It is a finding that the proven property does not cover the outcome.
 
 11.7. **Reproducibility duty.** A run is Conformant only if it publishes, at Disclosure Level `public` or `holder_only` with the Holder's consent to disclose to a Commissioner under PP-SPEC-081, everything an independent Check Assay needs to hold the Split constant: the Composition Manifest (9.8), the DUT, CUT, and SUT Fingerprints (15.2), the Witness Coverage Map (Section 14), the Claim Sheet reference for Gold canaries, the declared run thresholds (11.3), and the Technology Profile and its version. It MUST NOT be required to publish canary content, nonces before reveal, holdout contents, or embargoed details. A Holder MUST NOT contract with any party to prevent a Check Assay of a Registered run.
 
@@ -944,3 +950,4 @@ Craig Thomas Ellrod, as maintainer of Proof Protocol, is responsible for the edi
 | 0.8.0 | 2026-10-20 | Sealed content reveal: commitments bind a salted content digest; canary content is revealed to the Holder and Content Verifiers, not publicly by default (9.1, 9.4). Canary and order tags move to DCP-2. |
 | 0.8.1 | 2026-10-23 | The Provider of the DUT occupies no Integration Point (4.1, 18.1.6); closes IP-8 Adjudicator, IP-10 Signer, IP-4, and IP-2, which 0.8.0 did not list. 21.16 points to PP-SPEC-081 for independent reproduction. |
 | 0.8.2 | 2026-10-23 | Proof is reproducible (Section 3). 9.8 Composition Manifest: technique class, Color, target, Effect Point type counts, committed with `R`, revealed publicly. 11.7 reproducibility duty. 20 single-run error. 21.8.3 Reproof Status is computed, never stored. Licensed under Proof Protocol License 1.1: text CC BY 4.0 from this version; earlier versions remain Apache-2.0. |
+| 0.8.3 | 2026-10-29 | Formal verification (Proof of Correctness) is verification evidence about a control's design, not proof of outcome (Section 3). 5.6.4.4 formal claims as Gold canaries: theorem, formal specification, prover and version, proof artifact hash, asserted configuration. 11.6.1 Formal Claim Findings with `spec_gap`, `deployment_gap`, `model_gap`, or `undetermined`. |
