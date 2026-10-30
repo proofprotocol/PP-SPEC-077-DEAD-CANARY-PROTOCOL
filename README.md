@@ -98,6 +98,7 @@ Proof of Control and Proof of Efficacy are different claims. Proof of Control es
 | [CHANGELOG.md](CHANGELOG.md) | Version history |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | How to engage |
 | [NOTICE.md](NOTICE.md) | Attribution requirements |
+| [RELATED-WORK.md](RELATED-WORK.md) | Known related work by others, and whether anything was drawn from it |
 | [AI_DISCLOSURE.md](AI_DISCLOSURE.md) | What was human-authored and what was AI-drafted |
 | [CITATION.cff](CITATION.cff) | Citation metadata |
 | [SECURITY.md](SECURITY.md) | Reporting protocol flaws |

@@ -28,8 +28,10 @@ Machine-readable form: [ai_disclosure.json](ai_disclosure.json), conforming to P
 
 **Human (Craig Ellrod):**
 - Direction to cite arXiv:2603.28013 as related work, and the question of where its attribution belongs
+- Direction to add RELATED-WORK.md
 - Review and acceptance (pending)
 
+- RELATED-WORK.md: its fields and rules
 **AI (Claude Opus 5.5):**
 - Found the paper on 2026-10-29 while checking the claim that no one else attributes agent actions to planted tokens
 - The comparison and the text of the Related work section, the CITATION.cff reference, and the ACKNOWLEDGEMENTS.md note

@@ -21,7 +21,7 @@ Contribution: Later receipt-based verification work applying proof concepts to a
 Applies to: PP-SPEC-077 to PP-SPEC-080
 [/END OF ACKNOWLEDGED]
 
-Independent related work is cited in SPEC.md, Related work. It is not acknowledged here, because nothing in this specification was drawn from it (Rule 2).
+Independent related work is listed in [RELATED-WORK.md](RELATED-WORK.md) and compared in SPEC.md, Related work. It is not acknowledged here, because nothing in this specification was drawn from it (Rule 2).
 
 ## What this file is
 

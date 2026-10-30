@@ -70,7 +70,7 @@ What comes out is not a score, a grade, a pass, or a certificate. It is a set of
 
 ### Related work
 
-*Informative.*
+*Informative. The machine-readable list is [RELATED-WORK.md](RELATED-WORK.md).*
 
 Wang and Zhang, "Kill-Chain Canaries: Stage-Level Tracking of Prompt Injection Across Attack Surfaces and Five Production LLMs" ([arXiv:2603.28013](https://arxiv.org/abs/2603.28013), first posted 30 March 2026), embed a unique token in each injected payload and score each run by the furthest stage the token reaches: Exposed, Persisted, Relayed, or Executed. That work predates this specification's effect token (5.4.1, added in version 0.6.0, 10 October 2026), which was developed independently; the maintainer identified the paper on 29 October 2026. Nothing in this specification is drawn from it.
 
