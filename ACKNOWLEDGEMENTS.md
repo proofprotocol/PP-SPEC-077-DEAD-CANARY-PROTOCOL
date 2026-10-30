@@ -21,6 +21,8 @@ Contribution: Later receipt-based verification work applying proof concepts to a
 Applies to: PP-SPEC-077 to PP-SPEC-080
 [/END OF ACKNOWLEDGED]
 
+Independent related work is cited in SPEC.md, Related work. It is not acknowledged here, because nothing in this specification was drawn from it (Rule 2).
+
 ## What this file is
 
 ACKNOWLEDGEMENTS.md credits people whose ideas or prior work shaped this repository. It sits beside AI_DISCLOSURE.md (who wrote it), REVIEWERS.md (who reviewed it), FUNDING.md (who paid for it), and LICENSE.md (who may use it).

@@ -24,6 +24,16 @@ Method: self-estimated. Shares drafted by the AI from its itemized record of wha
 Machine-readable form: [ai_disclosure.json](ai_disclosure.json), conforming to PP-SPEC-077 Section 21.15. The two forms agree; if they ever differ, the JSON is wrong and must be corrected.
 
 
+## Unreleased (2026-10-30): Related work
+
+**Human (Craig Ellrod):**
+- Direction to cite arXiv:2603.28013 as related work, and the question of where its attribution belongs
+- Review and acceptance (pending)
+
+**AI (Claude Opus 5.5):**
+- Found the paper on 2026-10-29 while checking the claim that no one else attributes agent actions to planted tokens
+- The comparison and the text of the Related work section, the CITATION.cff reference, and the ACKNOWLEDGEMENTS.md note
+
 ## This version (0.8.3, 2026-10-29)
 
 **Human (Craig Ellrod):**

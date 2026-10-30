@@ -59,7 +59,8 @@
       "Humans and machines rule; Authorship Disclosure rule",
       "All review and acceptance",
       "0.7.4: decision to limit the maintainer to editorial responsibility (Section 22), matching PP-SPEC-079 v0.1.2",
-      "0.8.0: decision to stop publishing canary content and release it only to the Holder and authorized verifiers"
+      "0.8.0: decision to stop publishing canary content and release it only to the Holder and authorized verifiers",
+      "2026-10-30: directed citing arXiv:2603.28013 as related work"
     ],
     "ai": [
       "Text as written",
@@ -69,7 +70,8 @@
       "Introduction prose",
       "0.7.4: text of the Section 22 change and the matching changelog and CONTRIBUTING entries",
       "0.8.0: sealed-reveal mechanism (salted content digest, DCP-2 tags, Content Verifier role) and its text",
-      "0.8.3: proposed the name Proof of Correctness, the term Formal Claim Finding (kind formal_claim), and the gap values spec_gap, deployment_gap, model_gap, undetermined; accepted by Craig Ellrod on 2026-10-29"
+      "0.8.3: proposed the name Proof of Correctness, the term Formal Claim Finding (kind formal_claim), and the gap values spec_gap, deployment_gap, model_gap, undetermined; accepted by Craig Ellrod on 2026-10-29",
+      "2026-10-30: found arXiv:2603.28013; drafted the Related work section and its comparison"
     ]
   },
   "pending_acceptance": [

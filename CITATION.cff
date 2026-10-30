@@ -14,5 +14,15 @@ references:
   - type: generic
     title: "Proof Economy Prior Art Declaration"
     doi: 10.5281/zenodo.21379780
+  - type: article
+    title: "Kill-Chain Canaries: Stage-Level Tracking of Prompt Injection Across Attack Surfaces and Five Production LLMs"
+    authors:
+      - family-names: Wang
+        given-names: Haochuan Kevin
+      - family-names: Zhang
+        given-names: Zechen
+    year: 2026
+    url: "https://arxiv.org/abs/2603.28013"
+    notes: "Independent prior work, cited in SPEC.md Related work. Nothing in this specification is drawn from it."
 license: CC-BY-4.0
 license-url: "LICENSE.md"

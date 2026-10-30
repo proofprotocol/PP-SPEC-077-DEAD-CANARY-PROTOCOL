@@ -1,6 +1,7 @@
 # Changelog
 
 ## Unreleased (2026-10-29)
+- Related work (Introduction): arXiv:2603.28013, independent prior work on token tracking of prompt injection, cited with its differences; nothing drawn from it.
 - lean/: Lean 4 formalization of adjudication (5.6.6, 11.1, 11.2, 12, 14.3, 15.6.5). Seven machine-checked theorems, including closed accounting and that absence is never scored as Stopped; nine conformance vectors; checked on every push by .github/workflows/lean.yml.
 - lean/FINDINGS.md: four Outcome precedence cases the text leaves open (F1 to F4), with proposed 5.6.6.2 text for the maintainer's decision.
 

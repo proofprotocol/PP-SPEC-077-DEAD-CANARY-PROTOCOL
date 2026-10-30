@@ -68,6 +68,14 @@ What comes out is not a score, a grade, a pass, or a certificate. It is a set of
 
 **What this is not.** It is not a breach and attack simulation product, which plays recorded attacks and reads the Provider's own logs. It is not a penetration test, which depends on the skill of the tester and leaves no committed record. It is not a benchmark, which measures the product in the benchmark's environment rather than the Implementor's. It is a protocol: a set of rules under which anyone, using any tools, can produce proof of efficacy that any other party can verify without trusting the producer.
 
+### Related work
+
+*Informative.*
+
+Wang and Zhang, "Kill-Chain Canaries: Stage-Level Tracking of Prompt Injection Across Attack Surfaces and Five Production LLMs" ([arXiv:2603.28013](https://arxiv.org/abs/2603.28013), first posted 30 March 2026), embed a unique token in each injected payload and score each run by the furthest stage the token reaches: Exposed, Persisted, Relayed, or Executed. That work predates this specification's effect token (5.4.1, added in version 0.6.0, 10 October 2026), which was developed independently; the maintainer identified the paper on 29 October 2026. Nothing in this specification is drawn from it.
+
+The shared idea is attribution by a unique token. Purpose and method differ. That work measures how far an injection travels through an agent pipeline; this specification measures whether a security control stopped committed attack traffic. That work has no commitment before release (Section 9), no Time Anchor, no Proof Witness independent of the system under test (Section 10), no good canaries or False Block Rate, no Colors, no Absence Ladder (14.3), and no Registry, and its token format (`SECRET-[A-F0-9]{8}`) is distinguishable from ordinary identifiers, which 5.4.1 forbids. Its stages concern the agent's handling of injected content, which is the subject of PP-SPEC-078.
+
 ## 1. Conventions
 
 The key words MUST, MUST NOT, REQUIRED, SHALL, SHALL NOT, SHOULD, SHOULD NOT, RECOMMENDED, MAY, and OPTIONAL are to be interpreted as described in RFC 2119 and RFC 8174.
