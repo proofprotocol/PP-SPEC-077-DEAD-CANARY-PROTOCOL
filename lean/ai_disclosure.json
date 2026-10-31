@@ -37,8 +37,8 @@
     }
   },
   "method": {
-    "kind": "self_estimated",
-    "notes": "Every proof machine-checked by Lean 4.19.0 using only propext and Quot.sound. Shares self-estimated; MAY be re-measured with ProofJack (PP-SPEC-088)."
+    "kind": "self_attested",
+    "notes": "Every proof machine-checked by Lean 4.19.0 using only propext and Quot.sound. Shares self-attested; MAY be re-measured with ProofJack (PP-SPEC-088)."
   },
   "contributions": {
     "human": [

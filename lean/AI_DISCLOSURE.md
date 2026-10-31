@@ -15,7 +15,7 @@ The decision to formalize 077 in Lean, and the question it answers, are Craig El
 | Words, code, and schemas as written | 0% | 100% |
 | Review, direction, acceptance, decision to publish | 100% | 0% |
 
-Method: self-estimated. MAY be re-measured with a tool such as ProofJack.com (PP-SPEC-088).
+Method: self-attested. MAY be re-measured with a tool such as ProofJack.com (PP-SPEC-088).
 
 ## This version (2026-10-29)
 

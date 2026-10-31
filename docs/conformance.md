@@ -142,5 +142,5 @@
 ## Authorship Disclosure (SPEC 21.15)
 
 - [ ] Every component in the Interface Manifest carries a reference to its ai_disclosure.json
-- [ ] AI_DISCLOSURE.md and ai_disclosure.json present for the work, agreeing, with human and AI shares on all four dimensions, the AI systems named, and the method stated (self-estimated, or measured or attested with a named tool such as ProofJack.com)
+- [ ] AI_DISCLOSURE.md and ai_disclosure.json present for the work, agreeing, with human and AI shares on all four dimensions, the AI systems named, and the method stated (self-attested, or measured or attested with a named tool such as ProofJack.com)
 - [ ] No conformance claim at any seam by a component without a disclosure

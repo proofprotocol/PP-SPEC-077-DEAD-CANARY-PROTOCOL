@@ -1,6 +1,7 @@
 # Changelog
 
 ## Unreleased (2026-10-29)
+- 21.15.4 Authorship Disclosure: shares stated by the authors are self-attested, method `self_attested`, the author's own claim and not a measurement. `self_estimated` remains valid with the same meaning. Schema enum, conformance checklist, and this repository's own disclosures updated.
 - RELATED-WORK.md: machine-readable list of known related work by others, with dates and whether anything was drawn from it; referenced from SPEC.md, README.md and ACKNOWLEDGEMENTS.md.
 - Related work (Introduction): arXiv:2603.28013, independent prior work on token tracking of prompt injection, cited with its differences; nothing drawn from it.
 - lean/: Lean 4 formalization of adjudication (5.6.6, 11.1, 11.2, 12, 14.3, 15.6.5). Seven machine-checked theorems, including closed accounting and that absence is never scored as Stopped; nine conformance vectors; checked on every push by .github/workflows/lean.yml.

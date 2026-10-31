@@ -42,7 +42,7 @@
     }
   },
   "method": {
-    "kind": "self_estimated",
+    "kind": "self_attested",
     "notes": "Shares drafted by the AI from its itemized record of what it proposed and what the author directed, for the author to confirm or correct before release. MAY be re-measured with a tool such as ProofJack.com."
   },
   "contributions": {

@@ -19,7 +19,7 @@ ProofSwarm, the Dead Canary Protocol, was conceived, designed, and decided by Cr
 | Words, code, and schemas as written | 5% | 95% |
 | Review, direction, acceptance, decision to publish | 100% | 0% |
 
-Method: self-estimated. Shares drafted by the AI from its itemized record of what it proposed and what the author directed, for the author to confirm or correct before release. MAY be re-measured with a tool such as ProofJack.com.
+Method: self-attested. Shares drafted by the AI from its itemized record of what it proposed and what the author directed, for the author to confirm or correct before release. MAY be re-measured with a tool such as ProofJack.com.
 
 Machine-readable form: [ai_disclosure.json](ai_disclosure.json), conforming to PP-SPEC-077 Section 21.15. The two forms agree; if they ever differ, the JSON is wrong and must be corrected.
 

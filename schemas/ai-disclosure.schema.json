@@ -117,10 +117,12 @@
       "properties": {
         "kind": {
           "enum": [
+            "self_attested",
             "self_estimated",
             "tool_measured",
             "tool_attested"
-          ]
+          ],
+          "description": "self_attested: shares stated by the authors (21.15.4). self_estimated: earlier name for self_attested, still valid. tool_measured, tool_attested: shares from a named tool such as ProofJack.com"
         },
         "tool": {
           "type": "string",

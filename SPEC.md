@@ -919,7 +919,7 @@ This section governs the form of every record this specification produces: Units
 
 21.15.3. **Form.** The disclosure is published in both forms of 21.14: a human-readable file, `AI_DISCLOSURE.md`, at the root of the work, and a machine-readable file, `ai_disclosure.json`, conforming to [schemas/ai-disclosure.schema.json](schemas/ai-disclosure.schema.json). The two MUST agree.
 
-21.15.4. **Measurement.** Shares MAY be measured or attested with a tool built for the purpose, such as ProofJack.com, in which case the disclosure names the tool and its version. Shares MAY instead be estimated by the authors, in which case the disclosure MUST say they are self-estimated. Either is conforming; an undisclosed method is not.
+21.15.4. **Measurement.** Shares MAY be measured or attested with a tool built for the purpose, such as ProofJack.com, in which case the disclosure names the tool and its version. Shares MAY instead be stated by the authors, in which case the disclosure MUST say they are self-attested (method `self_attested`). A self-attested disclosure is the author's own claim about the work, not a measurement, and is read as such. Either is conforming; an undisclosed method is not. The earlier value `self_estimated` remains valid and means the same as `self_attested`.
 
 21.15.5. **Zero is a value.** A work made entirely by humans, or entirely by AI, says so. Silence is not a disclosure. A component without an Authorship Disclosure MUST NOT claim conformance at any Integration Point (18.3.1), and the Interface Manifest (18.1.3) carries each component's disclosure reference.
 
